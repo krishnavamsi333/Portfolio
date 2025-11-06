@@ -1,155 +1,179 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>K. Krishna Vamsi — Portfolio</title>
-<style>
-  :root{
-    --bg1:#0f1720; --bg2:#1f3a5f; --accent:#00d4ff; --card:#0f2436;
-    --glass: rgba(255,255,255,0.04);
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
-    background: linear-gradient(135deg,var(--bg1),var(--bg2));
-    color:#e6f2ff; -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale; padding:32px 18px;
-  }
-  .wrap{max-width:1000px;margin:0 auto}
-  .hero{
-    display:flex; gap:28px; align-items:center;
-    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    padding:28px; border-radius:14px; box-shadow:0 6px 30px rgba(2,6,23,0.6);
-    transform: translateY(0);
-    animation: float 6s ease-in-out infinite;
-  }
-  @keyframes float{
-    0%{transform:translateY(0)}
-    50%{transform:translateY(-8px)}
-    100%{transform:translateY(0)}
-  }
-  .avatar{
-    width:140px;height:140px;border-radius:16px;flex-shrink:0;
-    border:3px solid rgba(255,255,255,0.06); object-fit:cover;
-    box-shadow:0 8px 30px rgba(0,0,0,0.6);
-  }
-  .hero h1{margin:0;font-size:1.9rem;letter-spacing:0.2px}
-  .hero p{margin:6px 0 0 0;color: #cfeefc}
-  .badges{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-  .badge{
-    background:var(--glass); padding:6px 10px;border-radius:999px;font-size:0.85rem;
-    border:1px solid rgba(255,255,255,0.03)
-  }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>K. Krishna Vamsi — Portfolio</title>
+  <meta name="description" content="Portfolio — Kasimalla Krishna Vamsi. Renewable energy, robotics, MPPT, ROS2.">
+  <style>
+    /* --- color palette inspired by peepulagri: earthy / green / warm --- */
+    :root{
+      --bg:#f4f8f5;
+      --deep:#0f3d2e;
+      --muted:#2f6b56;
+      --accent:#7ad39a;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.75);
+      --text:#083226;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: "Inter", system-ui, Arial, sans-serif;
+      background: linear-gradient(180deg, #eef6ef 0%, var(--bg) 100%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
-  main{margin-top:22px;display:grid;grid-template-columns:1fr 320px;gap:20px}
-  @media (max-width:900px){ main{grid-template-columns:1fr} .avatar{width:120px;height:120px} }
+    /* container */
+    .container{max-width:1100px;margin:28px auto;padding:20px;}
 
-  .card{
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
-    box-shadow:0 8px 24px rgba(2,6,23,0.45)
-  }
+    /* hero */
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;
+      background: linear-gradient(90deg, rgba(34,77,57,0.06), rgba(122,211,154,0.03));
+      padding:34px;border-radius:14px;border:1px solid rgba(15,61,46,0.06);
+    }
+    @media (max-width:920px){ .hero{grid-template-columns:1fr; text-align:center} .hero-right{order:-1} }
 
-  h2{color:var(--accent);margin:0 0 12px 0;font-size:1.05rem}
-  .about p{margin:0 0 8px 0; color:#dff7ff}
+    .hero-left h1{font-size:2.1rem;margin:0 0 8px}
+    .hero-left p.lead{margin:0 0 14px;color:var(--muted);font-size:1.05rem}
+    .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .btn{
+      display:inline-block;padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none;
+      background:var(--deep);color:white;border:1px solid rgba(0,0,0,0.04);
+      box-shadow: 0 6px 18px rgba(15,61,46,0.08);
+    }
+    .btn.secondary{
+      background:transparent;color:var(--deep);border:1px solid rgba(15,61,46,0.12);
+      box-shadow:none;font-weight:600;
+    }
 
-  .projects-list{display:flex;flex-direction:column;gap:12px}
-  .project{
-    background:rgba(0,0,0,0.15); padding:12px;border-radius:10px;
-    border:1px solid rgba(255,255,255,0.02); transition:transform .18s ease, box-shadow .18s;
-  }
-  .project:hover{transform:translateY(-6px); box-shadow:0 14px 40px rgba(0,0,0,0.55)}
-  .project a{color:var(--accent); font-weight:600; text-decoration:none}
-  .project small{display:block;color:#bcecfb;margin-top:6px;font-size:0.9rem}
+    .hero-right{
+      background: linear-gradient(180deg, white, rgba(255,255,255,0.98));
+      border-radius:12px;padding:18px;border:1px solid rgba(15,61,46,0.04);
+    }
+    .hero-img{width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+    .hero-card h3{margin:6px 0 2px;font-size:1.02rem}
+    .hero-card p{margin:0;color:var(--muted);font-size:0.95rem}
 
-  /* sidebar */
-  .sidebar .contact-btn{
-    display:inline-block;width:100%;text-align:center;padding:10px;border-radius:10px;
-    background:linear-gradient(90deg,var(--accent),#6bf1ff); color:#022; font-weight:700; margin-bottom:10px;
-    text-decoration:none;
-  }
-  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-  .skill{background:rgba(255,255,255,0.03); padding:8px;border-radius:8px;text-align:center;font-weight:600}
+    /* sections */
+    .grid-2{display:grid;grid-template-columns:1fr 340px;gap:20px;margin-top:22px}
+    @media (max-width:920px){ .grid-2{grid-template-columns:1fr} }
 
-  footer{text-align:center;margin-top:28px;color:#9fcfe9;font-size:0.9rem;}
+    .card{
+      background:var(--card);border-radius:12px;padding:18px;border:1px solid rgba(2,20,14,0.03);
+      box-shadow:0 8px 30px rgba(17,43,34,0.03);
+    }
+    h2{color:var(--deep);margin:0 0 10px;font-size:1.05rem}
 
-  /* subtle link underline */
-  a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(0,0,0,0)}
-  a.inline:hover{opacity:0.95;text-decoration:underline}
-</style>
+    /* projects list */
+    .projects{display:flex;flex-direction:column;gap:12px}
+    .proj{
+      display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:10px;
+      background:linear-gradient(180deg, rgba(47,107,86,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(47,107,86,0.04);
+    }
+    .proj .meta{font-size:0.95rem;color:var(--muted)}
+    .proj a{color:var(--deep);font-weight:700;text-decoration:none}
+    .proj small{display:block;color:gray;margin-top:6px}
+
+    /* contact / quick links */
+    .contact-list{display:flex;flex-direction:column;gap:10px}
+    .link-btn{display:inline-block;padding:10px;border-radius:10px;text-decoration:none;background:var(--accent);color:var(--deep);font-weight:700;text-align:center}
+    .info{font-size:0.95rem;color:var(--muted)}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:0.9rem}
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="hero card" role="banner">
-      <img class="avatar" alt="Krishnavamsi333 avatar"
-           src="https://avatars.githubusercontent.com/krishnavamsi333?s=256" />
-      <div>
+  <div class="container">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-left">
         <h1>Kasimalla Krishna Vamsi</h1>
-        <p><strong>B.Tech — Electrical & Electronics Engineering</strong><br>
-           Velagapudi Ramakrishna Siddhartha Engg. College (JNTUK)</p>
-
-        <div class="badges" aria-hidden>
-          <span class="badge">MATLAB / Simulink</span>
-          <span class="badge">ROS 2</span>
-          <span class="badge">Power Electronics</span>
-          <span class="badge">MPPT / Solar</span>
+        <p class="lead">I build renewable-energy control systems and autonomous robots — MPPT, ROS2, and power-electronics for real-world projects.</p>
+        <div class="cta-row">
+          <a class="btn" href="mailto:kasimallakrishnavamsi333@gmail.com">Hire / Contact</a>
+          <a class="btn secondary" href="https://github.com/krishnavamsi333">View GitHub</a>
+          <a class="btn secondary" href="#projects">Projects</a>
         </div>
       </div>
-    </div>
 
-    <main>
-      <section>
-        <div class="card about" id="about">
-          <h2>About</h2>
-          <p>I develop control and autonomy solutions for renewable energy and robotic systems. I specialise in MPPT algorithms, ROS2-based robot integration, and simulation in Gazebo.</p>
-          <p>Currently pursuing projects on portable solar charging systems and agricultural automation with reinforcement learning.</p>
-        </div>
-
-        <div class="card" style="margin-top:14px">
-          <h2>Selected Projects</h2>
-          <div class="projects-list">
-            <div class="project">
-              <a class="inline" href="#">Portable Solar Charging System</a>
-              <small>MPPT algorithm in MATLAB/Simulink for e-bike batteries • Report available</small>
-            </div>
-
-            <div class="project">
-              <a class="inline" href="#">Precision Chili Harvesting Robot</a>
-              <small>ROS2 + Reinforcement Learning • Camera detection + manipulator control</small>
-            </div>
-
-            <div class="project">
-              <a class="inline" href="#">UCHCHAIHSHRAVA — ROS Agropilot</a>
-              <small>Autonomous field navigation — URDF simulation, mission phases, fleet management</small>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <aside class="sidebar">
-        <div class="card">
-          <h2>Contact</h2>
-          <a class="contact-btn" href="mailto:kasimallakrishnavamsi333@gmail.com">Email Me</a>
-          <a class="contact-btn" href="https://github.com/krishnavamsi333" style="background:transparent;color:var(--accent);border:1px solid rgba(255,255,255,0.06)">GitHub Profile</a>
-
-          <h2 style="margin-top:18px">Skills</h2>
-          <div class="skills" style="margin-top:8px">
-            <div class="skill">ROS 2</div>
-            <div class="skill">MATLAB</div>
-            <div class="skill">Power Electronics</div>
-            <div class="skill">C++ / Python</div>
-          </div>
-
-          <h2 style="margin-top:14px">Quick Links</h2>
-          <p style="margin:6px 0"><a class="inline" href="https://krishnavamsi333.github.io/Portfolio_kv/">Live site</a></p>
-          <p style="margin:6px 0"><a class="inline" href="https://github.com/krishnavamsi333/Portfolio_kv">Repository</a></p>
+      <aside class="hero-right" aria-label="Summary card">
+        <!-- replace image with a project or banner similar to Peepul's visual -->
+        <img class="hero-img" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="banner">
+        <div class="hero-card">
+          <h3>Focus Areas</h3>
+          <p class="meta">MPPT for solar chargers · ROS2 robotics · Power Electronics · Simulink modelling</p>
         </div>
       </aside>
-    </main>
+    </section>
+
+    <!-- MAIN GRID -->
+    <div class="grid-2">
+      <main>
+        <!-- ABOUT -->
+        <section class="card" id="about">
+          <h2>About</h2>
+          <p style="margin-top:8px">I develop algorithms and simulations to make renewable energy and agricultural robotics practical. Current work: portable solar charging systems, chili-harvesting automation using ROS2 & RL, and MPPT controller design in Simulink.</p>
+        </section>
+
+        <!-- Projects -->
+        <section class="card" id="projects" style="margin-top:12px">
+          <h2>Selected Projects</h2>
+          <div class="projects" style="margin-top:12px">
+            <article class="proj">
+              <div style="flex:1">
+                <a href="#">Portable Solar Charging System</a>
+                <small>MPPT algorithm in MATLAB/Simulink — e-bike charging strategy</small>
+              </div>
+            </article>
+
+            <article class="proj">
+              <div style="flex:1">
+                <a href="#">Precision Chili Harvesting Robot</a>
+                <small>ROS2 + Reinforcement Learning — camera detection & manipulator control</small>
+              </div>
+            </article>
+
+            <article class="proj">
+              <div style="flex:1">
+                <a href="#">UCHCHAIHSHRAVA — ROS Agropilot</a>
+                <small>Autonomous navigation for field robots • URDF & Gazebo simulation</small>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <div class="card">
+          <h2>Contact & Quick Links</h2>
+          <div class="contact-list" style="margin-top:10px">
+            <a class="link-btn" href="mailto:kasimallakrishnavamsi333@gmail.com">Email Me</a>
+            <a class="link-btn" href="https://github.com/krishnavamsi333" style="background:#fff;color:var(--deep)">GitHub Profile</a>
+          </div>
+
+          <div style="margin-top:14px">
+            <h2>Office</h2>
+            <p class="info">Velagapudi Ramakrishna Siddhartha Engg College — JNTUK</p>
+            <p class="info">Phone: +91 9392039416</p>
+            <p class="info">Email: <a href="mailto:kasimallakrishnavamsi333@gmail.com">kasimallakrishnavamsi333@gmail.com</a></p>
+          </div>
+
+          <div style="margin-top:14px">
+            <h2>Quick Links</h2>
+            <p class="info"><a href="https://krishnavamsi333.github.io/Portfolio_kv/">Live site</a></p>
+            <p class="info"><a href="https://github.com/krishnavamsi333/Portfolio_kv">Repository</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
 
     <footer>
-      © 2025 Kasimalla Krishna Vamsi · Built with HTML & CSS · View on <a class="inline" href="https://github.com/krishnavamsi333">GitHub</a>
+      © 2025 Kasimalla Krishna Vamsi · Inspired by Peepul Agri theme. :contentReference[oaicite:1]{index=1}
     </footer>
   </div>
 </body>
