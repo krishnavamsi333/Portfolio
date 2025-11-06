@@ -25,6 +25,29 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
+    /* ===== NAVBAR (small, sticky) ===== */
+    .site-nav{
+      position: sticky;
+      top: 12px;
+      z-index: 999;
+      max-width: 1100px;
+      margin: 0 auto 18px;
+      padding: 10px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:10px;
+      border:1px solid rgba(2,20,14,0.03);
+    }
+    .site-nav .brand{font-weight:800;color:var(--deep);letter-spacing:0.2px}
+    .site-nav .links{display:flex;gap:10px}
+    .site-nav a.nav-link{
+      text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:700;color:var(--deep);
+    }
+    .site-nav a.nav-link:hover{background:rgba(122,211,154,0.12)}
+    html { scroll-behavior: smooth; } /* smooth scroll for internal links */
+
     /* container */
     .container{max-width:1100px;margin:28px auto;padding:20px;}
 
@@ -87,22 +110,37 @@
   </style>
 </head>
 <body>
+  <!-- NAVBAR -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="brand">K. Krishna Vamsi</div>
+    <div class="links">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="nav-link" href="https://github.com/krishnavamsi333" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </nav>
+
   <div class="container">
     <!-- HERO -->
     <section class="hero" aria-label="Hero">
       <div class="hero-left">
         <h1>Kasimalla Krishna Vamsi</h1>
-        <p class="lead">I build renewable-energy control systems and autonomous robots — MPPT, ROS2, and power-electronics for real-world projects.</p>
-        <div class="cta-row">
-          <a class="btn" href="mailto:kasimallakrishnavamsi333@gmail.com">Hire / Contact</a>
-          <a class="btn secondary" href="https://github.com/krishnavamsi333">View GitHub</a>
+        <p class="lead">Personal portfolio — I build renewable-energy control systems and autonomous robots (MPPT, ROS2, power electronics).</p>
+
+        <div class="cta-row" style="margin-top:10px;align-items:center">
+          <!-- CV placeholder: upload CV_KV.pdf to repo root later for this link to work -->
+          <a class="btn" href="https://github.com/krishnavamsi333/Portfolio/raw/main/CV_KV.pdf" target="_blank" rel="noopener">Download CV</a>
+
+          <a class="btn secondary" href="mailto:kasimallakrishnavamsi333@gmail.com">Contact</a>
+
           <a class="btn secondary" href="#projects">Projects</a>
         </div>
       </div>
 
       <aside class="hero-right" aria-label="Summary card">
-        <!-- replace image with a project or banner similar to Peepul's visual -->
-        <img class="hero-img" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="banner">
+        <!-- personal banner / avatar (uses your GitHub avatar) -->
+        <img class="hero-img" src="https://avatars.githubusercontent.com/krishnavamsi333?s=1200" alt="K. Krishna Vamsi banner">
         <div class="hero-card">
           <h3>Focus Areas</h3>
           <p class="meta">MPPT for solar chargers · ROS2 robotics · Power Electronics · Simulink modelling</p>
@@ -125,21 +163,21 @@
           <div class="projects" style="margin-top:12px">
             <article class="proj">
               <div style="flex:1">
-                <a href="#">Portable Solar Charging System</a>
+                <a href="https://github.com/krishnavamsi333/portable-solar-charger" target="_blank" rel="noopener">Portable Solar Charging System</a>
                 <small>MPPT algorithm in MATLAB/Simulink — e-bike charging strategy</small>
               </div>
             </article>
 
             <article class="proj">
               <div style="flex:1">
-                <a href="#">Precision Chili Harvesting Robot</a>
+                <a href="https://github.com/krishnavamsi333/chili-harvester" target="_blank" rel="noopener">Precision Chili Harvesting Robot</a>
                 <small>ROS2 + Reinforcement Learning — camera detection & manipulator control</small>
               </div>
             </article>
 
             <article class="proj">
               <div style="flex:1">
-                <a href="#">UCHCHAIHSHRAVA — ROS Agropilot</a>
+                <a href="https://github.com/krishnavamsi333/uchchaihshrava-ros-agropilot" target="_blank" rel="noopener">UCHCHAIHSHRAVA — ROS Agropilot</a>
                 <small>Autonomous navigation for field robots • URDF & Gazebo simulation</small>
               </div>
             </article>
@@ -149,11 +187,11 @@
 
       <!-- SIDEBAR -->
       <aside>
-        <div class="card">
+        <div class="card" id="contact">
           <h2>Contact & Quick Links</h2>
           <div class="contact-list" style="margin-top:10px">
             <a class="link-btn" href="mailto:kasimallakrishnavamsi333@gmail.com">Email Me</a>
-            <a class="link-btn" href="https://github.com/krishnavamsi333" style="background:#fff;color:var(--deep)">GitHub Profile</a>
+            <a class="link-btn" href="https://github.com/krishnavamsi333" style="background:#fff;color:var(--deep)" target="_blank" rel="noopener">GitHub Profile</a>
           </div>
 
           <div style="margin-top:14px">
@@ -165,15 +203,15 @@
 
           <div style="margin-top:14px">
             <h2>Quick Links</h2>
-            <p class="info"><a href="https://krishnavamsi333.github.io/Portfolio_kv/">Live site</a></p>
-            <p class="info"><a href="https://github.com/krishnavamsi333/Portfolio_kv">Repository</a></p>
+            <p class="info"><a href="https://krishnavamsi333.github.io/Portfolio/" target="_blank" rel="noopener">Live site</a></p>
+            <p class="info"><a href="https://github.com/krishnavamsi333/Portfolio" target="_blank" rel="noopener">Repository</a></p>
           </div>
         </div>
       </aside>
     </div>
 
     <footer>
-      © 2025 Kasimalla Krishna Vamsi · Inspired by Peepul Agri theme. :contentReference[oaicite:1]{index=1}
+      © 2025 Kasimalla Krishna Vamsi · Inspired by Peepul Agri theme.
     </footer>
   </div>
 </body>
