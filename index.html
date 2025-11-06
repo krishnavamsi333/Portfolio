@@ -1,270 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio • Your Name</title>
-  <meta name="description" content="Portfolio and CV of Your Name" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasimalla Krishna Vamsi — Portfolio</title>
   <style>
-    :root{
-      --bg:#0b1020;         /* dark background */
-      --card:#111834;       /* card background */
-      --muted:#9aa3b2;      /* subtle text */
-      --text:#e7ecf3;       /* main text */
-      --accent:#6dd3fb;     /* accent color */
-      --accent-2:#a7f3d0;   /* secondary accent */
-      --ring: 0 0 0 2px rgba(109,211,251,.35);
-    }
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f6f7fb;
-        --card:#ffffff;
-        --muted:#5b6472;
-        --text:#0d1321;
-        --accent:#2563eb;
-        --accent-2:#0ea5e9;
-        --ring: 0 0 0 2px rgba(37,99,235,.2);
-      }
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--text)}
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    .container{max-width:1100px; margin-inline:auto; padding:24px}
-    header{
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px);
-      background:color-mix(in oklab, var(--bg) 75%, transparent);
-      border-bottom:1px solid color-mix(in oklab, var(--muted) 25%, transparent);
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.4);
     }
-    .nav{display:flex; gap:14px; align-items:center; justify-content:space-between}
-    .brand{display:flex; align-items:center; gap:10px; font-weight:700}
-    .brand .dot{width:10px; height:10px; border-radius:999px; background:linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow:0 0 0 4px color-mix(in oklab, var(--accent) 20%, transparent)}
-    .menu{display:flex; gap:18px; flex-wrap:wrap}
-    .menu a{padding:10px 12px; border-radius:10px}
-    .menu a:focus-visible, .menu a:active{outline:none; box-shadow:var(--ring)}
 
-    .grid{display:grid; grid-template-columns: 1.2fr 2fr; gap:24px}
-    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
 
-    .card{background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 18%, transparent); border-radius:18px; padding:20px; box-shadow:0 8px 24px rgba(0,0,0,.15)}
-    .card h2{margin:0 0 12px; font-size:1.25rem}
-    .muted{color:var(--muted)}
-    .tag{display:inline-block; padding:.25rem .6rem; border-radius:999px; background:color-mix(in oklab, var(--accent) 16%, transparent); color:var(--text); border:1px solid color-mix(in oklab, var(--accent) 30%, transparent); font-size:.8rem; margin:.15rem .25rem .15rem 0}
-    .section-title{display:flex; align-items:center; justify-content:space-between; gap:10px; margin:8px 0 14px}
-    .section-title .line{flex:1; height:1px; background:color-mix(in oklab, var(--muted) 20%, transparent)}
+    h2 {
+      color: #00e5ff;
+      border-bottom: 2px solid #00e5ff;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
 
-    .hero{display:flex; gap:16px; align-items:center}
-    .avatar{width:72px; height:72px; border-radius:16px; background:linear-gradient(135deg, var(--accent), var(--accent-2)); display:grid; place-items:center; color:#001; font-weight:800}
-    .hero h1{margin:0; font-size:1.7rem}
+    main {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
 
-    .list{display:grid; gap:12px}
-    .item{display:grid; gap:6px}
-    .item-title{font-weight:600}
-    .item-sub{font-size:.95rem; color:var(--muted)}
-    .item-meta{font-size:.85rem; color:var(--muted)}
+    ul {
+      list-style: none;
+      padding: 0;
+    }
 
-    .columns{columns:2; column-gap:18px}
-    @media (max-width:700px){ .columns{columns:1} }
+    li::before {
+      content: "🚀 ";
+    }
 
-    .project{break-inside:avoid; border:1px solid color-mix(in oklab, var(--muted) 18%, transparent); border-radius:14px; padding:14px; margin:0 0 14px; background:color-mix(in oklab, var(--card) 90%, transparent)}
-    .project h3{margin:0 0 6px; font-size:1.05rem}
-    .project .desc{font-size:.95rem; color:var(--muted)}
-    .project .links{display:flex; gap:12px; margin-top:8px}
+    a {
+      color: #00e5ff;
+      text-decoration: none;
+    }
 
-    footer{margin:28px 0 12px; text-align:center; color:var(--muted); font-size:.9rem}
+    a:hover {
+      text-decoration: underline;
+    }
 
-    #topBtn{position:fixed; right:18px; bottom:18px; padding:10px 12px; border-radius:12px; border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); background:var(--card); color:var(--text); cursor:pointer; box-shadow:0 6px 16px rgba(0,0,0,.18)}
-    #topBtn:focus-visible{outline:none; box-shadow:var(--ring)}
-
-    /* Print-friendly */
-    @media print{
-      header, #topBtn { display:none !important; }
-      body{background:#fff; color:#000}
-      .card{box-shadow:none; border-color:#ddd}
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      color: #bbb;
+      font-size: 0.9em;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="container nav">
-      <div class="brand"><span class="dot"></span> <span>Your Name</span></div>
-      <nav class="menu" aria-label="Primary">
-        <a href="#about">Details</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Papers</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+    <h1>Kasimalla Krishna Vamsi</h1>
+    <p>B.Tech — Electrical & Electronics Engineering</p>
+    <p>Velagapudi Ramakrishna Siddhartha Engineering College (JNTUK)</p>
   </header>
 
-  <main class="container">
-    <div class="grid">
-      <!-- Left column: profile & quick info -->
-      <aside class="card" id="about">
-        <div class="hero">
-          <div class="avatar" aria-hidden="true">YN</div>
-          <div>
-            <h1>Your Name</h1>
-            <div class="muted">Your Title • City, Country</div>
-          </div>
-        </div>
-        <hr style="border:0;border-top:1px solid color-mix(in oklab, var(--muted) 25%, transparent); margin:16px 0" />
-        <p>
-          Short bio (2–3 lines). Summarize your focus areas, strengths, and the impact you like to create.
-        </p>
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>I’m passionate about renewable energy, robotics, and power electronics.  
+         Skilled in MATLAB, SIMULINK, ROS2, and reinforcement learning.  
+         I aim to innovate in solar and agricultural automation.</p>
+    </section>
 
-        <div class="section-title"><strong>Skills</strong><span class="line"></span></div>
-        <div>
-          <span class="tag">C++</span>
-          <span class="tag">Python</span>
-          <span class="tag">ROS 2</span>
-          <span class="tag">Power Electronics</span>
-          <span class="tag">MATLAB/Simulink</span>
-        </div>
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><b>Portable Solar Charging System</b> — Designed MPPT in MATLAB for e-cycle batteries.</li>
+        <li><b>Precision Chili Harvesting Robot</b> — ROS2 + Reinforcement Learning for automated harvesting.</li>
+        <li><b>UCHCHAIHSHRAVA ROS Agropilot</b> — Autonomous field navigation system.</li>
+      </ul>
+    </section>
 
-        <div class="section-title" style="margin-top:14px"><strong>Quick Facts</strong><span class="line"></span></div>
-        <div class="list">
-          <div class="item">
-            <div class="item-title">Experience</div>
-            <div class="item-sub">X years • Domains/Industries</div>
-          </div>
-          <div class="item">
-            <div class="item-title">Looking for</div>
-            <div class="item-sub">Internship/Full‑time in …</div>
-          </div>
-          <div class="item">
-            <div class="item-title">Location Preference</div>
-            <div class="item-sub">Remote/On‑site • Cities</div>
-          </div>
-        </div>
-      </aside>
-
-      <!-- Right column: main sections -->
-      <section class="card">
-        <section id="education" aria-labelledby="edu-title">
-          <div class="section-title"><h2 id="edu-title">Education</h2><span class="line"></span></div>
-          <div class="list">
-            <div class="item">
-              <div class="item-title">B.Tech in Electrical & Electronics Engineering</div>
-              <div class="item-sub">Velagapudi Ramakrishna Siddhartha Engineering College • 2022 – 2025 • CGPA: 8.37</div>
-              <div class="item-meta">Relevant Coursework: Power Systems, Renewable Energy, Robotics, Control Systems</div>
-            </div>
-            <div class="item">
-              <div class="item-title">Diploma in Electrical & Electronics Engineering</div>
-              <div class="item-sub">Government Polytechnic, Gannavaram • 2019 – 2022 • 90.09%</div>
-            </div>
-          </div>
-        </section>
-
-        <section id="experience" aria-labelledby="exp-title" style="margin-top:20px">
-          <div class="section-title"><h2 id="exp-title">Experience</h2><span class="line"></span></div>
-          <div class="list">
-            <div class="item">
-              <div class="item-title">President, Electric Vehicle Club</div>
-              <div class="item-sub">VRSEC • Aug 2023 – Present • Vijayawada, IN</div>
-              <ul class="item-meta">
-                <li>Led campus‑wide EV awareness initiatives and industry collaborations.</li>
-                <li>Organized workshops on battery systems, BMS, and charging infrastructure.</li>
-              </ul>
-            </div>
-            <div class="item">
-              <div class="item-title">Intern, Power Electronics (MPPT)</div>
-              <div class="item-sub">NIT Andhra Pradesh • Jun – Jul 2024</div>
-              <ul class="item-meta">
-                <li>Developed and simulated MPPT algorithms in MATLAB/Simulink.</li>
-                <li>Benchmarked P&O vs. Incremental Conductance under partial shading.</li>
-              </ul>
-            </div>
-            <div class="item">
-              <div class="item-title">APCPDCL Substation Intern</div>
-              <div class="item-sub">33/11 kV Substation, Vuyyuru • Oct 2021 – Feb 2022</div>
-              <ul class="item-meta">
-                <li>Hands‑on exposure to protection, SCADA logs, and maintenance procedures.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="projects" aria-labelledby="proj-title" style="margin-top:20px">
-          <div class="section-title"><h2 id="proj-title">Projects</h2><span class="line"></span></div>
-          <div class="columns">
-            <article class="project">
-              <h3>Portable Solar Charging System for E‑Bicycles</h3>
-              <div class="desc">Designed a foldable panel and MPPT‑based charge controller for on‑the‑go e‑bike charging; simulated energy yield under varying irradiance.</div>
-              <div class="links">
-                <a href="#">Report</a>
-                <a href="#">GitHub</a>
-                <a href="#">Demo</a>
-              </div>
-              <div class="item-meta">Tech: MPPT, MATLAB/Simulink, Power Electronics</div>
-            </article>
-
-            <article class="project">
-              <h3>Precision Chili Harvesting with ROS 2 & RL</h3>
-              <div class="desc">Developed detection, cutting, and placement pipeline with ROS 2; simulated in Gazebo with RGB‑D sensing and TF.</div>
-              <div class="links">
-                <a href="#">Paper/Draft</a>
-                <a href="#">GitHub</a>
-              </div>
-              <div class="item-meta">Tech: ROS 2 Humble, Gazebo Fortress, Python/C++</div>
-            </article>
-
-            <article class="project">
-              <h3>UCHCHAIHSHRAVA ROS Agropilot</h3>
-              <div class="desc">Autonomous navigation for agricultural robots; simulated modules for perception, planning, and control.</div>
-              <div class="links">
-                <a href="#">Design Notes</a>
-                <a href="#">GitHub</a>
-              </div>
-              <div class="item-meta">Tech: ROS 2, Navigation, Control</div>
-            </article>
-          </div>
-        </section>
-
-        <section id="publications" aria-labelledby="pub-title" style="margin-top:20px">
-          <div class="section-title"><h2 id="pub-title">Papers Published</h2><span class="line"></span></div>
-          <ol class="list">
-            <li class="item">
-              <div class="item-title">Title of Paper One</div>
-              <div class="item-sub">Conference/Journal • Year</div>
-              <div class="item-meta">Authors: Your Name, Co‑author • DOI/URL: <a href="#">link</a></div>
-            </li>
-            <li class="item">
-              <div class="item-title">Title of Paper Two</div>
-              <div class="item-sub">Conference/Journal • Year</div>
-              <div class="item-meta">Authors: Your Name, Co‑author • DOI/URL: <a href="#">link</a></div>
-            </li>
-          </ol>
-        </section>
-
-        <section id="contact" aria-labelledby="contact-title" style="margin-top:20px">
-          <div class="section-title"><h2 id="contact-title">Contact</h2><span class="line"></span></div>
-          <div class="list">
-            <div class="item"><div class="item-title">Email</div><div class="item-sub">kasimallakrishnavamsi333@gmail.com</div></div>
-            <div class="item"><div class="item-title">Phone</div><div class="item-sub">+91 9392039416</div></div>
-            <div class="item"><div class="item-title">LinkedIn</div><div class="item-sub"><a href="#">linkedin.com/in/yourname</a></div></div>
-            <div class="item"><div class="item-title">GitHub</div><div class="item-sub"><a href="#">github.com/krishnavamsi333</a></div></div>
-            <div class="item"><div class="item-title">Address</div><div class="item-sub">City, State, Country</div></div>
-          </div>
-        </section>
-      </section>
-    </div>
+    <section>
+      <h2>Contact</h2>
+      <p>📧 <a href="mailto:kasimallakrishnavamsi333@gmail.com">kasimallakrishnavamsi333@gmail.com</a></p>
+      <p>🌐 <a href="https://github.com/krishnavamsi333">github.com/krishnavamsi333</a></p>
+    </section>
   </main>
 
-  <footer class="container">
-    <p>© <span id="year"></span> K V. All rights reserved.</p>
+  <footer>
+    © 2025 Kasimalla Krishna Vamsi · Built with 💙 using HTML & CSS
   </footer>
-
-  <button id="topBtn" aria-label="Back to top" title="Back to top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Top</button>
-
-  <script>
-    // Update year automatically
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
