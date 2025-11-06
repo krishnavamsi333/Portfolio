@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>K. Krishna Vamsi — Research Portfolio</title>
   <meta name="description" content="Professional Portfolio — Kasimalla Krishna Vamsi. Renewable Energy, Robotics, MPPT, ROS2.">
-  <meta name="theme-color" content="#6d5b97" />
+  <meta name="theme-color" content="#2563eb" />
 
   <!-- Open Graph & Twitter -->
   <meta property="og:title" content="Kasimalla Krishna Vamsi — Research Portfolio">
@@ -30,25 +30,24 @@
 
   <style>
     /* ============================================
-       LAVENDER COLOR THEME
+       REFINED PROFESSIONAL COLOR THEME
        ============================================ */
     :root{
-      --color-primary:#6840a0;
-      --color-secondary:#6d5b97;
-      --color-accent:#8b7cb3;
-      --color-accent-hover:#7a68a1;
-      --color-accent-light:#d8cff0;
-      --color-accent-lighter:#f0ecfb;
-      --color-accent-lightest:#f9f7ff;
-      --color-success:#8b7cb3;
-      --color-warning:#a896cc;
-      --color-bg:#f9f7ff;
-      --color-bg-alt:#f0ecfb;
+      --color-primary:#0f172a;
+      --color-secondary:#1e293b;
+      --color-accent:#2563eb;
+      --color-accent-hover:#1d4ed8;
+      --color-accent-light:#dbeafe;
+      --color-accent-lighter:#eff6ff;
+      --color-success:#059669;
+      --color-warning:#d97706;
+      --color-bg:#ffffff;
+      --color-bg-alt:#f8fafc;
       --color-bg-card:#ffffff;
-      --color-text:#2d2342;
-      --color-text-muted:#5d5279;
-      --color-border:#e2ddf2;
-      --color-border-light:#f1eef9;
+      --color-text:#1e293b;
+      --color-text-muted:#64748b;
+      --color-border:#e2e8f0;
+      --color-border-light:#f1f5f9;
 
       --space-sm:0.75rem;
       --space-md:1rem;
@@ -56,13 +55,13 @@
       --space-xl:2rem;
       --space-2xl:3rem;
       --max-width:1200px;
-      --border-radius:16px;
+      --border-radius:12px;
       --border-radius-sm:8px;
 
-      --shadow-sm:0 2px 4px rgba(77, 60, 112, 0.08);
-      --shadow-md:0 4px 8px rgba(77, 60, 112, 0.12);
-      --shadow-lg:0 10px 20px rgba(77, 60, 112, 0.15);
-      --shadow-xl:0 20px 40px rgba(77, 60, 112, 0.18);
+      --shadow-sm:0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md:0 4px 6px rgba(0,0,0,0.08);
+      --shadow-lg:0 10px 15px rgba(0,0,0,0.08);
+      --shadow-xl:0 20px 25px rgba(0,0,0,0.1);
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -80,7 +79,7 @@
     .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:8px;top:8px;width:auto;height:auto;padding:8px 12px;background:#fff;color:var(--color-primary);border-radius:6px;text-decoration:none;z-index:9999}
 
-    /* LAVENDER HEADER */
+    /* REFINED HEADER */
     .header{
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
       color: white;
@@ -105,7 +104,7 @@
       font-weight:800;
       margin-bottom:.5rem;
       letter-spacing:-0.03em;
-      background: linear-gradient(to right, #ffffff, #d8cff0);
+      background: linear-gradient(to right, #ffffff, #dbeafe);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -130,14 +129,13 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.1);
       padding: 0.5rem 1rem;
       border-radius: 24px;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
     }
 
-    /* LAVENDER NAV */
+    /* REFINED NAV */
     .nav{
       background:var(--color-bg-card);
       border-bottom:1px solid var(--color-border);
@@ -211,7 +209,7 @@
       left: 0;
       width: 60px;
       height: 4px;
-      background: linear-gradient(to right, var(--color-accent), var(--color-accent-light));
+      background: var(--color-accent);
       border-radius: 2px;
     }
     .section-title{
@@ -220,7 +218,7 @@
       font-weight:800;
     }
 
-    /* LAVENDER ABOUT */
+    /* REFINED ABOUT */
     .about-grid{
       display:grid;
       grid-template-columns:280px 1fr;
@@ -229,16 +227,14 @@
     }
     .profile-image{
       width:100%;
-      border-radius:20px;
+      border-radius:16px;
       box-shadow:var(--shadow-xl);
       aspect-ratio:1;
       object-fit:cover;
       transition: transform 0.3s ease;
-      border: 4px solid var(--color-accent-lighter);
     }
     .profile-image:hover {
       transform: scale(1.02);
-      box-shadow: 0 15px 30px rgba(109, 91, 151, 0.2);
     }
     .about-text{
       font-size:1.125rem;
@@ -252,12 +248,12 @@
       margin-top:1.5rem;
     }
     .tag{
-      background:var(--color-accent-lighter);
+      background:var(--color-accent-light);
       padding:.35rem .9rem;
       border-radius:24px;
       font-size:.9rem;
       color:var(--color-primary);
-      border:1px solid var(--color-accent-light);
+      border:1px solid var(--color-border);
       font-weight:600;
       transition: all 0.2s ease;
     }
@@ -265,7 +261,6 @@
       background: var(--color-accent);
       color: white;
       transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
     }
 
     .button-group{
@@ -279,7 +274,7 @@
       align-items:center;
       gap: 0.5rem;
       padding:.7rem 1.5rem;
-      border-radius:12px;
+      border-radius:10px;
       text-decoration:none;
       font-weight:700;
       border:2px solid transparent;
@@ -306,7 +301,7 @@
       transform:translateY(-2px);
     }
 
-    /* LAVENDER CARDS & PROJECTS */
+    /* REFINED CARDS & PROJECTS */
     .card-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -315,19 +310,17 @@
     .card{
       background:var(--color-bg-alt);
       padding:1.5rem;
-      border-radius:16px;
+      border-radius:12px;
       border-left:4px solid var(--color-accent);
       transition:all .18s ease;
       height: 100%;
       display: flex;
       flex-direction: column;
-      border: 1px solid var(--color-border);
     }
     .card:hover{
       transform:translateY(-4px);
       box-shadow:var(--shadow-lg);
       border-left-width:6px;
-      border-color: var(--color-accent-light);
     }
     .card-title{
       color:var(--color-primary);
@@ -353,7 +346,7 @@
       padding:1.5rem;
       background:var(--color-bg-card);
       border:1px solid var(--color-border);
-      border-radius:16px;
+      border-radius:12px;
       transition:all .18s ease;
     }
     .project-item:hover{
@@ -364,7 +357,7 @@
     .project-thumbnail{
       width:100%;
       height:140px;
-      border-radius:12px;
+      border-radius:8px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -372,7 +365,6 @@
       color:white;
       font-weight:700;
       transition: transform 0.3s ease;
-      box-shadow: var(--shadow-md);
     }
     .project-item:hover .project-thumbnail {
       transform: scale(1.05);
@@ -457,7 +449,7 @@
     }
     .skill-progress {
       height: 100%;
-      background: linear-gradient(to right, var(--color-accent), var(--color-accent-light));
+      background: var(--color-accent);
       border-radius: 4px;
       transition: width 1s ease-in-out;
     }
@@ -471,15 +463,13 @@
     .achievement-card {
       background: var(--color-bg-alt);
       padding: 1.5rem;
-      border-radius: 16px;
+      border-radius: 12px;
       text-align: center;
       transition: all 0.3s ease;
-      border: 1px solid var(--color-border);
     }
     .achievement-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-md);
-      background: var(--color-accent-lighter);
     }
     .achievement-icon {
       font-size: 2.5rem;
@@ -494,7 +484,7 @@
       color: var(--color-text-muted);
     }
 
-    /* LAVENDER PUBLICATIONS */
+    /* REFINED PUBLICATIONS */
     .publication-list{
       display:flex;
       flex-direction:column;
@@ -504,13 +494,11 @@
       padding:1.5rem;
       border-left:4px solid var(--color-accent);
       background:var(--color-bg-alt);
-      border-radius:12px;
+      border-radius:10px;
       transition: all 0.2s ease;
-      border: 1px solid var(--color-border);
     }
     .publication-item:hover {
       transform: translateX(5px);
-      background: var(--color-accent-lighter);
     }
     .publication-title{
       font-weight:700;
@@ -545,7 +533,7 @@
       transform: translateY(-2px);
     }
 
-    /* LAVENDER CONTACT */
+    /* REFINED CONTACT */
     .contact-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -554,15 +542,13 @@
     .contact-card{
       background:var(--color-bg-alt);
       padding:1.5rem;
-      border-radius:16px;
+      border-radius:12px;
       text-align:center;
       transition: all 0.2s ease;
-      border: 1px solid var(--color-border);
     }
     .contact-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-md);
-      background: var(--color-accent-lighter);
     }
     .contact-card-title{
       color:var(--color-primary);
@@ -589,7 +575,7 @@
       border-radius:12px;
     }
 
-    /* LAVENDER FOOTER */
+    /* REFINED FOOTER */
     .footer{
       background:var(--color-primary);
       color:#fff;
@@ -627,7 +613,6 @@
       opacity: 0;
       visibility: hidden;
       z-index: 1000;
-      border: 2px solid var(--color-accent-light);
     }
     .back-to-top.visible {
       opacity: 1;
@@ -658,11 +643,10 @@
     }
     .theme-toggle:hover {
       transform: rotate(15deg);
-      background: var(--color-accent-lighter);
     }
 
     /* keyboard focus only when tabbing */
-    :root.user-is-tabbing *:focus{outline:3px solid rgba(139, 124, 179, 0.35);outline-offset:3px}
+    :root.user-is-tabbing *:focus{outline:3px solid rgba(37, 99, 235, 0.35);outline-offset:3px}
     /* remove hover transform on touch devices */
     @media (hover:none){
       .project-item:hover,.card:hover{transform:none;box-shadow:none}
@@ -701,7 +685,7 @@
     </svg>
   </button>
 
-  <!-- LAVENDER HEADER -->
+  <!-- REFINED HEADER -->
   <header class="header" role="banner">
     <div class="header-content">
       <h1 class="header-title">Kasimalla Krishna Vamsi</h1>
@@ -714,7 +698,7 @@
     </div>
   </header>
 
-  <!-- LAVENDER NAV -->
+  <!-- REFINED NAV -->
   <nav class="nav" aria-label="Main navigation">
     <ul class="nav-list" role="menubar">
       <li role="none"><a role="menuitem" class="nav-link" href="#about">About</a></li>
@@ -729,7 +713,7 @@
 
   <!-- MAIN CONTENT -->
   <main class="container" id="main">
-    <!-- LAVENDER ABOUT -->
+    <!-- REFINED ABOUT -->
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="section-header">
         <h2 id="about-title" class="section-title">About Me</h2>
@@ -845,7 +829,7 @@
       </div>
     </section>
 
-    <!-- LAVENDER RESEARCH AREAS -->
+    <!-- REFINED RESEARCH AREAS -->
     <section class="section" id="research" aria-labelledby="research-title">
       <div class="section-header"><h2 id="research-title" class="section-title">Research Areas</h2></div>
       <div class="card-grid" role="list">
@@ -868,7 +852,7 @@
       </div>
     </section>
 
-    <!-- LAVENDER PUBLICATIONS -->
+    <!-- REFINED PUBLICATIONS -->
     <section class="section" id="publications" aria-labelledby="publications-title">
       <div class="section-header"><h2 id="publications-title" class="section-title">Publications</h2></div>
 
@@ -920,13 +904,13 @@
       </div>
     </section>
 
-    <!-- LAVENDER PROJECTS -->
+    <!-- REFINED PROJECTS -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-header"><h2 id="projects-title" class="section-title">Projects</h2></div>
       <div class="project-list">
         <!-- Project 1 -->
         <article class="project-item" aria-labelledby="p1-title">
-          <div class="project-thumbnail" style="background:linear-gradient(135deg,#8b7cb3 0%,#6d5b97 100%)" aria-hidden="true">
+          <div class="project-thumbnail" style="background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%)" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
               <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
             </svg>
@@ -947,7 +931,7 @@
 
         <!-- Project 2 -->
         <article class="project-item" aria-labelledby="p2-title">
-          <div class="project-thumbnail" style="background:linear-gradient(135deg,#a896cc 0%,#8b7cb3 100%)" aria-hidden="true">
+          <div class="project-thumbnail" style="background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%)" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
               <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-.836.628-1.374.868a7 7 0 0 0 0 1.354c.538.24 1.084.578 1.374.868l-.708.708a8 8 0 0 1-1.708-1.708l.708-.708a7 7 0 0 0 0-1.354l-.708-.708a8 8 0 0 1 1.708-1.708Z"/>
             </svg>
@@ -968,7 +952,7 @@
 
         <!-- Project 3 -->
         <article class="project-item" aria-labelledby="p3-title">
-          <div class="project-thumbnail" style="background:linear-gradient(135deg,#c9b8e8 0%,#a896cc 100%)" aria-hidden="true">
+          <div class="project-thumbnail" style="background:linear-gradient(135deg,#60a5fa 0%,#3b82f6 100%)" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
               <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
             </svg>
@@ -1019,7 +1003,7 @@
       </div>
     </section>
 
-    <!-- LAVENDER CONTACT -->
+    <!-- REFINED CONTACT -->
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="section-header"><h2 id="contact-title" class="section-title">Get In Touch</h2></div>
       <div class="contact-grid">
@@ -1052,7 +1036,7 @@
 
   </main>
 
-  <!-- LAVENDER FOOTER -->
+  <!-- REFINED FOOTER -->
   <footer class="footer" role="contentinfo">
     <p class="footer-text">&copy; 2025 Kasimalla Krishna Vamsi. All rights reserved.</p>
     <p class="footer-subtext">Researcher in Renewable Energy & Robotics</p>
