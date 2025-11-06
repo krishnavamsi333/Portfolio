@@ -3,24 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>K. Krishna Vamsi — Research Portfolio</title>
-  <meta name="description" content="Professional Portfolio — Kasimalla Krishna Vamsi. Renewable Energy, Robotics, MPPT, ROS2.">
+  
+  <!-- Primary Meta Tags -->
+  <title>KV - K. Krishna Vamsi | Research Portfolio - Renewable Energy, Robotics, MPPT</title>
+  <meta name="description" content="KV (K. Krishna Vamsi) - Research Portfolio: Renewable Energy Systems, Robotics, MPPT Algorithms, Power Electronics, ROS2, Agricultural Robotics Researcher at VRSEC, JNTUK">
   <meta name="theme-color" content="#2563eb" />
 
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="keywords" content="KV, K Krishna Vamsi, Kasimalla Krishna Vamsi, renewable energy, robotics, MPPT, ROS2, research portfolio, VRSEC, JNTUK, power electronics, agricultural robotics, solar charging, autonomous systems, MATLAB Simulink, reinforcement learning">
+  <meta name="author" content="Kasimalla Krishna Vamsi">
+  <meta name="copyright" content="Kasimalla Krishna Vamsi">
+  
   <!-- Open Graph & Twitter -->
-  <meta property="og:title" content="Kasimalla Krishna Vamsi — Research Portfolio">
-  <meta property="og:description" content="Researcher — Renewable Energy, Robotics, MPPT, ROS2.">
+  <meta property="og:title" content="KV - K. Krishna Vamsi | Research Portfolio">
+  <meta property="og:description" content="Researcher in Renewable Energy Systems, Robotics, MPPT Algorithms, and Power Electronics">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://krishnavamsi333.github.io/Portfolio/">
   <meta property="og:image" content="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/og-image.png">
   <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="KV Research Portfolio">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="K. Krishna Vamsi — Research Portfolio">
-  <meta name="twitter:description" content="Researcher — Renewable Energy, Robotics, MPPT, ROS2.">
+  <meta name="twitter:title" content="KV - K. Krishna Vamsi | Research Portfolio">
+  <meta name="twitter:description" content="Researcher in Renewable Energy Systems, Robotics, MPPT Algorithms">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/og-image.png">
 
-  <!-- favicon -->
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kasimalla Krishna Vamsi",
+    "alternateName": ["K. Krishna Vamsi", "KV"],
+    "url": "https://krishnavamsi333.github.io/Portfolio/",
+    "image": "https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-600.jpg",
+    "description": "KV (K. Krishna Vamsi) - Researcher and Engineer specializing in Renewable Energy Systems, Robotics, MPPT Algorithms, and Power Electronics",
+    "jobTitle": "Research Engineer",
+    "knowsAbout": [
+      "Renewable Energy Systems",
+      "MPPT Algorithms", 
+      "Robotics",
+      "ROS2",
+      "Power Electronics",
+      "Agricultural Robotics",
+      "MATLAB/Simulink",
+      "Autonomous Systems",
+      "Reinforcement Learning"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Velagapudi Ramakrishna Siddhartha Engineering College"
+    },
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "Jawaharlal Nehru Technological University Kakinada"
+    },
+    "sameAs": [
+      "https://github.com/krishnavamsi333",
+      "https://linkedin.com/in/krishnavamsi"
+    ]
+  }
+  </script>
+
+  <link rel="canonical" href="https://krishnavamsi333.github.io/Portfolio/">
   <link rel="icon" href="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/favicon.ico" type="image/x-icon">
 
   <!-- fonts -->
@@ -79,7 +128,7 @@
     .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:8px;top:8px;width:auto;height:auto;padding:8px 12px;background:#fff;color:var(--color-primary);border-radius:6px;text-decoration:none;z-index:9999}
 
-    /* REFINED HEADER */
+    /* KV OPTIMIZED HEADER */
     .header{
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
       color: white;
@@ -135,7 +184,7 @@
       backdrop-filter: blur(10px);
     }
 
-    /* REFINED NAV */
+    /* KV OPTIMIZED NAV */
     .nav{
       background:var(--color-bg-card);
       border-bottom:1px solid var(--color-border);
@@ -216,6 +265,12 @@
       font-size:1.75rem;
       color:var(--color-primary);
       font-weight:800;
+    }
+
+    /* KV INTRODUCTION SECTION */
+    .kv-highlight {
+      background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-accent-lighter) 100%);
+      border-left: 4px solid var(--color-accent);
     }
 
     /* REFINED ABOUT */
@@ -676,7 +731,7 @@
 <body>
 
   <!-- Skip link -->
-  <a class="skip-link" href="#about">Skip to content</a>
+  <a class="skip-link" href="#kv-intro">Skip to content</a>
 
   <!-- Dark Mode Toggle -->
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -685,11 +740,11 @@
     </svg>
   </button>
 
-  <!-- REFINED HEADER -->
+  <!-- KV OPTIMIZED HEADER -->
   <header class="header" role="banner">
     <div class="header-content">
-      <h1 class="header-title">Kasimalla Krishna Vamsi</h1>
-      <p class="header-subtitle">Researcher & Engineer — Renewable Energy Systems, Robotics, Power Electronics, MPPT Algorithms</p>
+      <h1 class="header-title">KV - Kasimalla Krishna Vamsi</h1>
+      <p class="header-subtitle">Research Engineer — Renewable Energy Systems, Robotics, MPPT Algorithms, Power Electronics</p>
       <div class="header-meta" role="list">
         <div class="header-meta-item" role="listitem">📧 <span>kasimallakrishnavamsi333@gmail.com</span></div>
         <div class="header-meta-item" role="listitem">📱 <span>+91 9392039416</span></div>
@@ -698,25 +753,54 @@
     </div>
   </header>
 
-  <!-- REFINED NAV -->
+  <!-- KV OPTIMIZED NAV -->
   <nav class="nav" aria-label="Main navigation">
     <ul class="nav-list" role="menubar">
-      <li role="none"><a role="menuitem" class="nav-link" href="#about">About</a></li>
-      <li role="none"><a role="menuitem" class="nav-link" href="#skills">Skills</a></li>
-      <li role="none"><a role="menuitem" class="nav-link" href="#research">Research</a></li>
-      <li role="none"><a role="menuitem" class="nav-link" href="#publications">Publications</a></li>
-      <li role="none"><a role="menuitem" class="nav-link" href="#projects">Projects</a></li>
-      <li role="none"><a role="menuitem" class="nav-link" href="#achievements">Achievements</a></li>
-      <li role="none"><a role="menuitem" class="nav-link" href="#contact">Contact</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#kv-intro">KV Portfolio</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#about">About KV</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#skills">KV Skills</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#research">KV Research</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#publications">KV Publications</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#projects">KV Projects</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#achievements">KV Achievements</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#contact">Contact KV</a></li>
     </ul>
   </nav>
 
   <!-- MAIN CONTENT -->
   <main class="container" id="main">
+    <!-- KV INTRODUCTION SECTION -->
+    <section class="section kv-highlight" id="kv-intro">
+      <div class="section-header">
+        <h2 class="section-title">KV Research Portfolio</h2>
+      </div>
+      <div class="about-text">
+        <p><strong>Welcome to KV Research Portfolio</strong> - This is the professional portfolio of <strong>K. Krishna Vamsi (KV)</strong>, a dedicated researcher and engineer specializing in cutting-edge technologies in renewable energy systems and agricultural robotics.</p>
+        
+        <p>As <strong>KV</strong>, I focus on developing innovative solutions in MPPT algorithms for solar energy systems, ROS2-based agricultural robotics, and power electronics for sustainable energy applications. My research combines theoretical knowledge with practical implementation to create real-world impact.</p>
+      </div>
+      
+      <!-- KV Quick Links -->
+      <div class="card-grid">
+        <div class="card">
+          <h3 class="card-title">KV Research Areas</h3>
+          <p class="card-description">Renewable Energy Systems • MPPT Algorithms • Robotics • Power Electronics • Autonomous Systems</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">KV Technical Expertise</h3>
+          <p class="card-description">MATLAB/Simulink • ROS2 • Python • Reinforcement Learning • Computer Vision • Power Electronics</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">KV Research Focus</h3>
+          <p class="card-description">Sustainable Energy Solutions • Agricultural Automation • Smart Charging Systems • Autonomous Navigation</p>
+        </div>
+      </div>
+    </section>
+
     <!-- REFINED ABOUT -->
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="section-header">
-        <h2 id="about-title" class="section-title">About Me</h2>
+        <h2 id="about-title" class="section-title">About KV</h2>
       </div>
 
       <div class="about-grid">
@@ -726,15 +810,15 @@
           src="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-600.jpg"
           srcset="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-300.jpg 300w, https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-600.jpg 600w, https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-1200.jpg 1200w"
           sizes="(max-width:768px) 280px, 280px"
-          alt="Portrait of Kasimalla Krishna Vamsi"
+          alt="Portrait of KV - K. Krishna Vamsi, Research Engineer"
           loading="lazy" decoding="async">
 
         <div>
-          <p class="about-text">I am a dedicated researcher and engineer specializing in renewable energy systems and agricultural robotics. My work focuses on developing practical, sustainable solutions for energy harvesting and autonomous field operations.</p>
+          <p class="about-text">I am <strong>KV (K. Krishna Vamsi)</strong>, a dedicated researcher and engineer specializing in renewable energy systems and agricultural robotics. My work focuses on developing practical, sustainable solutions for energy harvesting and autonomous field operations.</p>
 
-          <p class="about-text">Currently, I'm advancing MPPT algorithms for portable solar charging systems and implementing precision agriculture robotics using ROS2 and reinforcement learning techniques.</p>
+          <p class="about-text">Currently, as <strong>KV</strong>, I'm advancing MPPT algorithms for portable solar charging systems and implementing precision agriculture robotics using ROS2 and reinforcement learning techniques at VRSEC, JNTUK.</p>
 
-          <p class="about-text">My research integrates power electronics, control systems, and machine learning to create efficient, scalable solutions for real-world applications in renewable energy and agriculture.</p>
+          <p class="about-text">My research as <strong>KV</strong> integrates power electronics, control systems, and machine learning to create efficient, scalable solutions for real-world applications in renewable energy and agriculture.</p>
 
           <div class="tags-container" aria-hidden="true">
             <span class="tag">MPPT Algorithms</span>
@@ -753,13 +837,13 @@
                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
                 <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
               </svg>
-              Download CV
+              Download KV CV
             </a>
             <a class="btn btn-secondary" href="https://github.com/krishnavamsi333" target="_blank" rel="noopener noreferrer">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
               </svg>
-              GitHub Profile
+              KV GitHub
             </a>
           </div>
         </div>
@@ -769,7 +853,7 @@
     <!-- SKILLS SECTION -->
     <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="section-header">
-        <h2 id="skills-title" class="section-title">Technical Skills</h2>
+        <h2 id="skills-title" class="section-title">KV Technical Skills</h2>
       </div>
       <div class="skills-container">
         <div class="skill-item">
@@ -831,7 +915,7 @@
 
     <!-- REFINED RESEARCH AREAS -->
     <section class="section" id="research" aria-labelledby="research-title">
-      <div class="section-header"><h2 id="research-title" class="section-title">Research Areas</h2></div>
+      <div class="section-header"><h2 id="research-title" class="section-title">KV Research Areas</h2></div>
       <div class="card-grid" role="list">
         <div class="card" role="listitem">
           <h3 class="card-title">Renewable Energy Systems</h3>
@@ -854,12 +938,12 @@
 
     <!-- REFINED PUBLICATIONS -->
     <section class="section" id="publications" aria-labelledby="publications-title">
-      <div class="section-header"><h2 id="publications-title" class="section-title">Publications</h2></div>
+      <div class="section-header"><h2 id="publications-title" class="section-title">KV Publications</h2></div>
 
       <div class="publication-list" aria-live="polite">
         <div class="publication-item">
           <div class="publication-title">A Novel MPPT Algorithm for Portable Solar Charging Systems</div>
-          <div class="publication-authors">K. Krishna Vamsi, et al.</div>
+          <div class="publication-authors">K. Krishna Vamsi (KV), et al.</div>
           <div class="publication-venue">IEEE Conference on Renewable Energy Systems, 2024</div>
           <div class="publication-links">
             <a class="publication-link" href="https://ieeexplore.ieee.org/document/10984594" target="_blank" rel="noopener noreferrer">
@@ -874,7 +958,7 @@
 
         <div class="publication-item">
           <div class="publication-title">ROS2-Based Autonomous Navigation for Agricultural Robots</div>
-          <div class="publication-authors">K. Krishna Vamsi, et al.</div>
+          <div class="publication-authors">K. Krishna Vamsi (KV), et al.</div>
           <div class="publication-venue">IEEE International Conference on Robotics and Automation, 2024</div>
           <div class="publication-links">
             <a class="publication-link" href="https://ieeexplore.ieee.org/document/10984934" target="_blank" rel="noopener noreferrer">
@@ -889,7 +973,7 @@
 
         <div class="publication-item">
           <div class="publication-title">Reinforcement Learning for Precision Agriculture Applications</div>
-          <div class="publication-authors">K. Krishna Vamsi, et al.</div>
+          <div class="publication-authors">K. Krishna Vamsi (KV), et al.</div>
           <div class="publication-venue">IEEE Transactions on Agricultural Robotics, 2024</div>
           <div class="publication-links">
             <a class="publication-link" href="https://ieeexplore.ieee.org/document/10984602" target="_blank" rel="noopener noreferrer">
@@ -906,7 +990,7 @@
 
     <!-- REFINED PROJECTS -->
     <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="section-header"><h2 id="projects-title" class="section-title">Projects</h2></div>
+      <div class="section-header"><h2 id="projects-title" class="section-title">KV Projects</h2></div>
       <div class="project-list">
         <!-- Project 1 -->
         <article class="project-item" aria-labelledby="p1-title">
@@ -916,7 +1000,7 @@
             </svg>
           </div>
           <div class="project-content">
-            <h3 id="p1-title" class="project-title">UCHCHAIHSHRAVA — ROS Agropilot</h3>
+            <h3 id="p1-title" class="project-title">KV - UCHCHAIHSHRAVA ROS Agropilot</h3>
             <p class="project-description">Autonomous navigation system for agricultural field robots with URDF modeling, Gazebo simulation, and path planning algorithms for precision farming operations. Features real-time obstacle avoidance and optimized path planning for field coverage.</p>
             <div class="tech-tags" aria-hidden="true">
               <span class="tech-tag">ROS2</span>
@@ -925,7 +1009,7 @@
               <span class="tech-tag">Navigation</span>
               <span class="tech-tag">Python</span>
             </div>
-            <div class="project-links"><a class="project-link" href="https://github.com/krishnavamsi333/uchchaihshrava-ros-agropilot" target="_blank" rel="noopener noreferrer">View on GitHub →</a></div>
+            <div class="project-links"><a class="project-link" href="https://github.com/krishnavamsi333/uchchaihshrava-ros-agropilot" target="_blank" rel="noopener noreferrer">View KV Project →</a></div>
           </div>
         </article>
 
@@ -937,7 +1021,7 @@
             </svg>
           </div>
           <div class="project-content">
-            <h3 id="p2-title" class="project-title">Portable Solar Charging System</h3>
+            <h3 id="p2-title" class="project-title">KV - Portable Solar Charging System</h3>
             <p class="project-description">Advanced MPPT algorithm implementation in MATLAB/Simulink for efficient e-bike charging with real-time power optimization and battery management. Achieves 98% efficiency in power conversion under varying environmental conditions.</p>
             <div class="tech-tags" aria-hidden="true">
               <span class="tech-tag">MATLAB</span>
@@ -946,7 +1030,7 @@
               <span class="tech-tag">Power Electronics</span>
               <span class="tech-tag">DC-DC Converters</span>
             </div>
-            <div class="project-links"><a class="project-link" href="https://github.com/krishnavamsi333/portable-solar-charger" target="_blank" rel="noopener noreferrer">View on GitHub →</a></div>
+            <div class="project-links"><a class="project-link" href="https://github.com/krishnavamsi333/portable-solar-charger" target="_blank" rel="noopener noreferrer">View KV Project →</a></div>
           </div>
         </article>
 
@@ -958,7 +1042,7 @@
             </svg>
           </div>
           <div class="project-content">
-            <h3 id="p3-title" class="project-title">Precision Chili Harvesting Robot</h3>
+            <h3 id="p3-title" class="project-title">KV - Precision Chili Harvesting Robot</h3>
             <p class="project-description">Autonomous agricultural robot using ROS2 and reinforcement learning for precision chili detection and harvesting with camera-guided manipulator control. Implements computer vision for ripeness detection and selective harvesting.</p>
             <div class="tech-tags" aria-hidden="true">
               <span class="tech-tag">ROS2</span>
@@ -967,7 +1051,7 @@
               <span class="tech-tag">Computer Vision</span>
               <span class="tech-tag">OpenCV</span>
             </div>
-            <div class="project-links"><a class="project-link" href="https://github.com/krishnavamsi333/chili-harvester" target="_blank" rel="noopener noreferrer">View on GitHub →</a></div>
+            <div class="project-links"><a class="project-link" href="https://github.com/krishnavamsi333/chili-harvester" target="_blank" rel="noopener noreferrer">View KV Project →</a></div>
           </div>
         </article>
 
@@ -977,7 +1061,7 @@
     <!-- ACHIEVEMENTS SECTION -->
     <section class="section" id="achievements" aria-labelledby="achievements-title">
       <div class="section-header">
-        <h2 id="achievements-title" class="section-title">Achievements & Awards</h2>
+        <h2 id="achievements-title" class="section-title">KV Achievements & Awards</h2>
       </div>
       <div class="achievements-grid">
         <div class="achievement-card">
@@ -1005,7 +1089,7 @@
 
     <!-- REFINED CONTACT -->
     <section class="section" id="contact" aria-labelledby="contact-title">
-      <div class="section-header"><h2 id="contact-title" class="section-title">Get In Touch</h2></div>
+      <div class="section-header"><h2 id="contact-title" class="section-title">Contact KV</h2></div>
       <div class="contact-grid">
         <div class="contact-card">
           <h3 class="contact-card-title">Email</h3>
@@ -1021,7 +1105,7 @@
         </div>
         <div class="contact-card">
           <h3 class="contact-card-title">LinkedIn</h3>
-          <p><a href="https://linkedin.com/in/krishnavamsi" target="_blank" rel="noopener noreferrer">K. Krishna Vamsi</a></p>
+          <p><a href="https://linkedin.com/in/krishnavamsi" target="_blank" rel="noopener noreferrer">K. Krishna Vamsi (KV)</a></p>
         </div>
         <div class="contact-card">
           <h3 class="contact-card-title">Institution</h3>
@@ -1038,8 +1122,8 @@
 
   <!-- REFINED FOOTER -->
   <footer class="footer" role="contentinfo">
-    <p class="footer-text">&copy; 2025 Kasimalla Krishna Vamsi. All rights reserved.</p>
-    <p class="footer-subtext">Researcher in Renewable Energy & Robotics</p>
+    <p class="footer-text">&copy; 2025 KV - Kasimalla Krishna Vamsi. All rights reserved.</p>
+    <p class="footer-subtext">KV Research Portfolio - Renewable Energy & Robotics</p>
   </footer>
 
   <!-- Back to top button -->
@@ -1142,6 +1226,9 @@
       if (skillsSection) {
         observer.observe(skillsSection);
       }
+
+      // KV Analytics - Track page views (optional)
+      console.log('KV Portfolio loaded successfully');
     })();
   </script>
 </body>
