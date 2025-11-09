@@ -4,80 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   
-  <!-- Primary Meta Tags -->
-  <title>K. Krishna Vamsi (KV) | Research Portfolio - Renewable Energy & Robotics</title>
+  <title>K. Krishna Vamsi | Research Portfolio - Renewable Energy & Robotics</title>
   <meta name="description" content="K. Krishna Vamsi (KV) - Research Engineer specializing in Renewable Energy Systems, Robotics, MPPT Algorithms, and Power Electronics at VRSEC, JNTUK">
   <meta name="theme-color" content="#2563eb" />
 
-  <!-- SEO Meta Tags -->
-  <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
-  <meta name="keywords" content="K Krishna Vamsi, KV, renewable energy, robotics, MPPT, ROS2, research portfolio, VRSEC, JNTUK">
-  <meta name="author" content="Kasimalla Krishna Vamsi">
-  
-  <!-- Open Graph & Twitter -->
-  <meta property="og:title" content="K. Krishna Vamsi (KV) | Research Portfolio">
-  <meta property="og:description" content="Research Engineer in Renewable Energy Systems, Robotics, and Power Electronics">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://krishnavamsi333.github.io/Portfolio/">
-  <meta property="og:image" content="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/og-image.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="K. Krishna Vamsi (KV) | Research Portfolio">
-  <meta name="twitter:description" content="Research Engineer in Renewable Energy Systems and Robotics">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/og-image.png">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Kasimalla Krishna Vamsi",
-    "alternateName": "K. Krishna Vamsi",
-    "url": "https://krishnavamsi333.github.io/Portfolio/",
-    "image": "https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-600.jpg",
-    "description": "Research Engineer specializing in Renewable Energy Systems, Robotics, MPPT Algorithms, and Power Electronics",
-    "jobTitle": "Research Engineer",
-    "knowsAbout": [
-      "Renewable Energy Systems",
-      "MPPT Algorithms", 
-      "Robotics",
-      "ROS2",
-      "Power Electronics"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Velagapudi Ramakrishna Siddhartha Engineering College"
-    },
-    "alumniOf": {
-      "@type": "Organization",
-      "name": "Jawaharlal Nehru Technological University Kakinada"
-    },
-    "sameAs": [
-      "https://github.com/krishnavamsi333"
-    ]
-  }
-  </script>
-
-  <link rel="canonical" href="https://krishnavamsi333.github.io/Portfolio/">
-  <link rel="icon" href="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/favicon.ico" type="image/x-icon">
-
-  <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ============================================
-       REFINED PROFESSIONAL COLOR THEME
-       ============================================ */
     :root{
       --color-primary:#0f172a;
       --color-secondary:#1e293b;
       --color-accent:#2563eb;
       --color-accent-hover:#1d4ed8;
       --color-accent-light:#dbeafe;
-      --color-accent-lighter:#eff6ff;
       --color-success:#059669;
       --color-warning:#d97706;
       --color-bg:#ffffff;
@@ -114,11 +55,9 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
-    /* SKIP LINK - accessible */
     .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip-link:focus{left:8px;top:8px;width:auto;height:auto;padding:8px 12px;background:#fff;color:var(--color-primary);border-radius:6px;text-decoration:none;z-index:9999}
 
-    /* REFINED HEADER */
     .header{
       background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
       color: white;
@@ -174,7 +113,6 @@
       backdrop-filter: blur(10px);
     }
 
-    /* REFINED NAV */
     .nav{
       background:var(--color-bg-card);
       border-bottom:1px solid var(--color-border);
@@ -221,8 +159,8 @@
       width: 80%;
     }
 
-    /* MAIN LAYOUT */
     .container{max-width:var(--max-width);margin:2.5rem auto;padding:0 1.25rem}
+    
     .section{
       background:var(--color-bg-card);
       border-radius:var(--border-radius);
@@ -231,11 +169,105 @@
       box-shadow:var(--shadow-md);
       border:1px solid var(--color-border-light);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.6s ease-out;
     }
     .section:hover {
       box-shadow: var(--shadow-lg);
       transform: translateY(-5px);
     }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .about-grid > img {
+      animation: slideInLeft 0.8s ease-out;
+    }
+    
+    .about-grid > div {
+      animation: slideInRight 0.8s ease-out;
+    }
+    
+    .card {
+      animation: scaleIn 0.5s ease-out;
+    }
+    
+    .card:nth-child(1) { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+    .card:nth-child(2) { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+    .card:nth-child(3) { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+    .card:nth-child(4) { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
+    
+    .project-item {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .publication-item {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .achievement-card {
+      animation: scaleIn 0.5s ease-out;
+    }
+    
+    .achievement-card:nth-child(1) { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+    .achievement-card:nth-child(2) { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+    .achievement-card:nth-child(3) { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+    .achievement-card:nth-child(4) { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
+    
     .section-header{
       margin-bottom:1.5rem;
       padding-bottom:1rem;
@@ -251,13 +283,39 @@
       background: var(--color-accent);
       border-radius: 2px;
     }
+    
     .section-title{
       font-size:1.75rem;
       color:var(--color-primary);
       font-weight:800;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+    }
+    .section-title:hover {
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transform: translateX(10px);
+    }
+    .section-title::before {
+      content: '';
+      position: absolute;
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed, #db2777);
+      transition: width 0.4s ease;
+      border-radius: 2px;
+    }
+    .section-title:hover::before {
+      width: 10px;
     }
 
-    /* REFINED ABOUT */
     .about-grid{
       display:grid;
       grid-template-columns:280px 1fr;
@@ -286,6 +344,7 @@
       gap:.6rem;
       margin-top:1.5rem;
     }
+    
     .tag{
       background:var(--color-accent-light);
       padding:.35rem .9rem;
@@ -294,12 +353,14 @@
       color:var(--color-primary);
       border:1px solid var(--color-border);
       font-weight:600;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
+      animation: fadeIn 0.6s ease-out;
     }
     .tag:hover {
-      background: var(--color-accent);
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
       color: white;
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: var(--shadow-md);
     }
 
     .button-group{
@@ -308,6 +369,7 @@
       margin-top:1.5rem;
       flex-wrap:wrap;
     }
+    
     .btn{
       display:inline-flex;
       align-items:center;
@@ -317,7 +379,29 @@
       text-decoration:none;
       font-weight:700;
       border:2px solid transparent;
-      transition:all .15s ease;
+      transition:all .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    .btn > * {
+      position: relative;
+      z-index: 1;
     }
     .btn-primary{
       background:var(--color-accent);
@@ -326,8 +410,8 @@
     }
     .btn-primary:hover{
       background:var(--color-accent-hover);
-      transform:translateY(-2px);
-      box-shadow:var(--shadow-md);
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:var(--shadow-lg);
     }
     .btn-secondary{
       background:transparent;
@@ -337,10 +421,10 @@
     .btn-secondary:hover{
       background:var(--color-accent);
       color:#fff;
-      transform:translateY(-2px);
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:var(--shadow-md);
     }
 
-    /* REFINED CARDS & PROJECTS */
     .card-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -446,19 +530,33 @@
       align-items: center;
       gap: 0.5rem;
       padding:.45rem .9rem;
-      background:var(--color-accent);
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
       color:#fff;
       border-radius:8px;
       text-decoration:none;
       font-weight:700;
-      transition:all .15s ease;
+      transition:all .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    .project-link:hover::before {
+      left: 100%;
     }
     .project-link:hover{
-      background:var(--color-accent-hover);
-      transform:translateY(-2px);
+      transform:translateY(-2px) scale(1.05);
+      box-shadow: var(--shadow-md);
     }
 
-    /* SKILLS METER */
     .skills-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -470,7 +568,7 @@
     }
     .skill-header {
       display: flex;
-      justify-content: between;
+      justify-content: space-between;
       margin-bottom: 0.5rem;
     }
     .skill-name {
@@ -488,12 +586,23 @@
     }
     .skill-progress {
       height: 100%;
-      background: var(--color-accent);
+      background: linear-gradient(90deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
       border-radius: 4px;
-      transition: width 1s ease-in-out;
+      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .skill-progress::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
     }
 
-    /* ACHIEVEMENTS SECTION */
     .achievements-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -504,15 +613,36 @@
       padding: 1.5rem;
       border-radius: 12px;
       text-align: center;
-      transition: all 0.3s ease;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .achievement-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed, #db2777);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+    .achievement-card:hover::before {
+      transform: translateX(0);
     }
     .achievement-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-lg);
     }
     .achievement-icon {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      display: inline-block;
+      transition: transform 0.4s ease;
+    }
+    .achievement-card:hover .achievement-icon {
+      transform: scale(1.2) rotate(10deg);
     }
     .achievement-title {
       font-weight: 700;
@@ -523,7 +653,6 @@
       color: var(--color-text-muted);
     }
 
-    /* REFINED PUBLICATIONS */
     .publication-list{
       display:flex;
       flex-direction:column;
@@ -559,20 +688,34 @@
       align-items: center;
       gap: 0.5rem;
       padding:.35rem .65rem;
-      background:var(--color-accent);
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
       color:#fff;
       border-radius:8px;
       text-decoration:none;
       font-weight:700;
       font-size:.9rem;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .publication-link::after {
+      content: '→';
+      position: absolute;
+      right: 0.65rem;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+    }
+    .publication-link:hover::after {
+      opacity: 1;
+      transform: translateX(0);
     }
     .publication-link:hover{
-      background:var(--color-accent-hover);
-      transform: translateY(-2px);
+      transform: translateY(-2px) translateX(5px);
+      box-shadow: var(--shadow-md);
+      padding-right: 1.5rem;
     }
 
-    /* REFINED CONTACT */
     .contact-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -605,16 +748,6 @@
       color:var(--color-accent-hover);
     }
 
-    .empty-state{
-      text-align:center;
-      padding:2rem;
-      color:var(--color-text-muted);
-      font-style:italic;
-      background:var(--color-bg-alt);
-      border-radius:12px;
-    }
-
-    /* REFINED FOOTER */
     .footer{
       background:var(--color-primary);
       color:#fff;
@@ -632,7 +765,6 @@
       font-size:.95rem;
     }
 
-    /* Back to top button */
     .back-to-top {
       position: fixed;
       bottom: 2rem;
@@ -662,7 +794,6 @@
       transform: translateY(-3px);
     }
 
-    /* DARK MODE TOGGLE */
     .theme-toggle {
       position: fixed;
       top: 1rem;
@@ -684,9 +815,8 @@
       transform: rotate(15deg);
     }
 
-    /* keyboard focus only when tabbing */
     :root.user-is-tabbing *:focus{outline:3px solid rgba(37, 99, 235, 0.35);outline-offset:3px}
-    /* remove hover transform on touch devices */
+    
     @media (hover:none){
       .project-item:hover,.card:hover{transform:none;box-shadow:none}
     }
@@ -707,24 +837,18 @@
         height: 40px;
       }
     }
-
-    /* utilities */
-    .mt-sm{margin-top:.6rem}.mb-sm{margin-bottom:.6rem}
   </style>
 </head>
 <body>
 
-  <!-- Skip link -->
   <a class="skip-link" href="#about">Skip to content</a>
 
-  <!-- Dark Mode Toggle -->
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
       <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
     </svg>
   </button>
 
-  <!-- REFINED HEADER -->
   <header class="header" role="banner">
     <div class="header-content">
       <h1 class="header-title">Kasimalla Krishna Vamsi</h1>
@@ -737,7 +861,6 @@
     </div>
   </header>
 
-  <!-- REFINED NAV -->
   <nav class="nav" aria-label="Main navigation">
     <ul class="nav-list" role="menubar">
       <li role="none"><a role="menuitem" class="nav-link" href="#about">About</a></li>
@@ -750,16 +873,13 @@
     </ul>
   </nav>
 
-  <!-- MAIN CONTENT -->
   <main class="container" id="main">
-    <!-- REFINED ABOUT -->
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="section-header">
         <h2 id="about-title" class="section-title">About Me</h2>
       </div>
 
       <div class="about-grid">
-        <!-- responsive lazy-loading profile image -->
         <img
           class="profile-image"
           src="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-600.jpg"
@@ -805,7 +925,6 @@
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
     <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="section-header">
         <h2 id="skills-title" class="section-title">Technical Skills</h2>
@@ -868,7 +987,6 @@
       </div>
     </section>
 
-    <!-- REFINED RESEARCH AREAS -->
     <section class="section" id="research" aria-labelledby="research-title">
       <div class="section-header"><h2 id="research-title" class="section-title">Research Areas</h2></div>
       <div class="card-grid" role="list">
@@ -891,7 +1009,6 @@
       </div>
     </section>
 
-    <!-- REFINED PUBLICATIONS -->
     <section class="section" id="publications" aria-labelledby="publications-title">
       <div class="section-header"><h2 id="publications-title" class="section-title">Publications</h2></div>
 
@@ -943,11 +1060,9 @@
       </div>
     </section>
 
-    <!-- REFINED PROJECTS -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-header"><h2 id="projects-title" class="section-title">Projects</h2></div>
       <div class="project-list">
-        <!-- Project 1 -->
         <article class="project-item" aria-labelledby="p1-title">
           <div class="project-thumbnail" style="background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%)" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
@@ -968,7 +1083,6 @@
           </div>
         </article>
 
-        <!-- Project 2 -->
         <article class="project-item" aria-labelledby="p2-title">
           <div class="project-thumbnail" style="background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%)" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
@@ -989,7 +1103,6 @@
           </div>
         </article>
 
-        <!-- Project 3 -->
         <article class="project-item" aria-labelledby="p3-title">
           <div class="project-thumbnail" style="background:linear-gradient(135deg,#60a5fa 0%,#3b82f6 100%)" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
@@ -1009,11 +1122,9 @@
             <div class="project-links"><a class="project-link" href="https://github.com/krishnavamsi333/chili-harvester" target="_blank" rel="noopener noreferrer">View on GitHub →</a></div>
           </div>
         </article>
-
       </div>
     </section>
 
-    <!-- ACHIEVEMENTS SECTION -->
     <section class="section" id="achievements" aria-labelledby="achievements-title">
       <div class="section-header">
         <h2 id="achievements-title" class="section-title">Achievements & Awards</h2>
@@ -1042,7 +1153,6 @@
       </div>
     </section>
 
-    <!-- REFINED CONTACT -->
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="section-header"><h2 id="contact-title" class="section-title">Get In Touch</h2></div>
       <div class="contact-grid">
@@ -1075,23 +1185,20 @@
 
   </main>
 
-  <!-- REFINED FOOTER -->
   <footer class="footer" role="contentinfo">
     <p class="footer-text">&copy; 2025 Kasimalla Krishna Vamsi. All rights reserved.</p>
     <p class="footer-subtext">Researcher in Renewable Energy & Robotics</p>
   </footer>
 
-  <!-- Back to top button -->
   <a href="#" class="back-to-top" aria-label="Back to top">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
     </svg>
   </a>
 
-  <!-- ENHANCED SCRIPT -->
   <script>
     (function(){
-      // show focus outlines for keyboard users only
+      // Keyboard navigation accessibility
       function handleFirstTab(e) {
         if (e.key === 'Tab') {
           document.documentElement.classList.add('user-is-tabbing');
@@ -1100,10 +1207,12 @@
       }
       window.addEventListener('keydown', handleFirstTab);
 
-      // Add rel="noopener noreferrer" to any external links added later via JS (defensive)
+      // Add rel attributes to external links
       Array.from(document.querySelectorAll('a[target="_blank"]')).forEach(a=>{
         const rel = a.getAttribute('rel') || '';
-        if (!/noopener/.test(rel) || !/noreferrer/.test(rel)) a.setAttribute('rel', (rel+' noopener noreferrer').trim());
+        if (!/noopener/.test(rel) || !/noreferrer/.test(rel)) {
+          a.setAttribute('rel', (rel+' noopener noreferrer').trim());
+        }
       });
 
       // Back to top button functionality
@@ -1123,7 +1232,13 @@
           e.preventDefault();
           
           const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
+          if (targetId === '#') {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+            return;
+          }
           
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
@@ -1135,11 +1250,10 @@
         });
       });
 
-      // Dark mode toggle
+      // Dark mode toggle (placeholder - can be expanded)
       const themeToggle = document.getElementById('themeToggle');
       const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
       
-      // Check for saved theme or prefered scheme
       const currentTheme = localStorage.getItem('theme');
       if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
         document.body.classList.add('dark-theme');
@@ -1181,6 +1295,153 @@
       if (skillsSection) {
         observer.observe(skillsSection);
       }
+
+      // Animate sections on scroll
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.section').forEach(section => {
+        sectionObserver.observe(section);
+      });
+
+      // Add stagger animation to cards
+      const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.card, .achievement-card');
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+              }, index * 100);
+            });
+            cardObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+
+      const cardContainers = document.querySelectorAll('.card-grid, .achievements-grid');
+      cardContainers.forEach(container => {
+        cardObserver.observe(container);
+      });
+
+      // Parallax effect for header (subtle)
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const header = document.querySelector('.header');
+        if (header && scrolled < 500) {
+          header.style.transform = `translateY(${scrolled * 0.5}px)`;
+          header.style.opacity = 1 - (scrolled / 500);
+        }
+      });
+
+      // Add hover sound effect placeholder
+      const interactiveElements = document.querySelectorAll('.btn, .tag, .project-link, .publication-link');
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', function() {
+          this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+      });
+
+      // Typing effect for header subtitle (optional enhancement)
+      const subtitle = document.querySelector('.header-subtitle');
+      if (subtitle) {
+        const text = subtitle.textContent;
+        subtitle.textContent = '';
+        let i = 0;
+        
+        const typeWriter = () => {
+          if (i < text.length) {
+            subtitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 30);
+          }
+        };
+        
+        // Start typing effect after a short delay
+        setTimeout(typeWriter, 500);
+      }
+
+      // Add ripple effect to buttons
+      document.querySelectorAll('.btn, .project-link, .publication-link').forEach(button => {
+        button.addEventListener('click', function(e) {
+          const rect = this.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const ripple = document.createElement('span');
+          ripple.style.cssText = `
+            position: absolute;
+            left: ${x}px;
+            top: ${y}px;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s ease-out;
+            pointer-events: none;
+          `;
+          
+          this.appendChild(ripple);
+          
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+
+      // Add CSS for ripple animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes ripple {
+          to {
+            width: 200px;
+            height: 200px;
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Log page load time for performance monitoring
+      window.addEventListener('load', () => {
+        const loadTime = performance.now();
+        console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
+      });
+
+      // Add active nav link highlighting
+      const sections = document.querySelectorAll('.section');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.style.color = '';
+          if (link.getAttribute('href') === `#${current}`) {
+            link.style.color = 'var(--color-accent)';
+          }
+        });
+      });
+
     })();
   </script>
 </body>
