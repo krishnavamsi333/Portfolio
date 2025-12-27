@@ -14,7 +14,9 @@ const COMPONENTS = [
   { id: "research-container", file: "components/research.html" },
   { id: "publications-container", file: "components/publications.html" },
   { id: "projects-container", file: "components/projects.html" },
-  { id: "achievements-container", file: "components/achievements.html" },
+  //{ id: "achievements-container", file: "components/achievements.html" },
+  {id: "experience-container", file: "components/experience.html" },
+  {id: "learning-container", file: "components/learning.html" },
   { id: "contact-container", file: "components/contact.html" },
   { id: "footer-container", file: "components/footer.html" }
 ];

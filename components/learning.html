@@ -1,0 +1,152 @@
+<section class="learning-section" aria-labelledby="learning-title">
+  <div class="section-header">
+    <h2 id="learning-title" class="section-title">Continuous Growth</h2>
+    <div class="section-divider" aria-hidden="true"></div>
+    <p class="section-subtitle">
+      Deepening my technical stack to bridge the gap between simulation and physical hardware.
+    </p>
+  </div>
+
+  <div class="learning-grid">
+    <div class="learning-card" data-status="60%">
+      <div class="card-glow"></div>
+      <div class="learning-content">
+        <div class="learning-header">
+          <div class="learning-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><path d="M7 2v4"></path><path d="M17 2v4"></path><path d="M2 7h4"></path><path d="M2 17h4"></path><path d="M7 22v-4"></path><path d="M17 22v-4"></path><path d="M18 22h4"></path><path d="M18 7h4"></path></svg>
+          </div>
+          <span class="learning-status">60% Complete</span>
+        </div>
+        
+        <h3 class="learning-name">PCB Design & Hardware</h3>
+        <p class="learning-desc">
+          Mastering <strong>KiCad</strong> for high-current power electronics layouts and multi-layer signal integrity for robotics.
+        </p>
+        
+        <div class="learning-footer">
+          <span class="tool-chip">KiCad</span>
+          <span class="tool-chip">Altium</span>
+          <span class="tool-chip">Circuit Simulation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="learning-card" data-status="In Progress">
+      <div class="card-glow"></div>
+      <div class="learning-content">
+        <div class="learning-header">
+          <div class="learning-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <span class="learning-status">Deep Dive</span>
+        </div>
+        
+        <h3 class="learning-name">Advanced C++ for Robotics</h3>
+        <p class="learning-desc">
+          Implementing <strong>Object-Oriented Design</strong> for real-time control loops and optimizing ROS2 node performance.
+        </p>
+        
+        <div class="learning-footer">
+          <span class="tool-chip">C++20</span>
+          <span class="tool-chip">STL</span>
+          <span class="tool-chip">Embedded Logic</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.learning-section {
+  padding: 4rem 0;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.learning-card {
+  background: var(--color-bg-card, #ffffff);
+  border: 1px dashed var(--color-border, #e2e8f0); /* Dashed border signals "work in progress" */
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.learning-card:hover {
+  border-style: solid;
+  border-color: var(--color-accent, #2563eb);
+  transform: translateY(-5px);
+}
+
+/* Subtle Glow Effect on Hover */
+.card-glow {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent);
+  pointer-events: none;
+}
+
+.learning-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.learning-icon {
+  color: var(--color-accent, #2563eb);
+  background: rgba(37, 99, 235, 0.1);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.learning-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #64748b);
+  letter-spacing: 0.05em;
+}
+
+.learning-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--color-primary, #1e293b);
+}
+
+.learning-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted, #64748b);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.learning-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tool-chip {
+  background: var(--color-bg-alt, #f8fafc);
+  border: 1px solid var(--color-border-light, #f1f5f9);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text, #334155);
+}
+
+/* Dark Mode Overrides */
+body.dark-theme .learning-card {
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+</style>
