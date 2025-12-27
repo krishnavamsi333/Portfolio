@@ -83,7 +83,7 @@ function initNewsletter() {
 
     emailjs
       .send(
-        "service_cisylgf",
+        "service_lv8s52p",
         "template_fq0ahsr",
         { subscriber_email: email }
       )
