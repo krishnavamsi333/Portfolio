@@ -757,3 +757,19 @@
 body.dark-theme .nav-link::after {
   background: #60a5fa;
 }
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
