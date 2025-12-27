@@ -38,14 +38,11 @@ function hideLoadingState() {
 
 async function loadComponent({ id, file }) {
   const container = document.getElementById(id);
-  if (!container) {
-    console.warn(`Container not found: #${id}`);
-    return;
-  }
+  if (!container) return;
 
   const url = `${BASE_PATH}${file}`;
-
   const res = await fetch(url);
+
   if (!res.ok) {
     throw new Error(`Failed to load ${url}`);
   }
@@ -53,9 +50,59 @@ async function loadComponent({ id, file }) {
   container.innerHTML = await res.text();
 }
 
-// -----------------------------
+// =========================================================
+// EmailJS Init (PUBLIC KEY ONLY)
+// =========================================================
+
+function initEmailJS() {
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("B8jnclWW0_3oHVtAY"); // ✅ PUBLIC KEY
+    console.log("✓ EmailJS initialized");
+  } else {
+    console.warn("EmailJS not loaded");
+  }
+}
+
+// =========================================================
+// Newsletter logic (AFTER footer loads)
+// =========================================================
+
+function initNewsletter() {
+  const form = document.getElementById("newsletterForm");
+  if (!form) {
+    console.warn("Newsletter form not found");
+    return;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const emailInput = form.querySelector("input[type='email']");
+    const email = emailInput.value.trim();
+    if (!email) return;
+
+    emailjs
+      .send(
+        "service_cisylgf",
+        "template_fq0ahsr",
+        { subscriber_email: email }
+      )
+      .then(() => {
+        alert("✅ Subscription successful! Email received.");
+        form.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        alert("❌ Failed to send email. Try again.");
+      });
+  });
+
+  console.log("✓ Newsletter initialized");
+}
+
+// =========================================================
 // Main boot
-// -----------------------------
+// =========================================================
 
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("Base path:", BASE_PATH);
@@ -66,11 +113,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       await loadComponent(component);
     }
 
-    // Init after components exist
+    // Init global UI
     if (typeof initUI === "function") initUI();
     if (typeof initEffects === "function") initEffects();
 
-    console.log("✓ All components loaded");
+    // Init Email + Newsletter AFTER footer exists
+    initEmailJS();
+    initNewsletter();
+
+    console.log("✓ All components loaded & initialized");
   } catch (err) {
     console.error("Component loading failed:", err);
   } finally {
