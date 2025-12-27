@@ -1,6 +1,6 @@
-// Main application script
-document.addEventListener('DOMContentLoaded', function() {
-  // Load all components
+document.addEventListener('DOMContentLoaded', async () => {
+  showLoadingState();
+
   const components = [
     { id: 'header-container', file: 'components/header.html' },
     { id: 'nav-container', file: 'components/nav.html' },
@@ -14,26 +14,18 @@ document.addEventListener('DOMContentLoaded', function() {
     { id: 'footer-container', file: 'components/footer.html' }
   ];
 
-  components.forEach(component => {
-    fetch(component.file)
-      .then(response => response.text())
-      .then(data => {
-        const container = document.getElementById(component.id);
-        if (container) {
-          container.innerHTML = data;
-          
-          // Initialize components after loading
-          if (component.id === 'skills-container') {
-            initSkillBars();
-          }
-        }
-      })
-      .catch(error => console.error(`Error loading ${component.file}:`, error));
-  });
+  await Promise.all(
+    components.map(c =>
+      fetch(c.file)
+        .then(r => r.text())
+        .then(html => {
+          document.getElementById(c.id).innerHTML = html;
+        })
+    )
+  );
 
-  // Initialize all modules
-  initAccessibility();
-  initUI();
-  initEffects();
-  initParticles();
+  initUI();        // ✅ UI AFTER components
+  initEffects?.(); // ✅ optional (from effects.js)
+
+  hideLoadingState();
 });

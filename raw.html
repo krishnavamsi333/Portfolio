@@ -1,0 +1,1811 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <title>K. Krishna Vamsi | Research Portfolio - Renewable Energy & Robotics</title>
+  <meta name="description" content="K. Krishna Vamsi (KV) - Research Engineer specializing in Renewable Energy Systems, Robotics,MPPT Algorithms & Power Electronics at VRSEC, JNTUK">
+  <meta name="theme-color" content="#2563eb" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --color-primary:#0f172a;
+      --color-secondary:#1e293b;
+      --color-accent:#2563eb;
+      --color-accent-hover:#1d4ed8;
+      --color-accent-light:#dbeafe;
+      --color-success:#059669;
+      --color-warning:#d97706;
+      --color-bg:#ffffff;
+      --color-bg-alt:#f8fafc;
+      --color-bg-card:#ffffff;
+      --color-text:#1e293b;
+      --color-text-muted:#64748b;
+      --color-border:#e2e8f0;
+      --color-border-light:#f1f5f9;
+
+      --space-sm:0.75rem;
+      --space-md:1rem;
+      --space-lg:1.5rem;
+      --space-xl:2rem;
+      --space-2xl:3rem;
+      --max-width:1200px;
+      --border-radius:12px;
+      --border-radius-sm:8px;
+
+      --shadow-sm:0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md:0 4px 6px rgba(0,0,0,0.08);
+      --shadow-lg:0 10px 15px rgba(0,0,0,0.08);
+      --shadow-xl:0 20px 25px rgba(0,0,0,0.1);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background:var(--color-bg);
+      color:var(--color-text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x: hidden;
+    }
+
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:8px;top:8px;width:auto;height:auto;padding:8px 12px;background:#fff;color:var(--color-primary);border-radius:6px;text-decoration:none;z-index:9999}
+
+    /* Floating particles background */
+    .floating-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .particle {
+      position: absolute;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 15s infinite linear;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-20px) translateX(10px) rotate(90deg);
+      }
+      50% {
+        transform: translateY(-40px) translateX(20px) rotate(180deg);
+      }
+      75% {
+        transform: translateY(-20px) translateX(10px) rotate(270deg);
+      }
+      100% {
+        transform: translateY(0) translateX(0) rotate(360deg);
+      }
+    }
+
+    .header{
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      color: white;
+      padding: 5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transform: translateY(0);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+    .header-content{max-width:var(--max-width);margin:0 auto;position:relative;z-index:1}
+    .header-title{
+      font-size:3.5rem;
+      font-weight:800;
+      margin-bottom:.5rem;
+      letter-spacing:-0.03em;
+      background: linear-gradient(to right, #ffffff, #dbeafe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+    
+    @keyframes titleGlow {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+      100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      }
+    }
+    
+    .header-subtitle{
+      font-size:1.25rem;
+      opacity:.95;
+      margin-bottom:1rem;
+      font-weight:500;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      border-right: 2px solid rgba(255, 255, 255, 0.7);
+      white-space: nowrap;
+      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: rgba(255, 255, 255, 0.7) }
+    }
+    
+    .header-meta{
+      display:flex;
+      justify-content:center;
+      gap:1.5rem;
+      flex-wrap:wrap;
+      margin-top:1.5rem;
+      font-size:.95rem;
+    }
+    .header-meta-item{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      animation: fadeInUp 1s ease-out 1.5s both;
+    }
+
+    .nav{
+      background:var(--color-bg-card);
+      border-bottom:1px solid var(--color-border);
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:var(--shadow-sm);
+      backdrop-filter: blur(10px);
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .nav.hidden {
+      transform: translateY(-100%);
+    }
+    
+    .nav-list{
+      display:flex;
+      justify-content:center;
+      list-style:none;
+      max-width:var(--max-width);
+      margin:0 auto;
+      flex-wrap:wrap;
+    }
+    .nav-link{
+      display:block;
+      padding:1rem 1.25rem;
+      text-decoration:none;
+      color:var(--color-text);
+      font-weight:600;
+      position: relative;
+      transition:all .15s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: var(--color-accent);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover,
+    .nav-link:focus {
+      color:var(--color-accent);
+    }
+    .nav-link:hover::after,
+    .nav-link:focus::after {
+      width: 80%;
+    }
+
+    .container{max-width:var(--max-width);margin:2.5rem auto;padding:0 1.25rem}
+    
+    .section{
+      background:var(--color-bg-card);
+      border-radius:var(--border-radius);
+      padding:2.5rem;
+      margin-bottom:2rem;
+      box-shadow:var(--shadow-md);
+      border:1px solid var(--color-border-light);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .section.animate-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes ripple {
+      to {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+      }
+    }
+    
+    .about-grid > img {
+      animation: slideInLeft 0.8s ease-out;
+    }
+    
+    .about-grid > div {
+      animation: slideInRight 0.8s ease-out;
+    }
+    
+    .card {
+      animation: scaleIn 0.5s ease-out;
+    }
+    
+    .card:nth-child(1) { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+    .card:nth-child(2) { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+    .card:nth-child(3) { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+    .card:nth-child(4) { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
+    
+    .project-item {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .publication-item {
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .achievement-card {
+      animation: scaleIn 0.5s ease-out;
+    }
+    
+    .achievement-card:nth-child(1) { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+    .achievement-card:nth-child(2) { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+    .achievement-card:nth-child(3) { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+    .achievement-card:nth-child(4) { animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards; }
+    
+    .section-header{
+      margin-bottom:1.5rem;
+      padding-bottom:1rem;
+      position: relative;
+    }
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--color-accent);
+      border-radius: 2px;
+      animation: expandWidth 1s ease-out 0.5s forwards;
+    }
+    
+    @keyframes expandWidth {
+      from {
+        width: 0;
+      }
+      to {
+        width: 60px;
+      }
+    }
+    
+    .section-title{
+      font-size:1.75rem;
+      color:var(--color-primary);
+      font-weight:800;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+    }
+    .section-title:hover {
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transform: translateX(10px);
+    }
+    .section-title::before {
+      content: '';
+      position: absolute;
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed, #db2777);
+      transition: width 0.4s ease;
+      border-radius: 2px;
+    }
+    .section-title:hover::before {
+      width: 10px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:280px 1fr;
+      gap:2.5rem;
+      align-items:start;
+    }
+    .profile-image{
+      width:100%;
+      border-radius:16px;
+      box-shadow:var(--shadow-xl);
+      aspect-ratio:1;
+      object-fit:cover;
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .profile-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(124, 58, 237, 0.2));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .profile-image:hover::after {
+      opacity: 1;
+    }
+    .profile-image:hover {
+      transform: scale(1.02);
+    }
+    .about-text{
+      font-size:1.125rem;
+      margin-bottom:1rem;
+      line-height:1.7;
+    }
+    .tags-container{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.6rem;
+      margin-top:1.5rem;
+    }
+    
+    .tag{
+      background:var(--color-accent-light);
+      padding:.35rem .9rem;
+      border-radius:24px;
+      font-size:.9rem;
+      color:var(--color-primary);
+      border:1px solid var(--color-border);
+      font-weight:600;
+      transition: all 0.3s ease;
+      animation: fadeIn 0.6s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+    .tag:hover {
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      color: white;
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: var(--shadow-md);
+    }
+    .tag::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    .tag:hover::before {
+      left: 100%;
+    }
+
+    .button-group{
+      display:flex;
+      gap:1rem;
+      margin-top:1.5rem;
+      flex-wrap:wrap;
+    }
+    
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 0.5rem;
+      padding:.7rem 1.5rem;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      border:2px solid transparent;
+      transition:all .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    .btn > * {
+      position: relative;
+      z-index: 1;
+    }
+    .btn-primary{
+      background:var(--color-accent);
+      color:#fff;
+      border-color:var(--color-accent);
+    }
+    .btn-primary:hover{
+      background:var(--color-accent-hover);
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:var(--shadow-lg);
+    }
+    .btn-secondary{
+      background:transparent;
+      color:var(--color-accent);
+      border-color:var(--color-accent);
+    }
+    .btn-secondary:hover{
+      background:var(--color-accent);
+      color:#fff;
+      transform:translateY(-3px) scale(1.02);
+      box-shadow:var(--shadow-md);
+    }
+
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;
+    }
+    .card{
+      background:var(--color-bg-alt);
+      padding:1.5rem;
+      border-radius:12px;
+      border-left:4px solid var(--color-accent);
+      transition:all .18s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(124, 58, 237, 0.05));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .card:hover::before {
+      opacity: 1;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-lg);
+      border-left-width:6px;
+    }
+    .card-title{
+      color:var(--color-primary);
+      margin-bottom:.5rem;
+      font-size:1.125rem;
+      font-weight:700;
+    }
+    .card-description{
+      color:var(--color-text-muted);
+      font-size:1rem;
+      flex-grow: 1;
+    }
+
+    .project-list{
+      display:flex;
+      flex-direction:column;
+      gap:1.5rem;
+    }
+    .project-item{
+      display:grid;
+      grid-template-columns:200px 1fr;
+      gap:1.5rem;
+      padding:1.5rem;
+      background:var(--color-bg-card);
+      border:1px solid var(--color-border);
+      border-radius:12px;
+      transition:all .18s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.05), transparent);
+      transition: left 0.5s ease;
+    }
+    .project-item:hover::before {
+      left: 100%;
+    }
+    .project-item:hover{
+      box-shadow:var(--shadow-lg);
+      border-color:var(--color-accent);
+      transform:translateY(-4px);
+    }
+    .project-thumbnail{
+      width:100%;
+      height:140px;
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:2rem;
+      color:white;
+      font-weight:700;
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-thumbnail::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .project-thumbnail:hover::after {
+      opacity: 1;
+    }
+    .project-item:hover .project-thumbnail {
+      transform: scale(1.05);
+    }
+    .project-title{
+      font-size:1.25rem;
+      color:var(--color-primary);
+      font-weight:700;
+      margin-bottom:.35rem;
+    }
+    .project-description{
+      color:var(--color-text);
+      font-size:1rem;
+      line-height:1.6;
+      margin-bottom: 1rem;
+    }
+    .tech-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.4rem;
+      margin:.6rem 0;
+    }
+    .tech-tag{
+      background:var(--color-primary);
+      color:#fff;
+      padding:.2rem .6rem;
+      border-radius:6px;
+      font-size:.8rem;
+      font-weight:700;
+      font-family: 'JetBrains Mono', monospace;
+      transition: all 0.2s ease;
+    }
+    .tech-tag:hover {
+      background: var(--color-accent);
+      transform: translateY(-2px);
+    }
+
+    .project-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding:.45rem .9rem;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color:#fff;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+      transition:all .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    .project-link:hover::before {
+      left: 100%;
+    }
+    .project-link:hover{
+      transform:translateY(-2px) scale(1.05);
+      box-shadow: var(--shadow-md);
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .skill-name {
+      font-weight: 600;
+    }
+    .skill-percentage {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+    }
+    .skill-bar {
+      height: 8px;
+      background: var(--color-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
+      border-radius: 4px;
+      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .skill-progress::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .achievement-card {
+      background: var(--color-bg-alt);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .achievement-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed, #db2777);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+    .achievement-card:hover::before {
+      transform: translateX(0);
+    }
+    .achievement-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+    .achievement-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      transition: transform 0.4s ease;
+    }
+    .achievement-card:hover .achievement-icon {
+      transform: scale(1.2) rotate(10deg);
+    }
+    .achievement-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--color-primary);
+    }
+    .achievement-description {
+      color: var(--color-text-muted);
+    }
+
+    .publication-list{
+      display:flex;
+      flex-direction:column;
+      gap:1.5rem;
+    }
+    .publication-item{
+      padding:1.5rem;
+      border-left:4px solid var(--color-accent);
+      background:var(--color-bg-alt);
+      border-radius:10px;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .publication-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 0;
+      background: linear-gradient(to bottom, #2563eb, #7c3aed);
+      transition: height 0.3s ease;
+    }
+    .publication-item:hover::before {
+      height: 100%;
+    }
+    .publication-item:hover {
+      transform: translateX(5px);
+    }
+    .publication-title{
+      font-weight:700;
+      color:var(--color-primary);
+      margin-bottom:.4rem;
+    }
+    .publication-authors,.publication-venue{
+      color:var(--color-text-muted);
+      font-size:.95rem;
+    }
+    .publication-links{
+      display:flex;
+      gap:.5rem;
+      margin-top:.8rem;
+    }
+
+    .publication-link{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding:.35rem .65rem;
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      color:#fff;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.9rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .publication-link::after {
+      content: '→';
+      position: absolute;
+      right: 0.65rem;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+    }
+    .publication-link:hover::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .publication-link:hover{
+      transform: translateY(-2px) translateX(5px);
+      box-shadow: var(--shadow-md);
+      padding-right: 1.5rem;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;
+    }
+    .contact-card{
+      background:var(--color-bg-alt);
+      padding:1.5rem;
+      border-radius:12px;
+      text-align:center;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(124, 58, 237, 0.05));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none; 
+    }
+    .contact-card:hover::before {
+      opacity: 1;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-card-title{
+      color:var(--color-primary);
+      margin-bottom:.6rem;
+      font-weight:700;
+    }
+    .contact-card a{
+      color:var(--color-accent);
+      text-decoration:none;
+      font-weight:700;
+      transition: all 0.2s ease;
+    }
+    .contact-card a:hover{
+      text-decoration:underline;
+      color:var(--color-accent-hover);
+    }
+
+    .footer{
+      background:var(--color-primary);
+      color:#fff;
+      text-align:center;
+      padding:2.5rem 1rem;
+      margin-top:2.5rem;
+    }
+    .footer-text{
+      font-size:1rem;
+      opacity:.95;
+    }
+    .footer-subtext{
+      margin-top:.5rem;
+      opacity:.8;
+      font-size:.95rem;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--color-accent);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      animation: bounce 2s infinite;
+    }
+    .back-to-top:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-3px);
+      animation: none;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    .theme-toggle:hover {
+      transform: rotate(15deg);
+      animation: none;
+    }
+
+    :root.user-is-tabbing *:focus{outline:3px solid rgba(37, 99, 235, 0.35);outline-offset:3px}
+    
+    @media (hover:none){
+      .project-item:hover,.card:hover{transform:none;box-shadow:none}
+    }
+
+    @media (max-width:768px){
+      .header{padding:3rem 1.5rem}
+      .header-title{font-size:2.25rem}
+      .about-grid{grid-template-columns:1fr;text-align:center}
+      .profile-image{max-width:280px;margin:0 auto}
+      .project-item{grid-template-columns:1fr}
+      .nav-list{flex-direction:column}
+      .nav-link{text-align:center;padding:.9rem}
+      .section{padding:1.5rem}
+      .theme-toggle {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <!-- Floating particles background -->
+  <div class="floating-particles" id="particles"></div>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+    </svg>
+  </button>
+
+  <header class="header" role="banner">
+    <div class="header-content">
+      <h1 class="header-title">Kasimalla Krishna Vamsi</h1>
+      <p class="header-subtitle">Research Engineer — Renewable Energy Systems, Robotics, MPPT Algorithms, Power Electronics</p>
+      <div class="header-meta" role="list">
+        <div class="header-meta-item" role="listitem">📧 <span>kasimallakrishnavamsi333@gmail.com</span></div>
+        <div class="header-meta-item" role="listitem">📱 <span>+91 9392039416</span></div>
+        <div class="header-meta-item" role="listitem">📍 <span>VRSEC, JNTUK</span></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="Main navigation">
+    <ul class="nav-list" role="menubar">
+      <li role="none"><a role="menuitem" class="nav-link" href="#about">About</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#skills">Skills</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#research">Research</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#publications">Publications</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#projects">Projects</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#achievements">Achievements</a></li>
+      <li role="none"><a role="menuitem" class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container" id="main">
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="section-header">
+        <h2 id="about-title" class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <img
+          class="profile-image"
+          src="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-600.jpg"
+          srcset="https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-300.jpg 300w, https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-600.jpg 600w, https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-1200.jpg 1200w"
+          sizes="(max-width:768px) 280px, 280px"
+          alt="Portrait of Kasimalla Krishna Vamsi"
+          loading="lazy" decoding="async">
+
+        <div>
+          <p class="about-text">I am a dedicated researcher and engineer specializing in renewable energy systems and agricultural robotics. My work focuses on developing practical, sustainable solutions for energy harvesting and autonomous field operations.</p>
+
+          <p class="about-text">Currently, I'm advancing MPPT algorithms for portable solar charging systems and implementing precision agriculture robotics using ROS2 and reinforcement learning techniques.</p>
+
+          <p class="about-text">My research integrates power electronics, control systems, and machine learning to create efficient, scalable solutions for real-world applications in renewable energy and agriculture.</p>
+
+          <div class="tags-container" aria-hidden="true">
+            <span class="tag">MPPT Algorithms</span>
+            <span class="tag">Power Electronics</span>
+            <span class="tag">ROS2 Robotics</span>
+            <span class="tag">Reinforcement Learning</span>
+            <span class="tag">MATLAB/Simulink</span>
+            <span class="tag">Autonomous Systems</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Renewable Energy</span>
+          </div>
+
+          <div class="button-group">
+            <a class="btn btn-primary" href="https://github.com/krishnavamsi333/Portfolio/raw/main/CV_KV.pdf" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+              </svg>
+              Download CV
+            </a>
+            <a class="btn btn-secondary" href="https://github.com/krishnavamsi333" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+              GitHub Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="section-header">
+        <h2 id="skills-title" class="section-title">Technical Skills</h2>
+      </div>
+      <div class="skills-container">
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">MATLAB/Simulink</span>
+            <span class="skill-percentage">95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 95%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">ROS2 & Robotics</span>
+            <span class="skill-percentage">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Power Electronics</span>
+            <span class="skill-percentage">88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 88%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Python Programming</span>
+            <span class="skill-percentage">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">MPPT Algorithms</span>
+            <span class="skill-percentage">92%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 92%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Reinforcement Learning</span>
+            <span class="skill-percentage">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 80%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="section-header"><h2 id="research-title" class="section-title">Research Areas</h2></div>
+      <div class="card-grid" role="list">
+        <div class="card" role="listitem">
+          <h3 class="card-title">Renewable Energy Systems</h3>
+          <p class="card-description">Advanced MPPT algorithms, power conversion, and energy storage optimization for portable applications and grid integration.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3 class="card-title">Agricultural Robotics</h3>
+          <p class="card-description">Precision farming automation using ROS2, computer vision, and reinforcement learning for harvesting and monitoring tasks.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3 class="card-title">Power Electronics</h3>
+          <p class="card-description">Design and simulation of DC-DC converters, inverters, and control strategies in MATLAB/Simulink and hardware implementation.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3 class="card-title">Autonomous Navigation</h3>
+          <p class="card-description">URDF modeling, Gazebo simulation, SLAM, and field deployment strategies for autonomous robotic systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications" aria-labelledby="publications-title">
+      <div class="section-header"><h2 id="publications-title" class="section-title">Publications</h2></div>
+
+      <div class="publication-list" aria-live="polite">
+        <div class="publication-item">
+          <div class="publication-title">A Novel MPPT Algorithm for Portable Solar Charging Systems</div>
+          <div class="publication-authors">K. Krishna Vamsi, et al.</div>
+          <div class="publication-venue">IEEE Conference on Renewable Energy Systems, 2024</div>
+          <div class="publication-links">
+            <a class="publication-link" href="https://ieeexplore.ieee.org/document/10984594" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+              </svg>
+              IEEE Xplore
+            </a>
+          </div>
+        </div>
+
+        <div class="publication-item">
+          <div class="publication-title">ROS2-Based Autonomous Navigation for Agricultural Robots</div>
+          <div class="publication-authors">K. Krishna Vamsi, et al.</div>
+          <div class="publication-venue">IEEE International Conference on Robotics and Automation, 2024</div>
+          <div class="publication-links">
+            <a class="publication-link" href="https://ieeexplore.ieee.org/document/10984934" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+              </svg>
+              IEEE Xplore
+            </a>
+          </div>
+        </div>
+
+        <div class="publication-item">
+          <div class="publication-title">Reinforcement Learning for Precision Agriculture Applications</div>
+          <div class="publication-authors">K. Krishna Vamsi, et al.</div>
+          <div class="publication-venue">IEEE Transactions on Agricultural Robotics, 2024</div>
+          <div class="publication-links">
+            <a class="publication-link" href="https://ieeexplore.ieee.org/document/10984602" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+              </svg>
+              IEEE Xplore
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-header"><h2 id="projects-title" class="section-title">Projects</h2></div>
+      <div class="project-list">
+        <article class="project-item" aria-labelledby="p1-title">
+          <div class="project-thumbnail" style="background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%)" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <h3 id="p1-title" class="project-title">UCHCHAIHSHRAVA — ROS Agropilot</h3>
+            <p class="project-description">Autonomous navigation system for agricultural field robots with URDF modeling, Gazebo simulation, and path planning algorithms for precision farming operations. Features real-time obstacle avoidance and optimized path planning for field coverage.</p>
+            <div class="tech-tags" aria-hidden="true">
+              <span class="tech-tag">ROS2</span>
+              <span class="tech-tag">Gazebo</span>
+              <span class="tech-tag">URDF</span>
+              <span class="tech-tag">Navigation</span>
+              <span class="tech-tag">Python</span>
+            </div>
+            <div class="project-links"><a class="project-link" href="https://github.com/krishnavamsi333/uchchaihshrava-ros-agropilot" target="_blank" rel="noopener noreferrer">View on GitHub →</a></div>
+          </div>
+        </article>
+
+        <article class="project-item" aria-labelledby="p2-title">
+          <div class="project-thumbnail" style="background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%)" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-.836.628-1.374.868a7 7 0 0 0 0 1.354c.538.24 1.084.578 1.374.868l-.708.708a8 8 0 0 1-1.708-1.708l.708-.708a7 7 0 0 0 0-1.354l-.708-.708a8 8 0 0 1 1.708-1.708Z"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <h3 id="p2-title" class="project-title">Portable Solar Charging System</h3>
+            <p class="project-description">Advanced MPPT algorithm implementation in MATLAB/Simulink for efficient e-bike charging with real-time power optimization and battery management. Achieves 98% efficiency in power conversion under varying environmental conditions.</p>
+            <div class="tech-tags" aria-hidden="true">
+              <span class="tech-tag">MATLAB</span>
+              <span class="tech-tag">Simulink</span>
+              <span class="tech-tag">MPPT</span>
+              <span class="tech-tag">Power Electronics</span>
+              <span class="tech-tag">DC-DC Converters</span>
+            </div>
+            <div class="project-links"><a class="project-link" href="https://github.com/krishnavamsi333/portable-solar-charger" target="_blank" rel="noopener noreferrer">View on GitHub →</a></div>
+          </div>
+        </article>
+
+        <article class="project-item" aria-labelledby="p3-title">
+          <div class="project-thumbnail" style="background:linear-gradient(135deg,#60a5fa 0%,#3b82f6 100%)" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+            </svg>
+          </div>
+          <div class="project-content">
+            <h3 id="p3-title" class="project-title">Precision Chili Harvesting Robot</h3>
+            <p class="project-description">Autonomous agricultural robot using ROS2 and reinforcement learning for precision chili detection and harvesting with camera-guided manipulator control. Implements computer vision for ripeness detection and selective harvesting.</p>
+            <div class="tech-tags" aria-hidden="true">
+              <span class="tech-tag">ROS2</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">RL</span>
+              <span class="tech-tag">Computer Vision</span>
+              <span class="tech-tag">OpenCV</span>
+            </div>
+            <div class="project-links"><a class="project-link" href="https://github.com/krishnavamsi333/chili-harvester" target="_blank" rel="noopener noreferrer">View on GitHub →</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="achievements" aria-labelledby="achievements-title">
+      <div class="section-header">
+        <h2 id="achievements-title" class="section-title">Achievements & Awards</h2>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="achievement-icon">🏆</div>
+          <h3 class="achievement-title">##########</h3>
+          <p class="achievement-description">IEEE Conference on Renewable Energy Systems 2024</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon">🥇</div>
+          <h3 class="achievement-title">Research Grant</h3>
+          <p class="achievement-description">JNTUK Research Innovation Grant 2023</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon">📜</div>
+          <h3 class="achievement-title">Patent Filed</h3>
+          <p class="achievement-description">Novel MPPT Algorithm for Solar Systems</p>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon">🚀</div>
+          <h3 class="achievement-title">Innovation Award</h3>
+          <p class="achievement-description">VRSEC Tech Fest 2023 - Robotics Category</p>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="section-header">
+    <h2 id="contact-title" class="section-title">Get In Touch</h2>
+  </div>
+
+  <div class="contact-grid">
+
+    <!-- Email -->
+    <div class="contact-card">
+      <h3 class="contact-card-title">Email</h3>
+      <p>
+        <a href="mailto:kasimallakrishnavamsi333@gmail.com">
+          kasimallakrishnavamsi333@gmail.com
+        </a>
+      </p>
+    </div>
+
+    <!-- Phone -->
+    <div class="contact-card">
+      <h3 class="contact-card-title">Phone</h3>
+      <p>
+        <a href="tel:+919392039416">
+          +91 9392039416
+        </a>
+      </p>
+    </div>
+
+    <!-- GitHub -->
+    <div class="contact-card">
+      <h3 class="contact-card-title">GitHub</h3>
+      <p>
+        <a href="https://github.com/krishnavamsi333" target="_blank" rel="noopener noreferrer">
+          @krishnavamsi333
+        </a>
+      </p>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="contact-card">
+      <h3 class="contact-card-title">LinkedIn</h3>
+      <p>
+        <a href="https://www.linkedin.com/in/krishnavamsikasimalla/" target="_blank" rel="noopener noreferrer">
+          K. Krishna Vamsi
+        </a>
+      </p>
+    </div>
+
+    <!-- Institution (added link to college website) -->
+    <div class="contact-card">
+      <h3 class="contact-card-title">Institution</h3>
+      <p>
+        <a href="https://www.vrsiddhartha.ac.in" target="_blank" rel="noopener noreferrer">
+          Velagapudi Ramakrishna Siddhartha Engineering College (VRSEC)
+        </a><br>
+        JNTUK
+      </p>
+    </div>
+
+    <!-- Location (added Google Maps link) -->
+    <div class="contact-card">
+      <h3 class="contact-card-title">Location</h3>
+      <p>
+        <a href="https://www.google.com/maps?q=Vijayawada,+Andhra+Pradesh,+India"
+           target="_blank" rel="noopener noreferrer">
+          Vijayawada, Andhra Pradesh, India
+        </a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p class="footer-text">&copy; 2025 Kasimalla Krishna Vamsi. All rights reserved.</p>
+    <p class="footer-subtext">Researcher in Renewable Energy & Robotics</p>
+  </footer>
+
+  <a href="#" class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+    </svg>
+  </a>
+
+  <script>
+    (function(){
+      // Create floating particles
+      function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 15;
+        
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
+          
+          // Random properties
+          const size = Math.random() * 60 + 20;
+          const left = Math.random() * 100;
+          const top = Math.random() * 100;
+          const delay = Math.random() * 15;
+          const duration = Math.random() * 10 + 15;
+          
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = `${left}%`;
+          particle.style.top = `${top}%`;
+          particle.style.animationDelay = `${delay}s`;
+          particle.style.animationDuration = `${duration}s`;
+          
+          particlesContainer.appendChild(particle);
+        }
+      }
+      
+      createParticles();
+
+      // Keyboard navigation accessibility
+      function handleFirstTab(e) {
+        if (e.key === 'Tab') {
+          document.documentElement.classList.add('user-is-tabbing');
+          window.removeEventListener('keydown', handleFirstTab);
+        }
+      }
+      window.addEventListener('keydown', handleFirstTab);
+
+      // Add rel attributes to external links
+      Array.from(document.querySelectorAll('a[target="_blank"]')).forEach(a=>{
+        const rel = a.getAttribute('rel') || '';
+        if (!/noopener/.test(rel) || !/noreferrer/.test(rel)) {
+          a.setAttribute('rel', (rel+' noopener noreferrer').trim());
+        }
+      });
+
+      // Back to top button functionality
+      const backToTopButton = document.querySelector('.back-to-top');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+            return;
+          }
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Dark mode toggle (placeholder - can be expanded)
+      const themeToggle = document.getElementById('themeToggle');
+      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      
+      const currentTheme = localStorage.getItem('theme');
+      if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+        document.body.classList.add('dark-theme');
+      }
+      
+      themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-theme');
+        
+        let theme = 'light';
+        if (document.body.classList.contains('dark-theme')) {
+          theme = 'dark';
+        }
+        localStorage.setItem('theme', theme);
+      });
+
+      // Animate skill bars on scroll
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const skillBars = entry.target.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+              const width = bar.style.width;
+              bar.style.width = '0';
+              setTimeout(() => {
+                bar.style.width = width;
+              }, 100);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      const skillsSection = document.getElementById('skills');
+      if (skillsSection) {
+        observer.observe(skillsSection);
+      }
+
+      // Animate sections on scroll
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            sectionObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      document.querySelectorAll('.section').forEach(section => {
+        sectionObserver.observe(section);
+      });
+
+      // Add stagger animation to cards
+      const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.card, .achievement-card');
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+              }, index * 100);
+            });
+            cardObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+
+      const cardContainers = document.querySelectorAll('.card-grid, .achievements-grid');
+      cardContainers.forEach(container => {
+        cardObserver.observe(container);
+      });
+
+      // Parallax effect for header (subtle)
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const header = document.querySelector('.header');
+        if (header && scrolled < 500) {
+          header.style.transform = `translateY(${scrolled * 0.5}px)`;
+          header.style.opacity = 1 - (scrolled / 500);
+        }
+      });
+
+      // Add hover sound effect placeholder
+      const interactiveElements = document.querySelectorAll('.btn, .tag, .project-link, .publication-link');
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', function() {
+          this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+      });
+
+      // Typing effect for header subtitle
+      const subtitle = document.querySelector('.header-subtitle');
+      if (subtitle) {
+        const text = subtitle.textContent;
+        subtitle.textContent = '';
+        subtitle.style.borderRight = '2px solid rgba(255, 255, 255, 0.7)';
+        let i = 0;
+        
+        const typeWriter = () => {
+          if (i < text.length) {
+            subtitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 30);
+          } else {
+            subtitle.style.borderRight = 'none';
+          }
+        };
+        
+        // Start typing effect after a short delay
+        setTimeout(typeWriter, 500);
+      }
+
+      // Add ripple effect to buttons
+      document.querySelectorAll('.btn, .project-link, .publication-link').forEach(button => {
+        button.addEventListener('click', function(e) {
+          const rect = this.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const ripple = document.createElement('span');
+          ripple.style.cssText = `
+            position: absolute;
+            left: ${x}px;
+            top: ${y}px;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s ease-out;
+            pointer-events: none;
+          `;
+          
+          this.appendChild(ripple);
+          
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+
+      // Add CSS for ripple animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes ripple {
+          to {
+            width: 200px;
+            height: 200px;
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Log page load time for performance monitoring
+      window.addEventListener('load', () => {
+        const loadTime = performance.now();
+        console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
+      });
+
+      // Add active nav link highlighting
+      const sections = document.querySelectorAll('.section');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.style.color = '';
+          if (link.getAttribute('href') === `#${current}`) {
+            link.style.color = 'var(--color-accent)';
+          }
+        });
+      });
+
+      // Hide/show navbar on scroll
+      let lastScrollTop = 0;
+      const navbar = document.querySelector('.nav');
+      
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 200) {
+          // Scrolling down
+          navbar.classList.add('hidden');
+        } else {
+          // Scrolling up
+          navbar.classList.remove('hidden');
+        }
+        
+        lastScrollTop = scrollTop;
+      });
+
+      // Add random rotation to achievement icons on hover
+      document.querySelectorAll('.achievement-icon').forEach(icon => {
+        icon.addEventListener('mouseenter', function() {
+          const rotations = [5, -5, 10, -10, 15, -15];
+          const randomRotation = rotations[Math.floor(Math.random() * rotations.length)];
+          this.style.transform = `scale(1.2) rotate(${randomRotation}deg)`;
+        });
+        
+        icon.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1) rotate(0deg)';
+        });
+      });
+
+      // Add subtle pulse animation to project thumbnails
+      document.querySelectorAll('.project-thumbnail').forEach(thumbnail => {
+        setInterval(() => {
+          if (!thumbnail.matches(':hover')) {
+            thumbnail.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+              if (!thumbnail.matches(':hover')) {
+                thumbnail.style.transform = 'scale(1)';
+              }
+            }, 300);
+          }
+        }, 3000);
+      });
+
+    })();
+  </script>
+</body>
+</html>

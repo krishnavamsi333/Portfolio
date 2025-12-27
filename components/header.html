@@ -1,11 +1,228 @@
+<!-- ================= HEADER START ================= -->
 <header class="header" role="banner">
-  <div class="header-content">
-    <h1 class="header-title">Kasimalla Krishna Vamsi</h1>
-    <p class="header-subtitle">Research Engineer — Renewable Energy Systems, Robotics, MPPT Algorithms, Power Electronics</p>
-    <div class="header-meta" role="list">
-      <div class="header-meta-item" role="listitem">📧 <span>kasimallakrishnavamsi333@gmail.com</span></div>
-      <div class="header-meta-item" role="listitem">📱 <span>+91 9392039416</span></div>
-      <div class="header-meta-item" role="listitem">📍 <span>VRSEC, JNTUK</span></div>
+  <div class="header-container">
+    <div class="header-grid">
+
+      <!-- ===== LEFT CONTENT ===== -->
+      <div class="header-content">
+        <span class="header-badge" aria-label="Availability status">
+          Available for Research Roles
+        </span>
+
+        <h1 class="header-title">Kasimalla Krishna Vamsi</h1>
+
+        <p class="header-subtitle">
+          Research Engineer specializing in
+          <span class="highlight">Renewable Energy Systems</span>,
+          <span class="highlight">Robotics</span>, and
+          <span class="highlight">Power Electronics</span>.
+        </p>
+
+        <div class="header-meta" aria-label="Quick contact links">
+          <a href="mailto:kasimallakrishnavamsi333@gmail.com"
+             class="header-meta-item"
+             aria-label="Send email">
+            ✉ Email
+          </a>
+
+          <a href="tel:+919392039416"
+             class="header-meta-item"
+             aria-label="Call phone number">
+            📞 Call
+          </a>
+
+          <div class="header-meta-item" aria-label="Location">
+            📍 VRSEC, JNTUK
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== RIGHT ACTIONS ===== -->
+      <div class="header-actions">
+        <a href="#resume" class="btn-primary" aria-label="View full CV">
+          View Full CV
+        </a>
+        <a href="#contact" class="btn-secondary" aria-label="Contact section">
+          Let’s Talk
+        </a>
+      </div>
+
     </div>
   </div>
 </header>
+
+<style>
+/* ================= VARIABLES ================= */
+:root {
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8fafc;
+  --color-primary: #0f172a;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-accent: #3b82f6;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+  --color-accent-rgb: 59,130,246;
+}
+
+/* ================= HEADER ================= */
+.header {
+  padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+  background:
+    radial-gradient(60% 60% at top left,
+      rgba(var(--color-accent-rgb), 0.08),
+      transparent 60%),
+    linear-gradient(to bottom, var(--color-bg-alt), transparent);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* ================= CONTENT ================= */
+.header-badge {
+  display: inline-block;
+  background: rgba(var(--color-accent-rgb), 0.12);
+  color: var(--color-accent);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+}
+
+.header-title {
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.header-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  max-width: 620px;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.highlight {
+  position: relative;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: rgba(var(--color-accent-rgb), 0.35);
+  transform: scaleX(0.7);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.highlight:hover::after {
+  transform: scaleX(1);
+}
+
+/* ================= META ================= */
+.header-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.header-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a.header-meta-item:hover {
+  color: var(--color-accent);
+}
+
+/* ================= ACTIONS ================= */
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  min-width: 160px;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(var(--color-accent-rgb), 0.3);
+}
+
+.btn-secondary {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background: var(--color-bg-alt);
+}
+
+/* ================= ACCESSIBILITY ================= */
+a:focus-visible {
+  outline: 3px solid rgba(var(--color-accent-rgb), 0.4);
+  outline-offset: 3px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 850px) {
+  .header-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-meta {
+    justify-content: center;
+  }
+
+  .header-actions {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+}
+</style>
+<!-- ================= HEADER END ================= -->

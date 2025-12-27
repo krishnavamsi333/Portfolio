@@ -1,24 +1,209 @@
-/* Theme-specific styles (dark/light mode) */
+/* =========================================================
+   theme.css – dark theme & theme toggle
+========================================================= */
+
+/* Dark Theme Variables */
 body.dark-theme {
-  --color-primary: #f1f5f9;
-  --color-secondary: #e2e8f0;
-  --color-accent: #60a5fa;
-  --color-accent-hover: #3b82f6;
-  --color-accent-light: #1e293b;
   --color-bg: #0f172a;
-  --color-bg-alt: #1e293b;
   --color-bg-card: #1e293b;
-  --color-text: #f1f5f9;
-  --color-text-muted: #cbd5e1;
+  --color-bg-alt: #020617;
+
+  --color-text: #e5e7eb;
+  --color-text-muted: #94a3b8;
+
   --color-border: #334155;
-  --color-border-light: #475569;
+  --color-border-light: #1e293b;
+
+  /* Adjust shadows for dark mode */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+
+  /* Slightly adjust accent for better contrast */
+  --color-accent-light: #1e3a8a;
+}
+
+/* Component Overrides for Dark Theme */
+body.dark-theme .card,
+body.dark-theme .section {
+  background: var(--color-bg-card);
+  border-color: var(--color-border);
+}
+
+body.dark-theme .header {
+  background: linear-gradient(135deg, #020617, #0f172a);
+}
+
+body.dark-theme .nav {
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+body.dark-theme .footer {
+  background: #020617;
+}
+
+body.dark-theme .tag {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+body.dark-theme .btn-secondary {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+body.dark-theme .btn-secondary:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+body.dark-theme .contact-card,
+body.dark-theme .project-item {
+  background: var(--color-bg-card);
+  border-color: var(--color-border);
+}
+
+body.dark-theme .skill-bar {
+  background: var(--color-border);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  width: 50px;
+  height: 50px;
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
 }
 
 .theme-toggle:hover {
-  transform: rotate(15deg);
-  animation: none;
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: var(--shadow-lg);
 }
 
-.theme-toggle {
-  animation: pulse 2s infinite;
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle-icon {
+  font-size: 1.25rem;
+  transition: transform var(--transition-base);
+}
+
+/* Sun icon (visible in dark mode) */
+.theme-toggle .sun-icon {
+  display: none;
+  color: #fbbf24;
+}
+
+/* Moon icon (visible in light mode) */
+.theme-toggle .moon-icon {
+  display: block;
+  color: var(--color-accent);
+}
+
+body.dark-theme .theme-toggle .sun-icon {
+  display: block;
+}
+
+body.dark-theme .theme-toggle .moon-icon {
+  display: none;
+}
+
+/* Smooth Theme Transition */
+body {
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+.card,
+.section,
+.nav,
+.footer,
+.header,
+.tag,
+.btn,
+.contact-card,
+.project-item {
+  transition: background-color var(--transition-slow), 
+              border-color var(--transition-slow), 
+              color var(--transition-slow);
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  body.dark-theme {
+    --color-text: #ffffff;
+    --color-border: #475569;
+  }
+}
+
+/* Auto Dark Mode based on System Preference */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light-theme-forced) {
+    --color-bg: #0f172a;
+    --color-bg-card: #1e293b;
+    --color-bg-alt: #020617;
+    --color-text: #e5e7eb;
+    --color-text-muted: #94a3b8;
+    --color-border: #334155;
+    --color-border-light: #1e293b;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+    --color-accent-light: #1e3a8a;
+  }
+}
+
+/* Theme Persistence */
+body[data-theme="dark"] {
+  --color-bg: #0f172a;
+  --color-bg-card: #1e293b;
+  --color-bg-alt: #020617;
+  --color-text: #e5e7eb;
+  --color-text-muted: #94a3b8;
+  --color-border: #334155;
+  --color-border-light: #1e293b;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+  --color-accent-light: #1e3a8a;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: var(--space-md);
+    right: var(--space-md);
+    width: 45px;
+    height: 45px;
+  }
+
+  .theme-toggle-icon {
+    font-size: 1.1rem;
+  }
+}
+
+/* Accessibility - Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-toggle-icon,
+  body,
+  .card,
+  .section {
+    transition: none !important;
+  }
 }

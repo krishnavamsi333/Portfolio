@@ -1,27 +1,252 @@
 {
   "site": {
-    "title": "K. Krishna Vamsi | Research Portfolio",
-    "description": "Research Engineer specializing in Renewable Energy Systems, Robotics, MPPT Algorithms & Power Electronics",
+    "title": "K. Krishna Vamsi | Research Portfolio - Renewable Energy & Robotics",
+    "shortTitle": "KV Research Portfolio",
+    "description": "K. Krishna Vamsi (KV) - Research Engineer specializing in Renewable Energy Systems, Robotics, MPPT Algorithms & Power Electronics at VRSEC, JNTUK",
     "author": "Kasimalla Krishna Vamsi",
-    "keywords": ["Renewable Energy", "Robotics", "MPPT", "Power Electronics", "Research", "VRSEC", "JNTUK"],
-    "themeColor": "#2563eb"
+    "authorShort": "K. Krishna Vamsi",
+    "nickname": "KV",
+    "keywords": [
+      "Renewable Energy",
+      "MPPT Algorithms",
+      "Power Electronics",
+      "Agricultural Robotics",
+      "ROS2",
+      "Reinforcement Learning",
+      "MATLAB Simulink",
+      "Research Engineer",
+      "VRSEC",
+      "JNTUK",
+      "Autonomous Systems",
+      "Computer Vision",
+      "DC-DC Converters",
+      "Solar Energy",
+      "Precision Agriculture"
+    ],
+    "themeColor": "#2563eb",
+    "backgroundColor": "#ffffff",
+    "language": "en",
+    "locale": "en_IN",
+    "timezone": "Asia/Kolkata"
   },
-  "social": {
-    "github": "https://github.com/krishnavamsi333",
-    "linkedin": "https://www.linkedin.com/in/krishnavamsikasimalla/",
+  
+  "personal": {
+    "name": "Kasimalla Krishna Vamsi",
+    "title": "Research Engineer",
+    "subtitle": "Renewable Energy Systems, Robotics, MPPT Algorithms, Power Electronics",
+    "institution": "Velagapudi Ramakrishna Siddhartha Engineering College (VRSEC)",
+    "university": "JNTUK",
+    "location": {
+      "city": "Vijayawada",
+      "state": "Andhra Pradesh",
+      "country": "India",
+      "coordinates": {
+        "lat": 16.5062,
+        "lng": 80.6480
+      }
+    },
+    "bio": "Dedicated researcher and engineer specializing in renewable energy systems and agricultural robotics, focusing on developing practical, sustainable solutions for energy harvesting and autonomous field operations."
+  },
+  
+  "contact": {
     "email": "kasimallakrishnavamsi333@gmail.com",
-    "phone": "+91 9392039416"
+    "phone": "+91 9392039416",
+    "phoneDisplay": "+91 9392039416",
+    "website": "https://krishnavamsi333.github.io/Portfolio",
+    "institutionWebsite": "https://www.vrsiddhartha.ac.in"
   },
+  
+  "social": {
+    "github": {
+      "url": "https://github.com/krishnavamsi333",
+      "username": "krishnavamsi333",
+      "enabled": true
+    },
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/krishnavamsikasimalla/",
+      "username": "krishnavamsikasimalla",
+      "enabled": true
+    },
+    "researchgate": {
+      "url": "",
+      "username": "",
+      "enabled": false
+    },
+    "googlescholar": {
+      "url": "",
+      "username": "",
+      "enabled": false
+    },
+    "orcid": {
+      "url": "",
+      "id": "",
+      "enabled": false
+    },
+    "twitter": {
+      "url": "",
+      "username": "",
+      "enabled": false
+    }
+  },
+  
+  "assets": {
+    "profileImage": {
+      "default": "https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-600.jpg",
+      "thumbnail": "https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-300.jpg",
+      "fullsize": "https://raw.githubusercontent.com/krishnavamsi333/Portfolio/main/profile-1200.jpg",
+      "alt": "Portrait of Kasimalla Krishna Vamsi"
+    },
+    "cv": {
+      "url": "https://github.com/krishnavamsi333/Portfolio/raw/main/CV_KV.pdf",
+      "filename": "CV_KV.pdf",
+      "enabled": true
+    },
+    "resume": {
+      "url": "https://github.com/krishnavamsi333/Portfolio/raw/main/Resume_KV.pdf",
+      "filename": "Resume_KV.pdf",
+      "enabled": false
+    }
+  },
+  
+  "navigation": {
+    "links": [
+      { "id": "about", "label": "About", "enabled": true },
+      { "id": "skills", "label": "Skills", "enabled": true },
+      { "id": "research", "label": "Research", "enabled": true },
+      { "id": "publications", "label": "Publications", "enabled": true },
+      { "id": "projects", "label": "Projects", "enabled": true },
+      { "id": "achievements", "label": "Achievements", "enabled": true },
+      { "id": "contact", "label": "Contact", "enabled": true }
+    ],
+    "showBackToTop": true,
+    "stickyNav": true,
+    "hideOnScroll": true
+  },
+  
   "animation": {
     "enableParticles": true,
+    "particleCount": 15,
     "enableParallax": true,
+    "parallaxIntensity": 0.5,
     "enableTypingEffect": true,
-    "enableScrollAnimations": true
+    "typingSpeed": 30,
+    "enableScrollAnimations": true,
+    "enableRippleEffect": true,
+    "enableHoverEffects": true,
+    "animationDuration": 300,
+    "staggerDelay": 100
   },
+  
   "features": {
-    "darkMode": true,
-    "responsive": true,
-    "accessibility": true,
-    "lazyLoading": true
-  }
+    "darkMode": {
+      "enabled": true,
+      "default": "auto",
+      "storageKey": "theme"
+    },
+    "responsive": {
+      "enabled": true,
+      "breakpoints": {
+        "mobile": 768,
+        "tablet": 1024,
+        "desktop": 1280
+      }
+    },
+    "accessibility": {
+      "enabled": true,
+      "skipLinks": true,
+      "keyboardNavigation": true,
+      "ariaLabels": true,
+      "focusIndicators": true
+    },
+    "lazyLoading": {
+      "enabled": true,
+      "images": true,
+      "components": false
+    },
+    "analytics": {
+      "enabled": false,
+      "googleAnalyticsId": "",
+      "trackPageViews": false,
+      "trackClicks": false
+    },
+    "seo": {
+      "enabled": true,
+      "openGraph": true,
+      "twitterCard": true,
+      "structuredData": true
+    }
+  },
+  
+  "performance": {
+    "enableCaching": true,
+    "cacheVersion": "1.0.0",
+    "preloadCriticalAssets": true,
+    "lazyLoadImages": true,
+    "minifyAssets": false,
+    "compressionEnabled": false
+  },
+  
+  "sections": {
+    "about": {
+      "enabled": true,
+      "showProfileImage": true,
+      "showTags": true,
+      "showButtons": true
+    },
+    "skills": {
+      "enabled": true,
+      "animateOnScroll": true,
+      "showPercentage": true,
+      "showProgressBars": true
+    },
+    "research": {
+      "enabled": true,
+      "layout": "grid",
+      "columns": 2
+    },
+    "publications": {
+      "enabled": true,
+      "showLinks": true,
+      "sortByDate": true
+    },
+    "projects": {
+      "enabled": true,
+      "showThumbnails": true,
+      "showTechStack": true,
+      "showLinks": true
+    },
+    "achievements": {
+      "enabled": true,
+      "layout": "grid",
+      "showIcons": true
+    },
+    "contact": {
+      "enabled": true,
+      "layout": "grid",
+      "showMap": false
+    }
+  },
+  
+  "content": {
+    "headerEmojis": {
+      "email": "📧",
+      "phone": "📱",
+      "location": "📍"
+    },
+    "footer": {
+      "copyright": "© 2025 Kasimalla Krishna Vamsi. All rights reserved.",
+      "subtitle": "Researcher in Renewable Energy & Robotics",
+      "showSocial": true
+    }
+  },
+  
+  "development": {
+    "debug": false,
+    "verbose": false,
+    "showConsoleMessages": true,
+    "enableErrorReporting": true
+  },
+  
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-08"
 }
