@@ -1,0 +1,24 @@
+/* Theme-specific styles (dark/light mode) */
+body.dark-theme {
+  --color-primary: #f1f5f9;
+  --color-secondary: #e2e8f0;
+  --color-accent: #60a5fa;
+  --color-accent-hover: #3b82f6;
+  --color-accent-light: #1e293b;
+  --color-bg: #0f172a;
+  --color-bg-alt: #1e293b;
+  --color-bg-card: #1e293b;
+  --color-text: #f1f5f9;
+  --color-text-muted: #cbd5e1;
+  --color-border: #334155;
+  --color-border-light: #475569;
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg);
+  animation: none;
+}
+
+.theme-toggle {
+  animation: pulse 2s infinite;
+}

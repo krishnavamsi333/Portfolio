@@ -1,0 +1,27 @@
+{
+  "site": {
+    "title": "K. Krishna Vamsi | Research Portfolio",
+    "description": "Research Engineer specializing in Renewable Energy Systems, Robotics, MPPT Algorithms & Power Electronics",
+    "author": "Kasimalla Krishna Vamsi",
+    "keywords": ["Renewable Energy", "Robotics", "MPPT", "Power Electronics", "Research", "VRSEC", "JNTUK"],
+    "themeColor": "#2563eb"
+  },
+  "social": {
+    "github": "https://github.com/krishnavamsi333",
+    "linkedin": "https://www.linkedin.com/in/krishnavamsikasimalla/",
+    "email": "kasimallakrishnavamsi333@gmail.com",
+    "phone": "+91 9392039416"
+  },
+  "animation": {
+    "enableParticles": true,
+    "enableParallax": true,
+    "enableTypingEffect": true,
+    "enableScrollAnimations": true
+  },
+  "features": {
+    "darkMode": true,
+    "responsive": true,
+    "accessibility": true,
+    "lazyLoading": true
+  }
+}
