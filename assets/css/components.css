@@ -1063,3 +1063,8 @@ body.dark-theme .nav-link::after {
   width: 2px;
   background: var(--color-border);
 }
+.copy-btn.copied {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
