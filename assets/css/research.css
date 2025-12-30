@@ -1,0 +1,125 @@
+/* ================= RESEARCH SECTION ================= */
+
+section[aria-labelledby="research-title"] {
+  padding: 5rem 1.5rem;
+}
+
+/* ================= GRID ================= */
+
+.research-grid {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+/* ================= CARD ================= */
+
+.research-card {
+  position: relative;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 1.25rem;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  cursor: default;
+  outline: none;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.research-card:hover,
+.research-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= THEMES ================= */
+
+.research-card.theme-blue {
+  --theme-color: #3b82f6;
+}
+
+.research-card.theme-green {
+  --theme-color: #10b981;
+}
+
+.research-card.theme-purple {
+  --theme-color: #8b5cf6;
+}
+
+/* ================= ICON ================= */
+
+.research-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--theme-color);
+}
+
+/* ================= BODY ================= */
+
+.research-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.research-card-description {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* ================= KEYWORDS ================= */
+
+.research-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.research-keywords span {
+  padding: 0.3rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 999px;
+
+  background: #020617;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+}
+
+/* ================= PROGRESS ================= */
+
+.research-progress {
+  margin-top: auto;
+  height: 6px;
+  background: #020617;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: var(--progress);
+  background: linear-gradient(
+    90deg,
+    var(--theme-color),
+    rgba(255, 255, 255, 0.35)
+  );
+  border-radius: 999px;
+}

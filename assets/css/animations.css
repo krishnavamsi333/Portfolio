@@ -1,7 +1,9 @@
 /* =========================================================
-   animations.css – keyframes
+   animations.css – keyframes only
+   (No selectors, safe for reuse)
 ========================================================= */
 
+/* Fade + slide */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -13,6 +15,7 @@
   }
 }
 
+/* Scale entry */
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -24,15 +27,17 @@
   }
 }
 
+/* Decorative floating (use sparingly) */
 @keyframes float {
   0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0);
   }
   50% {
-    transform: translate(-20px, -20px) rotate(180deg);
+    transform: translate(-20px, -20px);
   }
 }
 
+/* Attention bounce */
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -42,6 +47,7 @@
   }
 }
 
+/* Ripple / feedback */
 @keyframes ripple {
   from {
     width: 0;
@@ -55,7 +61,7 @@
   }
 }
 
-/* Optional: Smooth pulse effect */
+/* Subtle pulse */
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
@@ -64,5 +70,14 @@
   50% {
     transform: scale(1.05);
     opacity: 0.8;
+  }
+}
+
+/* ================= ACCESSIBILITY ================= */
+/* Disable animations for reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

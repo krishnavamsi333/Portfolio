@@ -1,0 +1,171 @@
+/* ================= PUBLICATIONS SECTION ================= */
+
+section[aria-labelledby="publications-title"] {
+  padding: 5rem 1.5rem;
+}
+
+/* ================= TIMELINE ================= */
+
+.publication-timeline {
+  max-width: 900px;
+  margin: 3rem auto 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* Vertical line */
+.publication-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 2px;
+  height: 100%;
+  background: var(--color-border);
+}
+
+/* ================= CARD ================= */
+
+.pub-card {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+
+  outline: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pub-card:hover,
+.pub-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= YEAR ================= */
+
+.pub-year {
+  position: absolute;
+  left: -2.6rem;
+  top: 1.5rem;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+
+  color: var(--color-text-muted);
+}
+
+/* ================= CONTENT ================= */
+
+.pub-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* ================= BADGES ================= */
+
+.pub-badge {
+  width: fit-content;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.pub-badge.journal {
+  background: rgba(139, 92, 246, 0.15);
+  color: #c4b5fd;
+}
+
+/* ================= TEXT ================= */
+
+.pub-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin: 0.3rem 0;
+}
+
+.pub-authors {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.pub-venue {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ================= ACTIONS ================= */
+
+.pub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* Buttons */
+.pub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  padding: 0.45rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  border-radius: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  border: 1px solid transparent;
+}
+
+/* Primary */
+.pub-btn.primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-soft),
+    var(--color-accent)
+  );
+  color: #020617;
+}
+
+/* Secondary */
+.pub-btn.secondary {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text-main);
+}
+
+.pub-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 700px) {
+  .publication-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .pub-year {
+    display: none;
+  }
+}

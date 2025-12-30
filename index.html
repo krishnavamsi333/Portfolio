@@ -1,118 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>K. Krishna Vamsi | Research Portfolio - Renewable Energy & Robotics</title>
-  <meta name="description" content="K. Krishna Vamsi (KV) - Research Engineer specializing in Renewable Energy Systems, Robotics, MPPT Algorithms & Power Electronics at VRSEC, JNTUK">
-  <meta name="theme-color" content="#2563eb">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <title>K. Krishna Vamsi | Research Portfolio</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/animations.css">
-  <link rel="stylesheet" href="assets/css/theme.css">
+  <!-- =====================
+       CORE CSS
+  ====================== -->
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+
+  <!-- =====================
+       SECTION CSS
+  ====================== -->
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/nav.css" />
+  <link rel="stylesheet" href="assets/css/about.css" />
+  <link rel="stylesheet" href="assets/css/skills.css" />
+  <link rel="stylesheet" href="assets/css/research.css" />
+  <link rel="stylesheet" href="assets/css/publications.css" />
+  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/experience.css" />
+  <link rel="stylesheet" href="assets/css/learning.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+
+  <!-- =====================
+       EMAILJS (LIB ONLY)
+  ====================== -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+
 </head>
 <body>
+
+  <!-- =====================
+       PAGE LOADER
+  ====================== -->
   <div class="page-loader active">
-    <span>Loading…</span>
+    <span>Loading Intelligence…</span>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="assets/js/app.js"></script>
-
-
-
-
-  <!-- Skip to main content (Accessibility) -->
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Floating particles background -->
   <div class="floating-particles" id="particles"></div>
 
-  <!-- Theme Toggle Button -->
-  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-      <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-    </svg>
-  </button>
-
-  <!-- Header Component -->
+  <!-- =====================
+       COMPONENT CONTAINERS
+  ====================== -->
   <div id="header-container"></div>
-
-  <!-- Navigation Component -->
   <div id="nav-container"></div>
 
-  <!-- Main Content -->
   <main class="container" id="main">
-    
-    <!-- About Section -->
-    <section class="section" id="about" aria-labelledby="about-title">
+
+    <section class="section" id="about">
       <div id="about-container"></div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="section" id="skills" aria-labelledby="skills-title">
+    <section class="section" id="skills">
       <div id="skills-container"></div>
     </section>
 
-    <!-- Research Section -->
-    <section class="section" id="research" aria-labelledby="research-title">
+    <section class="section" id="research">
       <div id="research-container"></div>
     </section>
 
-    <!-- Publications Section -->
-    <section class="section" id="publications" aria-labelledby="publications-title">
+    <section class="section" id="publications">
       <div id="publications-container"></div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="section" id="projects" aria-labelledby="projects-title">
+    <section class="section" id="projects">
       <div id="projects-container"></div>
     </section>
 
-    <!-- Achievements Section -->
-    <!--<section class="section" id="achievements" aria-labelledby="achievements-title">
-      <div id="achievements-container"></div>
-    </section> -->
-
-    <!-- Experience Section -->
-    <section class="section" id="experience" aria-labelledby="experience-title">
+    <section class="section" id="experience">
       <div id="experience-container"></div>
     </section>
-    <!-- Learning Section -->
-    <section class="section" id="learning" aria-labelledby="learning-title">
+
+    <section class="section" id="learning">
       <div id="learning-container"></div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section" id="contact" aria-labelledby="contact-title">
+    <section class="section" id="contact">
       <div id="contact-container"></div>
     </section>
 
   </main>
 
-  <!-- Footer Component -->
   <div id="footer-container"></div>
 
-  <!-- Back to Top Button -->
-  <a href="#" class="back-to-top" aria-label="Back to top">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+  <!-- =====================
+       BACK TO TOP
+  ====================== -->
+  <a class="back-to-top" aria-label="Back to top">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path fill-rule="evenodd"
+        d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
     </svg>
   </a>
 
-  <!-- Scripts -->
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/ui.js"></script>
-  <script src="assets/js/effects.js"></script>
+  <!-- =====================
+       JS (ORDER MATTERS)
+  ====================== -->
+  <script src="assets/js/app.js" defer></script>
+  <script src="assets/js/ui.js" defer></script>
+  <script src="assets/js/effects.js" defer></script>
+  <script src="assets/js/contact.js" defer></script>
+  <script src="assets/js/footer.js" defer></script>
 
 </body>
 </html>

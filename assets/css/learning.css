@@ -1,0 +1,111 @@
+/* =====================================================
+   Learning Section
+===================================================== */
+
+.learning-section {
+  padding: 4rem 0;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Card */
+.learning-card {
+  position: relative;
+  background: var(--color-bg-card);
+  border: 1px dashed var(--color-border);
+  border-radius: 20px;
+  padding: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.learning-card:hover {
+  border-style: solid;
+  border-color: var(--color-accent);
+  transform: translateY(-6px);
+}
+
+/* Glow */
+.card-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(37, 99, 235, 0.08),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* Header */
+.learning-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.learning-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--color-accent);
+}
+
+.learning-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Content */
+.learning-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.learning-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Footer Tags */
+.learning-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tool-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text);
+}
+
+/* Dark Mode */
+body.dark-theme .learning-card {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-theme .tool-chip {
+  background: rgba(255, 255, 255, 0.05);
+}

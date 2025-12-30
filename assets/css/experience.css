@@ -1,0 +1,175 @@
+/* ================= EXPERIENCE SECTION ================= */
+
+.experience-section {
+  padding: 5rem 1.5rem;
+}
+
+/* ================= TIMELINE CONTAINER ================= */
+
+.timeline-container {
+  max-width: 900px;
+  margin: 3rem auto 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* Vertical line */
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 14px;
+  width: 2px;
+  height: 100%;
+  background: var(--color-border);
+}
+
+/* ================= TIMELINE BLOCK ================= */
+
+.timeline-block {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* ================= DOT ================= */
+
+.timeline-dot {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Node types */
+.work-node {
+  background: #3b82f6;
+}
+
+.edu-node {
+  background: #10b981;
+}
+
+.learn-node {
+  background: #8b5cf6;
+}
+
+/* Pulse animation (learning) */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(139, 92, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+  }
+}
+
+/* ================= INFO CARD ================= */
+
+.timeline-info {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  flex: 1;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.timeline-info:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= HEADER ================= */
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.at-company {
+  color: var(--color-accent-soft);
+  font-weight: 700;
+}
+
+/* Duration */
+.timeline-duration {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+/* ================= DESCRIPTION ================= */
+
+.timeline-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0.75rem 0 1rem;
+}
+
+/* ================= TAG CLOUD ================= */
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Pill tags */
+.pill-tag {
+  padding: 0.35rem 0.85rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: #020617;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+}
+
+/* Theme accents */
+.startup-theme .pill-tag {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.edu-theme .pill-tag {
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.learning-theme .pill-tag {
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 700px) {
+  .timeline-container {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

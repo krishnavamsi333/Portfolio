@@ -1,0 +1,160 @@
+/* ================= CONTACT SECTION ================= */
+
+.contact-section {
+  padding: 5rem 1.5rem;
+}
+
+/* ================= AVAILABILITY ================= */
+
+.availability-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+
+  background: rgba(16, 185, 129, 0.12);
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  border-radius: 0.75rem;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(16,185,129,.7); }
+  70% { box-shadow: 0 0 0 10px rgba(16,185,129,0); }
+  100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+}
+
+.availability-text {
+  font-weight: 700;
+  color: #10b981;
+}
+
+.availability-subtext {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ================= LAYOUT ================= */
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+/* ================= CONTACT CARDS ================= */
+
+.contact-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+
+  background: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0,0,0,.35);
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  background: #020617;
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: var(--color-text-muted);
+}
+
+.contact-value {
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+/* ================= FORM ================= */
+
+.contact-form-section {
+  background: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  border: 2px solid var(--color-border);
+  background: #020617;
+  color: var(--color-text-main);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* ================= TOAST ================= */
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--color-text-main);
+  color: #020617;
+  padding: 1rem 1.5rem;
+  border-radius: .5rem;
+  transform: translateX(400px);
+  transition: transform .3s ease;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

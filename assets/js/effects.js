@@ -214,9 +214,7 @@ function injectRippleStyles() {
       pointer-events: none;
     }
     
-    .dark-theme .ripple-element {
-      background: rgba(37, 99, 235, 0.4);
-    }
+    
   `;
   document.head.appendChild(style);
 }
@@ -515,3 +513,21 @@ function monitorAnimationPerformance() {
 if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
   monitorAnimationPerformance();
 }
+
+/* Skill bar animation on scroll */
+
+const skillObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("start-animation");
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+  skillObserver.observe(el);
+});
