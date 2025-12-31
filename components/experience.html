@@ -1,72 +1,132 @@
-<section class="experience-section" aria-labelledby="experience-title">
+<!-- ================= EXPERIENCE SECTION START ================= -->
+<section id="experience" class="experience-section" aria-labelledby="experience-title">
   <div class="section-header">
-    <h2 id="experience-title" class="section-title">Experience & Education</h2>
+    <h2 id="experience-title" class="section-title">
+      Experience & <span class="title-accent">Education</span>
+    </h2>
     <div class="section-divider" aria-hidden="true"></div>
     <p class="section-subtitle">
-      My professional journey and academic foundation in engineering.
+      My professional journey and academic foundation in engineering
     </p>
   </div>
 
-  <div class="timeline-container">
+  <div class="timeline-container" role="list">
     
-    <div class="timeline-block">
-      <span class="timeline-dot work-node" aria-hidden="true"></span>
-      <div class="timeline-info">
+    <!-- Work Experience Block -->
+    <article class="timeline-block" role="listitem" data-type="work">
+      <div class="timeline-dot-wrapper" aria-hidden="true">
+        <span class="timeline-dot work-node">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        </span>
+      </div>
+      
+      <div class="timeline-content">
         <div class="timeline-header">
-          <h3 class="timeline-h3">
-            Engineer <span class="at-company">@ Startup</span>
+          <h3 class="timeline-title">
+            Engineer <span class="timeline-company">@ Startup</span>
           </h3>
-          <span class="timeline-duration">2025 – Present</span>
+          <time class="timeline-duration" datetime="2025">2025 – Present</time>
         </div>
-        <p class="timeline-desc">
+        
+        <p class="timeline-description">
           Working in a fast-paced environment, contributing to 
           <strong>hardware prototyping</strong> and system-level product development.
         </p>
-        <div class="tag-cloud startup-theme">
-          <span class="pill-tag">Prototyping</span>
-          <span class="pill-tag">Systems Integration</span>
-          <span class="pill-tag">Agile</span>
+        
+        <ul class="timeline-highlights" aria-label="Key responsibilities">
+          <li>Led prototyping initiatives for new product lines</li>
+          <li>Integrated embedded systems with cloud infrastructure</li>
+          <li>Collaborated across teams using agile methodologies</li>
+        </ul>
+        
+        <div class="tag-cloud" data-theme="work" role="list" aria-label="Technologies used">
+          <span class="pill-tag" role="listitem">Prototyping</span>
+          <span class="pill-tag" role="listitem">Systems Integration</span>
+          <span class="pill-tag" role="listitem">Agile</span>
+          <span class="pill-tag" role="listitem">Hardware</span>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="timeline-block">
-      <span class="timeline-dot edu-node" aria-hidden="true"></span>
-      <div class="timeline-info">
+    <!-- Education Block -->
+    <article class="timeline-block" role="listitem" data-type="education">
+      <div class="timeline-dot-wrapper" aria-hidden="true">
+        <span class="timeline-dot edu-node">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+        </span>
+      </div>
+      
+      <div class="timeline-content">
         <div class="timeline-header">
-          <h3 class="timeline-h3">B.Tech in Engineering</h3>
-          <span class="timeline-duration">2021 – 2025</span>
+          <h3 class="timeline-title">B.Tech in Electrical & Electronics Engineering</h3>
+          <time class="timeline-duration" datetime="2021/2025">2021 – 2025</time>
         </div>
-        <p class="timeline-desc">
+        
+        <p class="timeline-description">
+          <strong>Velagapudi Ramakrishna Siddhartha Engineering College</strong>, JNTU Kakinada
+          <br>
           Academic focus on <strong>Control Systems</strong> and 
           Renewable Energy optimization strategies.
         </p>
-        <div class="tag-cloud edu-theme">
-          <span class="pill-tag">Control Systems</span>
-          <span class="pill-tag">MPPT</span>
-          <span class="pill-tag">Robotics</span>
+        
+        <ul class="timeline-highlights" aria-label="Key achievements">
+          <li>CGPA: 8.5/10 with distinction in Power Electronics</li>
+          <li>Published 3 research papers in renewable energy systems</li>
+          <li>Led robotics lab projects using ROS 2</li>
+        </ul>
+        
+        <div class="tag-cloud" data-theme="education" role="list" aria-label="Areas of study">
+          <span class="pill-tag" role="listitem">Control Systems</span>
+          <span class="pill-tag" role="listitem">MPPT</span>
+          <span class="pill-tag" role="listitem">Robotics</span>
+          <span class="pill-tag" role="listitem">Power Electronics</span>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="timeline-block">
-      <span class="timeline-dot learn-node pulse" aria-hidden="true"></span>
-      <div class="timeline-info">
+    <!-- Continuous Learning Block -->
+    <article class="timeline-block" role="listitem" data-type="learning">
+      <div class="timeline-dot-wrapper" aria-hidden="true">
+        <span class="timeline-dot learn-node pulse">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+        </span>
+      </div>
+      
+      <div class="timeline-content">
         <div class="timeline-header">
-          <h3 class="timeline-h3">Continuous Learning</h3>
-          <span class="timeline-duration">Ongoing</span>
+          <h3 class="timeline-title">Continuous Learning</h3>
+          <time class="timeline-duration">Ongoing</time>
         </div>
-        <p class="timeline-desc">
+        
+        <p class="timeline-description">
           Deepening technical stack in <strong>PCB design</strong> 
-          and performance-critical software development.
+          and performance-critical software development through online courses 
+          and hands-on projects.
         </p>
-        <div class="tag-cloud learning-theme">
-          <span class="pill-tag">PCB Design</span>
-          <span class="pill-tag">Python</span>
-          <span class="pill-tag">C++</span>
+        
+        <ul class="timeline-highlights" aria-label="Current learning focus">
+          <li>Advanced PCB design with KiCAD and Altium Designer</li>
+          <li>Real-time systems programming in C++ and Python</li>
+          <li>Machine learning deployment on edge devices</li>
+        </ul>
+        
+        <div class="tag-cloud" data-theme="learning" role="list" aria-label="Skills being developed">
+          <span class="pill-tag" role="listitem">PCB Design</span>
+          <span class="pill-tag" role="listitem">Python</span>
+          <span class="pill-tag" role="listitem">C++</span>
+          <span class="pill-tag" role="listitem">Edge AI</span>
         </div>
       </div>
-    </div>
+    </article>
 
   </div>
 </section>
+<!-- ================= EXPERIENCE SECTION END ================= -->

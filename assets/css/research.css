@@ -1,125 +1,131 @@
-/* ================= RESEARCH SECTION ================= */
-
-section[aria-labelledby="research-title"] {
-  padding: 5rem 1.5rem;
+:root {
+  --accent-color: #4f46e5;
+  --bar-bg: #e5e7eb;
+  --bar-fill: #4f46e5;
 }
 
-/* ================= GRID ================= */
-
-.research-grid {
-  max-width: 1200px;
-  margin: 3rem auto 0;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2.5rem;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* ================= CARD ================= */
-
-.research-card {
-  position: relative;
-  background: var(--color-bg-alt);
-  border: 1px solid var(--color-border);
-  border-radius: 1.25rem;
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
   padding: 2rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-
-  cursor: default;
-  outline: none;
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #fafafa;
+  color: #111;
 }
 
-.research-card:hover,
-.research-card:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+.section-header {
+  max-width: 800px;
+  margin-bottom: 2rem;
 }
 
-/* ================= THEMES ================= */
-
-.research-card.theme-blue {
-  --theme-color: #3b82f6;
-}
-
-.research-card.theme-green {
-  --theme-color: #10b981;
-}
-
-.research-card.theme-purple {
-  --theme-color: #8b5cf6;
-}
-
-/* ================= ICON ================= */
-
-.research-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 1rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(59, 130, 246, 0.12);
-  color: var(--theme-color);
-}
-
-/* ================= BODY ================= */
-
-.research-card-title {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--color-text-main);
+.section-title {
+  font-size: 2rem;
   margin: 0;
 }
 
-.research-card-description {
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: var(--color-text-muted);
+.title-accent {
+  color: var(--accent-color);
 }
 
-/* ================= KEYWORDS ================= */
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  margin: 0.75rem 0;
+}
 
-.research-keywords {
+.section-subtitle {
+  color: #555;
+}
+
+.research-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.research-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.research-item:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+.research-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.research-keywords span {
-  padding: 0.3rem 0.75rem;
-  font-size: 0.7rem;
-  font-weight: 600;
+.research-icon {
+  color: var(--accent-color);
+}
+
+.research-title {
+  margin: 0;
+  font-size: 1.1rem;
+  flex-grow: 1;
+}
+
+.research-level {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #eef2ff;
+  color: var(--accent-color);
   border-radius: 999px;
-
-  background: #020617;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-main);
 }
 
-/* ================= PROGRESS ================= */
+.research-description {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0.75rem 0 1rem;
+}
 
-.research-progress {
-  margin-top: auto;
-  height: 6px;
-  background: #020617;
+.research-bar-bg {
+  background: var(--bar-bg);
+  height: 8px;
   border-radius: 999px;
   overflow: hidden;
 }
 
-.progress-fill {
+.research-bar-fill {
+  background: var(--bar-fill);
   height: 100%;
-  width: var(--progress);
-  background: linear-gradient(
-    90deg,
-    var(--theme-color),
-    rgba(255, 255, 255, 0.35)
-  );
+  width: 0;
+  transition: width 1s ease;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  background: #f3f4f6;
   border-radius: 999px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }

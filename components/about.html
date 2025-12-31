@@ -1,99 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Me - Enhanced</title>
+<!-- ================= ABOUT SECTION START ================= -->
+<section id="about" class="container" aria-labelledby="about-title">
 
-</head>
-<body>
-  <section id="about" class="container" aria-labelledby="about-title">
+  <!-- Section Header -->
+  <header class="section-header card">
+    <h2 id="about-title" class="section-title">
+      What I <span class="title-accent">Do</span>
+    </h2>
+    <div class="section-divider" aria-hidden="true"></div>
+  </header>
 
-    <!-- Section Header -->
-    <header class="section-header card">
-      <h2 id="about-title" class="section-title">
-        What I <span class="title-accent">Do</span>
-      </h2>
-      <div class="section-divider" aria-hidden="true"></div>
-    </header>
+  <div class="about-grid">
 
-    <div class="about-grid">
+    <!-- Profile -->
+    <figure class="profile-image-wrapper">
+      <img
+        class="profile-image"
+        src="assets/images/profile-600.jpg"
+        alt="Kasimalla Krishna Vamsi, researcher in renewable energy and agricultural robotics"
+        width="280"
+        height="280"
+        loading="eager"
+      />
+      <div class="profile-image-border" aria-hidden="true"></div>
+      <figcaption class="sr-only">
+        Kasimalla Krishna Vamsi
+      </figcaption>
+    </figure>
 
-      <!-- Profile -->
-      <figure class="profile-image-wrapper">
-        <img
-          class="profile-image"
-          src="assets/images/profile-600.jpg"
-          alt="Kasimalla Krishna Vamsi, researcher in renewable energy and agricultural robotics"
-          width="280"
-          height="280"
-          loading="eager"
-        />
-        <div class="profile-image-border" aria-hidden="true"></div>
-        <figcaption class="sr-only">
-          Kasimalla Krishna Vamsi
-        </figcaption>
-      </figure>
+    <!-- About Content -->
+    <article class="about-content">
 
-      <!-- About Content -->
-      <article class="about-content">
+      <div class="about-text-wrapper">
+        <p class="about-text about-text-highlight">
+          I am a dedicated researcher and engineer specializing in
+          <strong>renewable energy systems</strong> and
+          <strong>agricultural robotics</strong>.
+        </p>
 
-        <div class="about-text-wrapper">
-          <p class="about-text about-text-highlight">
-            I am a dedicated researcher and engineer specializing in
-            <strong>renewable energy systems</strong> and
-            <strong>agricultural robotics</strong>.
-          </p>
+        <p class="about-text">
+          Currently, I'm advancing MPPT algorithms for portable solar charging
+          systems and building precision agriculture robots using
+          <strong>ROS 2</strong> and reinforcement learning.
+        </p>
 
-          <p class="about-text">
-            Currently, I'm advancing MPPT algorithms for portable solar charging
-            systems and building precision agriculture robots using
-            <strong>ROS 2</strong> and reinforcement learning.
-          </p>
+        <p class="about-text">
+          My work integrates power electronics, control systems, and
+          machine learning to develop efficient, field-ready solutions.
+        </p>
+      </div>
 
-          <p class="about-text">
-            My work integrates power electronics, control systems, and
-            machine learning to develop efficient, field-ready solutions.
-          </p>
+      <!-- Expertise -->
+      <section class="expertise-section" aria-labelledby="tech-title">
+        <div class="expertise-header">
+          <h3 id="tech-title" class="expertise-title">Core Research Focus</h3>
+          <p class="expertise-desc">Bridging the gap between hardware and intelligent control.</p>
         </div>
 
-        <!-- Expertise -->
-        <section class="expertise-section" aria-labelledby="tech-title">
-          <h3 id="tech-title" class="expertise-title">Tech Stack</h3>
-
-          <div class="tags-container" role="list">
-            <span class="tag" role="listitem" data-category="algorithm">⚡ MPPT Algorithms</span>
-            <span class="tag" role="listitem" data-category="hardware">🔌 Power Electronics</span>
-            <span class="tag" role="listitem" data-category="robotics">🤖 ROS 2 Robotics</span>
-            <span class="tag" role="listitem" data-category="ai">🧠 Reinforcement Learning</span>
-            <span class="tag" role="listitem" data-category="software">💻 MATLAB / Simulink</span>
-            <span class="tag" role="listitem" data-category="robotics">🚀 Autonomous Systems</span>
-            <span class="tag" role="listitem" data-category="ai">👁️ Computer Vision</span>
-            <span class="tag" role="listitem" data-category="energy">🌱 Renewable Energy</span>
+        <div class="tech-stack-groups">
+          <div class="tech-group">
+            <h4 class="tech-group-label">Energy Systems</h4>
+            <div class="tags-container" role="list">
+              <span class="tag" role="listitem" data-category="energy">⚡ MPPT Control</span>
+              <span class="tag" role="listitem" data-category="energy">🔌 Power Electronics</span>
+              <span class="tag" role="listitem" data-category="software">📊 Simulink HIL</span>
+            </div>
           </div>
-        </section>
 
-        <!-- Stats -->
-        <section class="about-stats" aria-label="Profile statistics">
-          <dl class="stat-item">
-            <dt class="stat-value" data-counter="3">0</dt>
-            <dd class="stat-label">Research Papers</dd>
-          </dl>
+          <div class="tech-group">
+            <h4 class="tech-group-label">Autonomous Robotics</h4>
+            <div class="tags-container" role="list">
+              <span class="tag" role="listitem" data-category="robotics">🤖 ROS 2 / Nav2</span>
+              <span class="tag" role="listitem" data-category="ai">🧠 Reinforcement Learning</span>
+              <span class="tag" role="listitem" data-category="ai">👁️ OpenCV / YOLO</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <dl class="stat-item">
-            <dt class="stat-value" data-counter="5">0</dt>
-            <dd class="stat-label">Projects Completed</dd>
-          </dl>
+      <!-- Stats -->
+      <section class="about-stats" aria-label="Profile statistics">
+        <dl class="stat-item">
+          <dt class="stat-value" data-counter="3">0</dt>
+          <dd class="stat-label">Research Papers</dd>
+        </dl>
 
-          <dl class="stat-item">
-            <dt class="stat-value" data-counter="1">0</dt>
-            <dd class="stat-label">Awards & Honors</dd>
-          </dl>
-        </section>
+        <dl class="stat-item">
+          <dt class="stat-value" data-counter="5">0</dt>
+          <dd class="stat-label">Projects Completed</dd>
+        </dl>
 
-      </article>
-    </div>
-  </section>
-</body>
+        <dl class="stat-item">
+          <dt class="stat-value" data-counter="1">0</dt>
+          <dd class="stat-label">Awards & Honors</dd>
+        </dl>
+      </section>
 
-</html>
+    </article>
+  </div>
+</section>
+<!-- ================= ABOUT SECTION END ================= -->

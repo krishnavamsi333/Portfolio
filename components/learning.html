@@ -1,28 +1,36 @@
-<section class="learning-section" aria-labelledby="learning-title">
+<!-- ================= LEARNING SECTION START ================= -->
+<section id="learning" class="learning-section" aria-labelledby="learning-title">
   <div class="section-header">
-    <h2 id="learning-title" class="section-title">Continuous Growth</h2>
+    <h2 id="learning-title" class="section-title">
+      Continuous <span class="title-accent">Growth</span>
+    </h2>
     <div class="section-divider" aria-hidden="true"></div>
     <p class="section-subtitle">
-      Deepening my technical stack to bridge the gap between simulation and physical hardware.
+      Deepening my technical stack to bridge the gap between simulation and physical hardware
     </p>
   </div>
 
-  <div class="learning-grid">
+  <div class="learning-grid" role="list">
 
-    <!-- Card 1 -->
-    <div class="learning-card" data-status="60%">
-      <div class="card-glow"></div>
+    <!-- Learning Card 1: PCB Design -->
+    <article class="learning-card" role="listitem" data-category="hardware">
+      <div class="card-glow" aria-hidden="true"></div>
 
       <div class="learning-content">
         <div class="learning-header">
-          <div class="learning-icon">
+          <div class="learning-icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2">
               <rect x="2" y="2" width="20" height="20" rx="2"></rect>
               <path d="M7 2v4M17 2v4M2 7h4M2 17h4M7 22v-4M17 22v-4M18 22h4M18 7h4"></path>
             </svg>
           </div>
-          <span class="learning-status">60% Complete</span>
+          <div class="learning-status" data-progress="60">
+            <span class="status-text">60% Complete</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 60%"></div>
+            </div>
+          </div>
         </div>
 
         <h3 class="learning-name">PCB Design & Hardware</h3>
@@ -31,28 +39,41 @@
           and multi-layer signal integrity for robotics.
         </p>
 
+        <ul class="learning-goals" aria-label="Learning objectives">
+          <li>High-current PCB layout techniques</li>
+          <li>Multi-layer board design and signal integrity</li>
+          <li>Component selection and thermal management</li>
+        </ul>
+
         <div class="learning-footer">
-          <span class="tool-chip">KiCad</span>
-          <span class="tool-chip">Altium</span>
-          <span class="tool-chip">Circuit Simulation</span>
+          <div class="tool-chips" role="list" aria-label="Tools being learned">
+            <span class="tool-chip" role="listitem">KiCad</span>
+            <span class="tool-chip" role="listitem">Altium</span>
+            <span class="tool-chip" role="listitem">Circuit Simulation</span>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
 
-    <!-- Card 2 -->
-    <div class="learning-card" data-status="In Progress">
-      <div class="card-glow"></div>
+    <!-- Learning Card 2: C++ -->
+    <article class="learning-card" role="listitem" data-category="software">
+      <div class="card-glow" aria-hidden="true"></div>
 
       <div class="learning-content">
         <div class="learning-header">
-          <div class="learning-icon">
+          <div class="learning-icon" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2">
               <polyline points="16 18 22 12 16 6"></polyline>
               <polyline points="8 6 2 12 8 18"></polyline>
             </svg>
           </div>
-          <span class="learning-status">Deep Dive</span>
+          <div class="learning-status" data-progress="active">
+            <span class="status-text">Deep Dive</span>
+            <div class="progress-bar">
+              <div class="progress-fill active" style="width: 75%"></div>
+            </div>
+          </div>
         </div>
 
         <h3 class="learning-name">Advanced C++ for Robotics</h3>
@@ -61,13 +82,107 @@
           loops and optimizing ROS 2 node performance.
         </p>
 
+        <ul class="learning-goals" aria-label="Learning objectives">
+          <li>Modern C++ patterns for robotics systems</li>
+          <li>Real-time performance optimization</li>
+          <li>Memory-efficient ROS 2 node architecture</li>
+        </ul>
+
         <div class="learning-footer">
-          <span class="tool-chip">C++20</span>
-          <span class="tool-chip">STL</span>
-          <span class="tool-chip">Embedded Logic</span>
+          <div class="tool-chips" role="list" aria-label="Tools being learned">
+            <span class="tool-chip" role="listitem">C++20</span>
+            <span class="tool-chip" role="listitem">STL</span>
+            <span class="tool-chip" role="listitem">Embedded Logic</span>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
+
+    <!-- Learning Card 3: Machine Learning -->
+    <article class="learning-card" role="listitem" data-category="ai">
+      <div class="card-glow" aria-hidden="true"></div>
+
+      <div class="learning-content">
+        <div class="learning-header">
+          <div class="learning-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 1v6m0 6v6M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h6M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24"></path>
+            </svg>
+          </div>
+          <div class="learning-status" data-progress="45">
+            <span class="status-text">45% Complete</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 45%"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="learning-name">ML Deployment on Edge Devices</h3>
+        <p class="learning-desc">
+          Deploying <strong>computer vision models</strong> on embedded hardware
+          for real-time agricultural robotics applications.
+        </p>
+
+        <ul class="learning-goals" aria-label="Learning objectives">
+          <li>Model optimization for edge inference</li>
+          <li>TensorFlow Lite and ONNX conversion</li>
+          <li>Hardware acceleration with GPU/NPU</li>
+        </ul>
+
+        <div class="learning-footer">
+          <div class="tool-chips" role="list" aria-label="Tools being learned">
+            <span class="tool-chip" role="listitem">TensorFlow Lite</span>
+            <span class="tool-chip" role="listitem">ONNX</span>
+            <span class="tool-chip" role="listitem">Edge TPU</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Learning Card 4: Power Electronics -->
+    <article class="learning-card" role="listitem" data-category="power">
+      <div class="card-glow" aria-hidden="true"></div>
+
+      <div class="learning-content">
+        <div class="learning-header">
+          <div class="learning-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+            </svg>
+          </div>
+          <div class="learning-status" data-progress="80">
+            <span class="status-text">80% Complete</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="learning-name">Advanced Power Conversion</h3>
+        <p class="learning-desc">
+          Studying <strong>bidirectional converters</strong> and advanced control
+          techniques for renewable energy systems.
+        </p>
+
+        <ul class="learning-goals" aria-label="Learning objectives">
+          <li>Bidirectional DC-DC converter design</li>
+          <li>Digital control implementation</li>
+          <li>Grid-tied inverter systems</li>
+        </ul>
+
+        <div class="learning-footer">
+          <div class="tool-chips" role="list" aria-label="Tools being learned">
+            <span class="tool-chip" role="listitem">PSIM</span>
+            <span class="tool-chip" role="listitem">LTspice</span>
+            <span class="tool-chip" role="listitem">DSP Control</span>
+          </div>
+        </div>
+      </div>
+    </article>
 
   </div>
 </section>
+<!-- ================= LEARNING SECTION END ================= -->

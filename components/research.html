@@ -1,39 +1,165 @@
-<section aria-labelledby="research-title">
-
+<section id="research" aria-labelledby="research-title" class="research-section">
   <div class="section-header">
-    <h2 id="research-title" class="section-title">Research Focus</h2>
+    <h2 id="research-title" class="section-title">
+      Research <span class="title-accent">Frontiers</span>
+    </h2>
     <div class="section-divider" aria-hidden="true"></div>
     <p class="section-subtitle">
-      Core technical domains where I bridge theory and hardware
+      Bridging theoretical control systems with rugged hardware implementation
     </p>
   </div>
 
-  <div class="research-grid" role="list">
+  <ul class="research-grid">
 
-    <article class="research-card theme-blue" role="listitem" tabindex="0" style="--progress:95%;">
-      <div class="research-icon">
-        <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M11 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5"></path>
-        </svg>
-      </div>
+    <!-- Power Systems -->
+    <li class="research-item" tabindex="0">
+      <article>
+        <div class="research-header">
+          <div class="research-icon">
+            <svg aria-hidden="true" focusable="false" width="20" height="20"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3 class="research-title">Power Systems & Energy</h3>
+          <span class="research-level">
+            <span class="sr-only">Expertise level:</span> Advanced
+          </span>
+        </div>
 
-      <div class="research-body">
-        <h3 class="research-card-title">Renewable Energy Systems</h3>
-        <p class="research-card-description">
-          Focus on <strong>MPPT</strong> and high-efficiency power conversion for solar and wind systems.
+        <p class="research-description">
+          Optimizing <strong>MPPT algorithms</strong> under non-linear irradiance and designing
+          high-efficiency <strong>DC-DC converters</strong> for microgrids and e-mobility.
         </p>
 
-        <div class="research-keywords">
-          <span>PV Systems</span><span>E-Mobility</span><span>Grid Tie</span>
+        <div class="research-bar-bg"
+             role="progressbar"
+             aria-label="Power Systems & Energy research maturity"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="95"
+             aria-valuetext="Research maturity 95 percent">
+          <div class="research-bar-fill animate-on-scroll" data-level="95"></div>
         </div>
 
-        <div class="research-progress" aria-hidden="true">
-          <div class="progress-fill"></div>
+        <div class="research-tags">
+          <span class="tag">PV Systems</span>
+          <span class="tag">E-Mobility</span>
+          <span class="tag">Grid-Tie</span>
         </div>
-      </div>
-    </article>
+      </article>
+    </li>
 
-    <!-- Repeat pattern for other cards -->
+    <!-- Ag-Robot Autonomy -->
+    <li class="research-item" tabindex="0">
+      <article>
+        <div class="research-header">
+          <div class="research-icon">
+            <svg aria-hidden="true" focusable="false" width="20" height="20"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="research-title">Ag-Robot Autonomy</h3>
+          <span class="research-level">
+            <span class="sr-only">Expertise level:</span> Advanced
+          </span>
+        </div>
 
-  </div>
+        <p class="research-description">
+          Developing <strong>ROS 2</strong> navigation stacks with
+          <strong>multi-sensor fusion</strong>, SLAM, and autonomy
+          in unstructured agricultural environments.
+        </p>
+        <div class="research-bar-bg"
+             role="progressbar"
+             aria-label="Ag-Robot Autonomy research maturity"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="85"
+             aria-valuetext="Research maturity 85 percent">
+          <div class="research-bar-fill animate-on-scroll" data-level="85"></div>
+        </div>
+        </div>
+
+        <div class="research-tags">
+          <span class="tag">Nav2</span>
+          <span class="tag">LiDAR</span>
+          <span class="tag">SLAM</span>
+        </div>
+      </article>
+    </li>
+
+    <!-- Intelligent Control -->
+    <li class="research-item" tabindex="0">
+      <article>
+        <div class="research-header">
+          <div class="research-icon">
+            <svg aria-hidden="true" focusable="false" width="20" height="20"
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="research-title">Intelligent Control</h3>
+          <span class="research-level">
+            <span class="sr-only">Expertise level:</span> Intermediate
+          </span>
+        </div>
+
+        <p class="research-description">
+          Applying <strong>Reinforcement Learning</strong>, fuzzy logic,
+          and adaptive control for dynamic systems and predictive maintenance.
+        <div class="research-bar-bg"
+             role="progressbar"
+             aria-label="Intelligent Control research maturity"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="75"
+             aria-valuetext="Research maturity 75 percent">
+          <div class="research-bar-fill animate-on-scroll" data-level="75"></div>
+        </div>
+          <div class="research-bar-fill animate-on-scroll" data-level="75"></div>
+        </div>
+
+        <div class="research-tags">
+          <span class="tag">RL</span>
+          <span class="tag">Adaptive Control</span>
+          <span class="tag">Predictive Systems</span>
+        </div>
+      </article>
+    </li>
+
+  </ul>
 </section>
+
+<script>
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const level = bar.dataset.level;
+
+        bar.style.width = `${level}%`;
+
+        const progress = bar.parentElement;
+        progress.setAttribute('aria-valuenow', level);
+        progress.setAttribute(
+          'aria-valuetext',
+          `Research maturity ${level} percent`
+        );
+
+        obs.unobserve(bar);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.animate-on-scroll')
+    .forEach(bar => observer.observe(bar));
+</script>
+
+</body>
+</html>

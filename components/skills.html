@@ -1,15 +1,22 @@
+<!-- ================= SKILLS SECTION START ================= -->
 <section id="skills" aria-labelledby="skills-title" class="skills-section">
   <div class="section-header">
-    <h2 id="skills-title" class="section-title">Technical Expertise</h2>
+    <h2 id="skills-title" class="section-title">
+      Technical <span class="title-accent">Expertise</span>
+    </h2>
     <div class="section-divider" aria-hidden="true"></div>
     <p class="section-subtitle">Multidisciplinary toolkit for advanced engineering research</p>
   </div>
 
   <div class="skills-grid" role="list">
+    
+    <!-- Simulation & Modeling Category -->
     <div class="skill-category" role="listitem">
       <div class="category-header">
-        <div class="category-icon" style="background: rgba(37, 99, 235, 0.1); color: #2563eb;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <div class="category-icon" data-category="simulation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
         </div>
         <h3 class="category-title">Simulation & Modeling</h3>
       </div>
@@ -17,10 +24,10 @@
       <div class="skill-item" tabindex="0">
         <div class="skill-header">
           <span class="skill-name">MATLAB / Simulink</span>
-          <span class="skill-level">Expert</span>
+          <span class="skill-level" aria-label="Proficiency level: Expert">Expert</span>
         </div>
-        <div class="skill-bar-bg" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-          <div class="skill-bar-fill animate-on-scroll" style="--level: 95%;"></div>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="95% proficiency">
+          <div class="skill-bar-fill animate-on-scroll" data-level="95"></div>
         </div>
         <div class="skill-tags">
           <span class="tag" data-tooltip="Used in Solar MPPT Project">MPPT</span>
@@ -28,23 +35,42 @@
           <span class="tag" data-tooltip="Hardware-in-the-loop testing">HIL Simulation</span>
         </div>
       </div>
-      </div>
 
+      <div class="skill-item" tabindex="0">
+        <div class="skill-header">
+          <span class="skill-name">Python (NumPy, SciPy)</span>
+          <span class="skill-level" aria-label="Proficiency level: Advanced">Advanced</span>
+        </div>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="85% proficiency">
+          <div class="skill-bar-fill animate-on-scroll" data-level="85"></div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Data Analysis</span>
+          <span class="tag">Algorithm Development</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Robotics & Software Category -->
     <div class="skill-category" role="listitem">
       <div class="category-header">
-        <div class="category-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        <div class="category-icon" data-category="robotics">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
         </div>
         <h3 class="category-title">Robotics & Software</h3>
       </div>
       
       <div class="skill-item" tabindex="0">
         <div class="skill-header">
-          <span class="skill-name">ROS2 & Gazebo</span>
-          <span class="skill-level">Expert</span>
+          <span class="skill-name">ROS 2 & Gazebo</span>
+          <span class="skill-level" aria-label="Proficiency level: Expert">Expert</span>
         </div>
-        <div class="skill-bar-bg" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-          <div class="skill-bar-fill animate-on-scroll" style="--level: 90%;"></div>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="90% proficiency">
+          <div class="skill-bar-fill animate-on-scroll" data-level="90"></div>
         </div>
         <div class="skill-tags">
           <span class="tag">Navigation2</span>
@@ -53,17 +79,108 @@
           <span class="tag">MoveIt</span>
         </div>
       </div>
+
+      <div class="skill-item" tabindex="0">
+        <div class="skill-header">
+          <span class="skill-name">Computer Vision</span>
+          <span class="skill-level" aria-label="Proficiency level: Advanced">Advanced</span>
+        </div>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="80% proficiency">
+          <div class="skill-bar-fill animate-on-scroll" data-level="80"></div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">OpenCV</span>
+          <span class="tag">YOLO</span>
+          <span class="tag">Image Processing</span>
+        </div>
+      </div>
     </div>
+
+    <!-- AI & Machine Learning Category -->
+    <div class="skill-category" role="listitem">
+      <div class="category-header">
+        <div class="category-icon" data-category="ai">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <h3 class="category-title">AI & Machine Learning</h3>
+      </div>
+      
+      <div class="skill-item" tabindex="0">
+        <div class="skill-header">
+          <span class="skill-name">Reinforcement Learning</span>
+          <span class="skill-level" aria-label="Proficiency level: Advanced">Advanced</span>
+        </div>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="85% proficiency">
+          <div class="skill-bar-fill animate-on-scroll" data-level="85"></div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Q-Learning</span>
+          <span class="tag">Policy Gradient</span>
+          <span class="tag">DQN</span>
+        </div>
+      </div>
+
+      <div class="skill-item" tabindex="0">
+        <div class="skill-header">
+          <span class="skill-name">TensorFlow / PyTorch</span>
+          <span class="skill-level" aria-label="Proficiency level: Intermediate">Intermediate</span>
+        </div>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="75% proficiency">
+          <div class="skill-bar-fill animate-on-scroll" data-level="75"></div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Neural Networks</span>
+          <span class="tag">Model Training</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Power Electronics Category -->
+    <div class="skill-category" role="listitem">
+      <div class="category-header">
+        <div class="category-icon" data-category="power">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <h3 class="category-title">Power Electronics</h3>
+      </div>
+      
+      <div class="skill-item" tabindex="0">
+        <div class="skill-header">
+          <span class="skill-name">DC-DC Converters</span>
+          <span class="skill-level" aria-label="Proficiency level: Expert">Expert</span>
+        </div>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="90% proficiency">
+          <div class="skill-bar-fill animate-on-scroll" data-level="90"></div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Buck/Boost</span>
+          <span class="tag">PWM Control</span>
+          <span class="tag">Efficiency Optimization</span>
+        </div>
+      </div>
+
+      <div class="skill-item" tabindex="0">
+        <div class="skill-header">
+          <span class="skill-name">Circuit Design & PCB</span>
+          <span class="skill-level" aria-label="Proficiency level: Advanced">Advanced</span>
+        </div>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="80% proficiency">
+          <div class="skill-bar-fill animate-on-scroll" data-level="80"></div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">KiCAD</span>
+          <span class="tag">Altium</span>
+          <span class="tag">Prototyping</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('start-animation');
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-</script>
+<!-- ================= SKILLS SECTION END ================= -->
