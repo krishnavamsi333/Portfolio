@@ -256,7 +256,8 @@
   font-size: 1.4rem;            /* CHANGE: Card title size */
   font-weight: 700;
   margin: 0;
-  color: var(--color-text-main, #e4e6eb);
+  color: var(--color-text-main, #ee0000);
+  color: var(--color-text-main, #2ecc71);
   line-height: 1.3;
 }
 

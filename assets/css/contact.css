@@ -65,6 +65,7 @@
   border-radius: 50%;
   animation: pulse-dot 2s infinite;
   box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  flex-shrink: 0;
 }
 
 @keyframes pulse-dot {
@@ -326,6 +327,7 @@
   width: 16px;
   height: 16px;
   color: #60a5fa;               /* CHANGE: Icon color */
+  flex-shrink: 0;
 }
 
 /* ===== CONTACT FORM SECTION ===== */
@@ -606,24 +608,24 @@ CONTACT CARD COLORS:
 - [data-contact-type="location"] - Pink (#ec4899)
 
 FORM DIMENSIONS:
-- .contact-wrapper { grid-template-columns } - Column layout
-- .contact-form-section { padding } - Form padding
-- .form-input { padding } - Input field padding
-- .form-textarea { min-height } - Textarea height
+- .contact-wrapper { grid-template-columns } - Column layout (1fr 1fr)
+- .contact-form-section { padding } - Form padding (2rem)
+- .form-input { padding } - Input field padding (0.875rem 1rem)
+- .form-textarea { min-height } - Textarea height (120px)
 
 AVAILABILITY BANNER:
 - .availability-banner { background } - Banner color
-- .status-indicator { background } - Dot color
-- Pulsing animation can be disabled
+- .status-indicator { background } - Dot color (#10b981)
+- Pulsing animation can be disabled in accessibility section
 
 BUTTONS:
 - .btn-primary { background } - Primary button gradient
 - .btn-secondary { background } - Secondary button color
-- .btn { padding } - Button size
+- .btn { padding } - Button size (0.875rem 1.75rem)
 
 TOAST NOTIFICATION:
-- .toast { bottom, right } - Position
+- .toast { bottom, right } - Position (2rem, 2rem)
 - .toast { background } - Background color
-- .toast-icon { background } - Icon background
+- .toast-icon { background } - Icon background (#10b981)
 
-*/'
+*/

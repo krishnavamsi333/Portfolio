@@ -55,7 +55,7 @@
 .timeline-container::before {
   content: '';
   position: absolute;
-  left: 40px;                   /* CHANGE: Position of vertical line (mobile: auto-centered) */
+  left: 40px;                   /* CHANGE: Position of vertical line */
   top: 0;
   bottom: 0;
   width: 2px;                   /* CHANGE: Line thickness */
@@ -488,31 +488,37 @@
 /*
 
 TIMELINE DIMENSIONS:
-- .timeline-container { max-width } - Timeline width
-- .timeline-block { margin-bottom } - Space between items
-- .timeline-block { gap } - Space between dot and content
-- .timeline-content { padding } - Card internal spacing
+- .timeline-container { max-width } - Timeline width (900px)
+- .timeline-block { margin-bottom } - Space between items (3rem)
+- .timeline-block { gap } - Space between dot and content (2rem)
+- .timeline-content { padding } - Card internal spacing (2rem)
 
 TIMELINE LINE:
-- .timeline-container::before { width } - Line thickness
-- .timeline-container::before { left } - Line position
+- .timeline-container::before { width } - Line thickness (2px)
+- .timeline-container::before { left } - Line position (40px)
 - .timeline-container::before { background } - Line color/gradient
 
 DOT COLORS:
-- .work-node - Blue work experience
-- .edu-node - Purple education
-- .learn-node - Green continuous learning
+- .work-node - Blue work experience (#3b82f6)
+- .edu-node - Purple education (#8b5cf6)
+- .learn-node - Green continuous learning (#10b981)
 
 CARD COLORS:
-- .timeline-content { background } - Card fill
+- .timeline-content { background } - Card fill (rgba(255, 255, 255, 0.02))
 - .timeline-content { border } - Card border
-- [data-type="work"]:hover - Work hover colors
-- [data-type="education"]:hover - Education hover colors
-- [data-type="learning"]:hover - Learning hover colors
+- [data-type="work"]:hover - Work hover colors (blue)
+- [data-type="education"]:hover - Education hover colors (purple)
+- [data-type="learning"]:hover - Learning hover colors (green)
 
 TAG COLORS:
 - [data-theme="work"] - Blue tags
 - [data-theme="education"] - Purple tags
 - [data-theme="learning"] - Green tags
+
+ANIMATIONS:
+- Ripple effect on dot hover
+- Pulse animation on learning dot
+- Slide-in effect on card hover
+- Left accent border appears on hover
 
 */
