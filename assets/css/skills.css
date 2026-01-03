@@ -118,7 +118,21 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
-  color: var(--color-text-main, #e4e6eb);
+  color: #002e91;
+}
+
+.category-title-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #005f24;
+}
+
+.category-title-ai {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #9d174d;
 }
 
 /* ===== SKILL ITEM ===== */
@@ -126,6 +140,7 @@
   padding: 1.25rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .skill-item:last-child {
@@ -149,21 +164,33 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.75rem;
+
 }
 
 .skill-name {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-text-main, #e4e6eb);
+  color: #39288d;
 }
+
 
 .skill-level {
   font-size: 0.85rem;
   padding: 0.25rem 0.75rem;
-  background: rgba(96, 165, 250, 0.1);
-  color: var(--color-accent-soft, #60a5fa);
+  background: rgba(96, 165, 250, 0.322);
+  color: #0c0052;
   border-radius: 1rem;
   font-weight: 500;
+}
+.skill-name-robo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #348d28;
+}
+.skill-name-ai {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #7b2c5d;
 }
 
 /* ===== SKILL BAR ===== */
@@ -215,95 +242,150 @@
 .skill-bar-fill[data-level="80"] { --level: 80%; }
 .skill-bar-fill[data-level="75"] { --level: 75%; }
 
-/* ===== SKILL TAGS ===== */
+
+
+/* ===== SKILL LEVEL BADGES ===== */
+.skill-level {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px; /* Pill shape */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Category 1: Simulation Level (Blue) */
+.skill-category:nth-child(1) .skill-level {
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+/* Category 2: Robotics Level (Green) */
+.skill-category:nth-child(2) .skill-level {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Category 3: AI Level (Pink) */
+.skill-category:nth-child(3) .skill-level {
+  background: rgba(236, 72, 153, 0.15);
+  color: #f472b6;
+  border-color: rgba(236, 72, 153, 0.3);
+}
+
+/* Category 4: Power Level (Gold) */
+.skill-category:nth-child(4) .skill-level {
+  background: rgba(234, 179, 8, 0.15);
+  color: #fbbf24;
+  border-color: rgba(234, 179, 8, 0.3);
+}
+
+/* Hover effect for the level badge */
+.skill-item:hover .skill-level {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+/* ===== UPDATED SKILL TAGS ===== */
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .tag {
   display: inline-block;
-  padding: 0.35rem 0.75rem;
-  background: rgba(96, 165, 250, 0.08);
-  border: 1px solid rgba(96, 165, 250, 0.2);
-  border-radius: 0.4rem;
-  font-size: 0.8rem;
-  color: var(--color-text-muted, #9ca3af);
-  transition: all 0.3s ease;
-  cursor: default;
-  position: relative;
-}
-
-.tag:hover {
-  background: rgba(96, 165, 250, 0.15);
-  border-color: rgba(96, 165, 250, 0.4);
-  color: var(--color-accent-soft, #60a5fa);
-  transform: translateY(-2px);
-}
-
-/* Tooltip for tags */
-.tag[data-tooltip]::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-5px);
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
   font-size: 0.75rem;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer; /* FIXED: Changed from 'help' to 'pointer' to remove "?" */
+  position: relative;
+  border: 1px solid transparent;
 }
 
-.tag[data-tooltip]:hover::after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-8px);
+/* Category 1: Simulation (Blue) */
+.skill-category:nth-child(1) .tag {
+  background: rgba(37, 99, 235, 0.1);
+  color: #3b82f6;
+  border-color: rgba(4, 51, 151, 0.7);
+  font-weight: 650;
+}
+.skill-category:nth-child(1) .tag:hover {
+  background: #2563eb !important;
+  color: #fff !important;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+  border-color: rgba(4, 51, 151, 0.7);
+  font-weight: 700;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .skills-section {
-    padding: 3rem 0;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1.25rem;
-  }
-
-  .skill-category {
-    padding: 1.25rem;
-  }
-
-  .category-header {
-    margin-bottom: 1.25rem;
-  }
-
-  .skill-item {
-    padding: 1rem 0;
-  }
-
-  .skill-name {
-    font-size: 0.95rem;
-  }
-
-  .skill-level {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
-  }
-
-  .tag {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.6rem;
-  }
+/* Category 2: Robotics (Green) */
+.skill-category:nth-child(2) .tag {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.6);
+  font-weight: 700;
 }
+.skill-category:nth-child(2) .tag:hover {
+  background: #10b981 !important;
+  color: #fff !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+  font-weight: 800;
+}
+
+/* Category 3: AI (Pink/Purple) */
+.skill-category:nth-child(3) .tag {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+  border-color: rgba(236, 72, 153, 0.3);
+  font-weight: 700;
+}
+.skill-category:nth-child(3) .tag:hover {
+  background: #ec4899 !important;
+  color: #fff !important;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+  font-weight: 800;
+}
+
+/* Category 4: Power Electronics (Yellow/Gold) */
+.skill-category:nth-child(4) .tag {
+  background: rgba(234, 179, 8, 0.1);
+  color: #eab308;
+  border-color: rgba(234, 179, 8, 0.4);
+}
+.skill-category:nth-child(4) .tag:hover {
+  background: #eab308 !important;
+  color: #000 !important;
+  box-shadow: 0 0 15px rgba(234, 179, 8, 0.5);
+}
+
+/* Global Tag Hover State */
+.tag:hover {
+  transform: translateY(-3px);
+}
+
+/* SPECIFIC STYLE: MPPT / Solar Tag */
+.tag[data-tooltip*="Solar"] {
+  border: 1px solid rgba(4, 51, 151, 0.7);
+  font-weight: 700;
+  background-color: rgba(4, 51, 151, 0.7);
+  color: #f1c40f;
+}
+
+.tag[data-tooltip*="Solar"]:hover {
+  box-shadow: 0 0 20px rgba(255, 217, 66, 0.8);
+  background-color: rgba(4, 51, 151, 0.7);
+  color: #000 !important;
+}
+
 
 /* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
@@ -311,7 +393,7 @@
   .skill-category,
   .skill-item,
   .category-icon {
-    animation: none;
+    animation: none
     transition: none;
   }
   

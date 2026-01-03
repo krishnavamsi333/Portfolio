@@ -1,234 +1,364 @@
-/* ================= NAVIGATION ================= */
+/* ================= NAVIGATION STYLES ================= */
 
+/* ===== NAVIGATION CONTAINER ===== */
 .nav {
-  position: sticky;
+  position: fixed;              /* CHANGE: Keep nav fixed at top (or sticky, relative) */
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: var(--border-width) solid var(--color-border);
-  z-index: var(--z-sticky);
-  transition: all var(--transition-base);
+  z-index: 1000;
+  background: rgba(10, 14, 23, 0.95);  /* CHANGE: Nav background color with transparency */
+  backdrop-filter: blur(10px);  /* CHANGE: Blur effect for modern look */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);  /* CHANGE: Bottom border */
+  transition: all 0.3s ease;
 }
 
-[data-theme="dark"] .nav {
-  background-color: rgba(15, 23, 42, 0.8);
-}
-
+/* Scrolled state (optional - add .scrolled class via JS) */
 .nav.scrolled {
-  box-shadow: var(--shadow-md);
+  background: rgba(10, 14, 23, 0.98);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
-  max-width: var(--container-max-width);
+  max-width: 1400px;            /* CHANGE: Maximum nav width */
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding: 1rem 2rem;           /* CHANGE: Nav vertical and horizontal padding */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  gap: 2rem;
 }
 
-/* Brand */
+/* ===== BRAND LOGO ===== */
 .nav-brand {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;            /* CHANGE: Logo size */
+  font-weight: 800;
+  color: var(--color-text-main, #e4e6eb);
   text-decoration: none;
-  transition: color var(--transition-fast);
-  letter-spacing: -0.025em;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.brand-text {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);  /* CHANGE: Logo gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav-brand:hover {
-  color: var(--color-primary);
+  transform: scale(1.05);       /* CHANGE: Logo hover scale effect */
 }
 
-/* Navigation List */
+.nav-brand::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  transition: width 0.3s ease;
+}
+
+.nav-brand:hover::after {
+  width: 100%;
+}
+
+/* ===== NAVIGATION LIST ===== */
 .nav-list {
-  display: none;
+  display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 0.5rem;                  /* CHANGE: Space between nav items */
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
-@media (min-width: 768px) {
-  .nav-list {
-    display: flex;
-  }
-}
-
+/* ===== NAVIGATION LINKS ===== */
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
+  padding: 0.75rem 1.25rem;    /* CHANGE: Link padding */
+  font-size: 0.95rem;           /* CHANGE: Link text size */
+  font-weight: 500;
+  color: var(--color-text-muted, #9ca3af);
   text-decoration: none;
-  border-radius: var(--border-radius-md);
-  transition: all var(--transition-fast);
+  border-radius: 0.5rem;        /* CHANGE: Link corner roundness */
+  transition: all 0.3s ease;
   position: relative;
 }
 
 .nav-link:hover {
-  color: var(--color-text);
-  background-color: var(--color-bg-secondary);
+  color: var(--color-text-main, #e4e6eb);
+  background: rgba(96, 165, 250, 0.1);  /* CHANGE: Hover background */
 }
 
+.nav-link:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* Active link state */
 .nav-link.active {
-  color: var(--color-primary);
+  color: #60a5fa;               /* CHANGE: Active link color */
+  background: rgba(96, 165, 250, 0.1);
 }
 
 .nav-link.active::after {
   content: '';
   position: absolute;
-  bottom: -1px;
-  left: 1rem;
-  right: 1rem;
+  bottom: 0;
+  left: 1.25rem;
+  right: 1.25rem;
   height: 2px;
-  background-color: var(--color-primary);
-  border-radius: var(--border-radius-full);
+  background: #60a5fa;          /* CHANGE: Active link underline color */
 }
 
-/* Navigation Actions */
+/* ===== NAVIGATION ACTIONS ===== */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: 1rem;                    /* CHANGE: Space between action items */
 }
 
+/* ===== RESUME CTA BUTTON ===== */
 .nav-cta {
-  display: none;
-  padding: 0.5rem 1.25rem;
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-inverse);
-  background: var(--gradient-primary);
-  border-radius: var(--border-radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;      /* CHANGE: Button padding */
+  font-size: 0.95rem;           /* CHANGE: Button text size */
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);  /* CHANGE: Button gradient */
+  border: none;
+  border-radius: 0.5rem;        /* CHANGE: Button corner roundness */
   text-decoration: none;
-  transition: all var(--transition-fast);
-}
-
-@media (min-width: 768px) {
-  .nav-cta {
-    display: inline-block;
-  }
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
 }
 
 .nav-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  color: var(--color-text-inverse);
+  transform: translateY(-2px);  /* CHANGE: Button hover lift effect */
+  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.4);
 }
 
-/* Mobile Toggle */
+.nav-cta:active {
+  transform: translateY(0);
+}
+
+.nav-cta svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.nav-cta:hover svg {
+  transform: translateY(2px);   /* CHANGE: Icon animation on hover */
+}
+
+/* ===== MOBILE MENU TOGGLE ===== */
 .mobile-toggle {
-  display: flex;
+  display: none;                /* Hidden on desktop */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40px;
+  width: 40px;                  /* CHANGE: Toggle button size */
   height: 40px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
   padding: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 5px;
 }
 
-@media (min-width: 768px) {
-  .mobile-toggle {
-    display: none;
+.mobile-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(96, 165, 250, 0.5);
+}
+
+.hamburger-line {
+  width: 20px;                  /* CHANGE: Hamburger line width */
+  height: 2px;                  /* CHANGE: Hamburger line thickness */
+  background: var(--color-text-main, #e4e6eb);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animated hamburger when open */
+.mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 1rem 1.5rem;
   }
-}
 
-.mobile-toggle span,
-.mobile-toggle span::before,
-.mobile-toggle span::after {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background-color: var(--color-text);
-  border-radius: var(--border-radius-full);
-  transition: all var(--transition-base);
-}
-
-.mobile-toggle span::before,
-.mobile-toggle span::after {
-  content: '';
-  position: absolute;
-}
-
-.mobile-toggle span::before {
-  transform: translateY(-7px);
-}
-
-.mobile-toggle span::after {
-  transform: translateY(7px);
-}
-
-.mobile-toggle[aria-expanded="true"] span {
-  background-color: transparent;
-}
-
-.mobile-toggle[aria-expanded="true"] span::before {
-  transform: rotate(45deg);
-}
-
-.mobile-toggle[aria-expanded="true"] span::after {
-  transform: rotate(-45deg);
-}
-
-/* Mobile Menu */
-@media (max-width: 767px) {
   .nav-list {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background-color: var(--color-surface);
-    border-bottom: var(--border-width) solid var(--color-border);
-    box-shadow: var(--shadow-lg);
-    flex-direction: column;
-    align-items: stretch;
-    padding: var(--space-lg);
-    gap: var(--space-sm);
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: all var(--transition-base);
-  }
-
-  .nav-list.active {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+    gap: 0.25rem;
   }
 
   .nav-link {
-    padding: 0.75rem 1rem;
-    text-align: left;
+    padding: 0.625rem 1rem;     /* CHANGE: Smaller padding on tablet */
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem 1.25rem;
   }
 
-  .nav-link.active::after {
+  /* Show mobile toggle */
+  .mobile-toggle {
+    display: flex;
+  }
+
+  /* Hide resume button on small mobile */
+  .nav-cta {
     display: none;
   }
 
-  .nav-cta {
-    display: block;
-    text-align: center;
-    margin-top: var(--space-sm);
+  /* Mobile menu */
+  .nav-list {
+    position: fixed;
+    top: 73px;                  /* CHANGE: Position below nav (adjust based on nav height) */
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(10, 14, 23, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Open state */
+  .nav-list.active {
+    max-height: 500px;          /* CHANGE: Maximum height when open */
+    opacity: 1;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem 1.25rem;      /* CHANGE: Mobile link padding */
+    border-radius: 0;
+  }
+
+  .nav-link.active::after {
+    left: 1.25rem;
+    right: auto;
+    width: 30px;
+    bottom: 50%;
+    transform: translateY(50%);
+    height: 2px;
   }
 }
 
-/* Theme Toggle Icon */
-#theme-toggle svg {
-  transition: transform var(--transition-base);
+/* Small Mobile */
+@media (max-width: 480px) {
+  .nav-brand {
+    font-size: 1.25rem;         /* CHANGE: Smaller logo on small screens */
+  }
+
+  .nav-container {
+    padding: 0.875rem 1rem;
+  }
 }
 
-[data-theme="dark"] #theme-toggle svg {
-  transform: rotate(180deg);
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .nav,
+  .nav-link,
+  .nav-brand,
+  .nav-cta,
+  .mobile-toggle,
+  .hamburger-line,
+  .nav-list {
+    transition: none;
+    animation: none;
+  }
 }
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* ===== SMOOTH SCROLL BEHAVIOR ===== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;     /* CHANGE: Offset for fixed nav (adjust to nav height) */
+}
+
+/* ================= CUSTOMIZATION QUICK REFERENCE ================= */
+/*
+
+NAVIGATION POSITION:
+- .nav { position } - fixed (stays at top), sticky, or relative
+- .nav { top } - Distance from top (0 for fixed)
+- .nav { background } - Nav background color/transparency
+
+BRAND LOGO:
+- .nav-brand { font-size } - Logo text size (1.5rem)
+- .brand-text { background } - Logo gradient colors
+- Hover animation can be adjusted
+
+NAVIGATION LINKS:
+- .nav-link { padding } - Link padding (0.75rem 1.25rem)
+- .nav-link { font-size } - Link text size (0.95rem)
+- .nav-link:hover { background } - Hover background
+- .nav-link.active - Active link styling
+
+CTA BUTTON:
+- .nav-cta { padding } - Button size (0.75rem 1.5rem)
+- .nav-cta { background } - Button gradient
+- Download icon included with animation
+
+MOBILE MENU:
+- .mobile-toggle { width/height } - Toggle button size (40px)
+- .hamburger-line { width } - Line width (20px)
+- .nav-list (mobile) { top } - Position below nav (73px)
+- Animated hamburger to X transition
+
+RESPONSIVE BREAKPOINTS:
+- 1024px - Tablet (smaller spacing)
+- 768px - Mobile (hamburger menu appears)
+- 480px - Small mobile (smaller logo)
+
+COLORS:
+- Primary: #60a5fa (blue)
+- Gradient: #60a5fa to #3b82f6
+- Background: rgba(10, 14, 23, 0.95)
+- Text: #e4e6eb (light) / #9ca3af (muted)
+
+*/

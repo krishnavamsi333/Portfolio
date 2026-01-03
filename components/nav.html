@@ -1,34 +1,63 @@
-<nav class="nav" id="main-nav" aria-label="Main navigation">
+<!-- ================= NAVIGATION START ================= -->
+<nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
 
-    <a href="#" class="nav-brand" aria-label="Go to top">KV</a>
+    <!-- Brand Logo -->
+    <a href="#" class="nav-brand" aria-label="Go to top of page">
+      <span class="brand-text">KV</span>
+    </a>
 
-    <ul class="nav-list" id="nav-list">
-      <li><a class="nav-link active" href="#about" aria-current="page">About</a></li>
-      <li><a class="nav-link" href="#skills">Skills</a></li>
-      <li><a class="nav-link" href="#research">Research Focus</a></li>
-      <li><a class="nav-link" href="#publications">Publications</a></li>
-      <li><a class="nav-link" href="#projects">Projects</a></li>
-      <li><a class="nav-link" href="#contact">Contact</a></li>
+    <!-- Navigation Links -->
+    <ul class="nav-list" id="nav-list" role="menubar">
+      <li role="none">
+        <a class="nav-link active" href="#about" role="menuitem" aria-current="page">About</a>
+      </li>
+      <li role="none">
+        <a class="nav-link" href="#skills" role="menuitem">Skills</a>
+      </li>
+      <li role="none">
+        <a class="nav-link" href="#research" role="menuitem">Research</a>
+      </li>
+      <li role="none">
+        <a class="nav-link" href="#experience" role="menuitem">Experience</a>
+      </li>
+      <li role="none">
+        <a class="nav-link" href="#projects" role="menuitem">Projects</a>
+      </li>
+      <li role="none">
+        <a class="nav-link" href="#contact" role="menuitem">Contact</a>
+      </li>
     </ul>
 
+    <!-- Navigation Actions -->
     <div class="nav-actions">
-      <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode">
-        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="5"></circle>
+      <!-- Resume CTA Button -->
+      <a href="assets/docs/CV_KV.pdf" 
+         class="nav-cta" 
+         target="_blank"
+         rel="noopener noreferrer"
+         download="Krishna_Vamsi_CV.pdf"
+         aria-label="Download resume PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
         </svg>
-      </button>
+        Resume
+      </a>
 
-      <a href="#resume" class="nav-cta">Resume</a>
-
+      <!-- Mobile Menu Toggle -->
       <button
         class="mobile-toggle"
+        id="mobile-toggle"
         aria-expanded="false"
         aria-controls="nav-list"
-        aria-label="Toggle menu">
-        <span></span>
+        aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </div>
 </nav>
+<!-- ================= NAVIGATION END ================= -->
