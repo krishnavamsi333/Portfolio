@@ -1,66 +1,97 @@
-/* ================= NAVIGATION STYLES ================= */
+/* ================= ENHANCED NAVIGATION STYLES ================= */
+
+/* Import premium font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ===== CSS VARIABLES FOR EASY CUSTOMIZATION ===== */
+:root {
+  --nav-bg: rgba(10, 14, 23, 0.95);
+  --nav-bg-scrolled: rgba(10, 14, 23, 0.98);
+  --primary-gradient: linear-gradient(135deg, #60a5fa, #3b82f6, #2563eb);
+  --primary-glow: rgba(96, 165, 250, 0.4);
+  --text-main: #e4e6eb;
+  --text-muted: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --hover-bg: rgba(96, 165, 250, 0.1);
+  --nav-height: 80px;
+}
 
 /* ===== NAVIGATION CONTAINER ===== */
 .nav {
-  position: fixed;              /* CHANGE: Keep nav fixed at top (or sticky, relative) */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(10, 14, 23, 0.95);  /* CHANGE: Nav background color with transparency */
-  backdrop-filter: blur(10px);  /* CHANGE: Blur effect for modern look */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);  /* CHANGE: Bottom border */
-  transition: all 0.3s ease;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Scrolled state (optional - add .scrolled class via JS) */
+/* Scrolled state with enhanced shadow */
 .nav.scrolled {
-  background: rgba(10, 14, 23, 0.98);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: var(--nav-bg-scrolled);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+              0 0 80px rgba(96, 165, 250, 0.1);
 }
 
 .nav-container {
-  max-width: 1400px;            /* CHANGE: Maximum nav width */
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;           /* CHANGE: Nav vertical and horizontal padding */
+  padding: 1.25rem 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
 }
 
-/* ===== BRAND LOGO ===== */
+/* ===== BRAND LOGO WITH ENHANCED EFFECTS ===== */
 .nav-brand {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;            /* CHANGE: Logo size */
+  font-size: 1.5rem;
   font-weight: 800;
-  color: var(--color-text-main, #e4e6eb);
+  color: var(--text-main);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  letter-spacing: -0.02em;
 }
 
 .brand-text {
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);  /* CHANGE: Logo gradient colors */
+  background: var(--primary-gradient);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: gradientShift 8s ease infinite;
+  filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.3));
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .nav-brand:hover {
-  transform: scale(1.05);       /* CHANGE: Logo hover scale effect */
+  transform: scale(1.05) translateY(-2px);
 }
 
 .nav-brand::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: -6px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #60a5fa, #3b82f6);
-  transition: width 0.3s ease;
+  height: 3px;
+  background: var(--primary-gradient);
+  background-size: 200% 200%;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+  box-shadow: 0 0 12px var(--primary-glow);
+  animation: gradientShift 3s ease infinite;
 }
 
 .nav-brand:hover::after {
@@ -71,128 +102,200 @@
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 0.5rem;                  /* CHANGE: Space between nav items */
+  gap: 0.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* ===== NAVIGATION LINKS ===== */
+/* ===== ENHANCED NAVIGATION LINKS ===== */
 .nav-link {
   display: block;
-  padding: 0.75rem 1.25rem;    /* CHANGE: Link padding */
-  font-size: 0.95rem;           /* CHANGE: Link text size */
+  padding: 0.875rem 1.5rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  color: var(--color-text-muted, #9ca3af);
+  color: var(--text-muted);
   text-decoration: none;
-  border-radius: 0.5rem;        /* CHANGE: Link corner roundness */
-  transition: all 0.3s ease;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+}
+
+/* Magnetic hover effect background */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--hover-bg), transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  width: 200%;
+  height: 200%;
 }
 
 .nav-link:hover {
-  color: var(--color-text-main, #e4e6eb);
-  background: rgba(96, 165, 250, 0.1);  /* CHANGE: Hover background */
+  color: var(--text-main);
+  transform: translateY(-2px);
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
 }
 
 .nav-link:focus-visible {
   outline: 2px solid #60a5fa;
-  outline-offset: 2px;
+  outline-offset: 4px;
 }
 
-/* Active link state */
+/* Active link with glow effect */
 .nav-link.active {
-  color: #60a5fa;               /* CHANGE: Active link color */
-  background: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
+  background: var(--hover-bg);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.2),
+              inset 0 0 20px rgba(96, 165, 250, 0.1);
 }
 
 .nav-link.active::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 1.25rem;
-  right: 1.25rem;
+  bottom: 8px;
+  left: 1.5rem;
+  right: 1.5rem;
   height: 2px;
-  background: #60a5fa;          /* CHANGE: Active link underline color */
+  background: var(--primary-gradient);
+  background-size: 200% 200%;
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--primary-glow);
+  animation: gradientShift 3s ease infinite;
 }
 
 /* ===== NAVIGATION ACTIONS ===== */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;                    /* CHANGE: Space between action items */
+  gap: 1rem;
 }
 
-/* ===== RESUME CTA BUTTON ===== */
+/* ===== ENHANCED RESUME CTA BUTTON ===== */
 .nav-cta {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;      /* CHANGE: Button padding */
-  font-size: 0.95rem;           /* CHANGE: Button text size */
+  padding: 0.875rem 1.75rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);  /* CHANGE: Button gradient */
+  background: var(--primary-gradient);
+  background-size: 200% 200%;
   border: none;
-  border-radius: 0.5rem;        /* CHANGE: Button corner roundness */
+  border-radius: 0.75rem;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px var(--primary-glow),
+              0 0 0 0 rgba(96, 165, 250, 0.4);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+  animation: gradientShift 8s ease infinite, float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Shimmer effect on hover */
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.nav-cta:hover::before {
+  left: 100%;
 }
 
 .nav-cta:hover {
-  transform: translateY(-2px);  /* CHANGE: Button hover lift effect */
-  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--primary-glow),
+              0 0 0 8px rgba(96, 165, 250, 0.1);
+  animation: gradientShift 3s ease infinite;
 }
 
 .nav-cta:active {
-  transform: translateY(0);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--primary-glow);
 }
 
 .nav-cta svg {
   width: 16px;
   height: 16px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-cta:hover svg {
-  transform: translateY(2px);   /* CHANGE: Icon animation on hover */
+  transform: translateY(2px) scale(1.1);
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(4px) scale(1.1); }
 }
 
 /* ===== MOBILE MENU TOGGLE ===== */
 .mobile-toggle {
-  display: none;                /* Hidden on desktop */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40px;                  /* CHANGE: Toggle button size */
-  height: 40px;
+  width: 44px;
+  height: 44px;
   padding: 0;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   gap: 5px;
 }
 
 .mobile-toggle:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
+  transform: scale(1.05);
 }
 
 .hamburger-line {
-  width: 20px;                  /* CHANGE: Hamburger line width */
-  height: 2px;                  /* CHANGE: Hamburger line thickness */
-  background: var(--color-text-main, #e4e6eb);
+  width: 22px;
+  height: 2.5px;
+  background: var(--text-main);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.3);
 }
 
-/* Animated hamburger when open */
+/* Animated hamburger to X */
 .mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(7.5px) rotate(45deg);
 }
 
 .mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
@@ -201,7 +304,7 @@
 }
 
 .mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7.5px) rotate(-45deg);
 }
 
 /* ===== RESPONSIVE BREAKPOINTS ===== */
@@ -209,7 +312,7 @@
 /* Tablet */
 @media (max-width: 1024px) {
   .nav-container {
-    padding: 1rem 1.5rem;
+    padding: 1rem 2rem;
   }
 
   .nav-list {
@@ -217,7 +320,7 @@
   }
 
   .nav-link {
-    padding: 0.625rem 1rem;     /* CHANGE: Smaller padding on tablet */
+    padding: 0.75rem 1.25rem;
     font-size: 0.9rem;
   }
 }
@@ -225,42 +328,64 @@
 /* Mobile */
 @media (max-width: 768px) {
   .nav-container {
-    padding: 1rem 1.25rem;
+    padding: 1rem 1.5rem;
   }
 
-  /* Show mobile toggle */
   .mobile-toggle {
     display: flex;
   }
 
-  /* Hide resume button on small mobile */
   .nav-cta {
     display: none;
   }
 
-  /* Mobile menu */
+  /* Enhanced mobile menu */
   .nav-list {
     position: fixed;
-    top: 73px;                  /* CHANGE: Position below nav (adjust based on nav height) */
+    top: 76px;
     left: 0;
     right: 0;
     flex-direction: column;
     gap: 0;
-    background: rgba(10, 14, 23, 0.98);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem 0;
+    background: var(--nav-bg-scrolled);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4),
+                0 0 60px rgba(96, 165, 250, 0.1);
   }
 
-  /* Open state */
   .nav-list.active {
-    max-height: 500px;          /* CHANGE: Maximum height when open */
+    max-height: 500px;
     opacity: 1;
+  }
+
+  /* Staggered animation for menu items */
+  .nav-list.active li {
+    animation: slideInFromLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+  }
+
+  .nav-list.active li:nth-child(1) { animation-delay: 0.1s; }
+  .nav-list.active li:nth-child(2) { animation-delay: 0.15s; }
+  .nav-list.active li:nth-child(3) { animation-delay: 0.2s; }
+  .nav-list.active li:nth-child(4) { animation-delay: 0.25s; }
+  .nav-list.active li:nth-child(5) { animation-delay: 0.3s; }
+  .nav-list.active li:nth-child(6) { animation-delay: 0.35s; }
+
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   .nav-list li {
@@ -269,96 +394,114 @@
 
   .nav-link {
     width: 100%;
-    padding: 1rem 1.25rem;      /* CHANGE: Mobile link padding */
+    padding: 1.25rem 1.5rem;
     border-radius: 0;
+    border-left: 3px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link:hover {
+    border-left-color: #60a5fa;
+    padding-left: 2rem;
+    background: rgba(96, 165, 250, 0.05);
+  }
+
+  .nav-link.active {
+    border-left-color: #60a5fa;
+    background: rgba(96, 165, 250, 0.1);
   }
 
   .nav-link.active::after {
-    left: 1.25rem;
-    right: auto;
-    width: 30px;
-    bottom: 50%;
-    transform: translateY(50%);
-    height: 2px;
+    display: none;
   }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
   .nav-brand {
-    font-size: 1.25rem;         /* CHANGE: Smaller logo on small screens */
+    font-size: 1.35rem;
   }
 
   .nav-container {
-    padding: 0.875rem 1rem;
+    padding: 1rem 1.25rem;
   }
 }
 
 /* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
-  .nav,
-  .nav-link,
-  .nav-brand,
-  .nav-cta,
-  .mobile-toggle,
-  .hamburger-line,
-  .nav-list {
-    transition: none;
-    animation: none;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-/* Focus visible for keyboard navigation */
 *:focus-visible {
   outline: 2px solid #60a5fa;
-  outline-offset: 2px;
+  outline-offset: 4px;
+  border-radius: 0.25rem;
 }
 
 /* ===== SMOOTH SCROLL BEHAVIOR ===== */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;     /* CHANGE: Offset for fixed nav (adjust to nav height) */
+  scroll-padding-top: 80px;
 }
 
-/* ================= CUSTOMIZATION QUICK REFERENCE ================= */
+/* ===== SCROLL PROGRESS INDICATOR ===== */
+.nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+  box-shadow: 0 0 12px var(--primary-glow);
+  transition: width 0.1s linear;
+  z-index: 1001;
+}
+
+/* Add this via JavaScript: document.querySelector('.nav').style.setProperty('--scroll-width', scrollPercentage + '%'); */
+
+/* ================= FEATURES SUMMARY ================= */
 /*
 
-NAVIGATION POSITION:
-- .nav { position } - fixed (stays at top), sticky, or relative
-- .nav { top } - Distance from top (0 for fixed)
-- .nav { background } - Nav background color/transparency
+✨ NEW ENHANCEMENTS:
 
-BRAND LOGO:
-- .nav-brand { font-size } - Logo text size (1.5rem)
-- .brand-text { background } - Logo gradient colors
-- Hover animation can be adjusted
+TYPOGRAPHY:
+- Inter font family for premium look
+- Better letter-spacing
+- Improved font weights
 
-NAVIGATION LINKS:
-- .nav-link { padding } - Link padding (0.75rem 1.25rem)
-- .nav-link { font-size } - Link text size (0.95rem)
-- .nav-link:hover { background } - Hover background
-- .nav-link.active - Active link styling
+ANIMATIONS:
+- Gradient shift animation on logo and CTA
+- Floating animation on CTA button
+- Magnetic hover effect on links
+- Staggered slide-in for mobile menu
+- Shimmer effect on CTA hover
+- Bounce animation on icon
 
-CTA BUTTON:
-- .nav-cta { padding } - Button size (0.75rem 1.5rem)
-- .nav-cta { background } - Button gradient
-- Download icon included with animation
+COLORS & EFFECTS:
+- Enhanced glassmorphism with better blur
+- Gradient backgrounds that animate
+- Glow effects on active states
+- Better shadow depth
+- Radial gradient hover backgrounds
 
-MOBILE MENU:
-- .mobile-toggle { width/height } - Toggle button size (40px)
-- .hamburger-line { width } - Line width (20px)
-- .nav-list (mobile) { top } - Position below nav (73px)
-- Animated hamburger to X transition
+MICRO-INTERACTIONS:
+- Smooth cubic-bezier easing
+- Icon scale and movement
+- Button lift effect
+- Border slide animations
+- Progressive menu item reveals
 
-RESPONSIVE BREAKPOINTS:
-- 1024px - Tablet (smaller spacing)
-- 768px - Mobile (hamburger menu appears)
-- 480px - Small mobile (smaller logo)
-
-COLORS:
-- Primary: #60a5fa (blue)
-- Gradient: #60a5fa to #3b82f6
-- Background: rgba(10, 14, 23, 0.95)
-- Text: #e4e6eb (light) / #9ca3af (muted)
+ACCESSIBILITY:
+- Respects prefers-reduced-motion
+- Better focus indicators
+- Improved keyboard navigation
 
 */
