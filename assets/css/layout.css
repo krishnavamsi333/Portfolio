@@ -4,7 +4,10 @@
 .container {
   max-width: 1200px;
   margin-inline: auto;
-  padding: 0; /* CHANGED from 4rem 1.5rem */
+
+  /* ONLY horizontal padding */
+  padding-inline: 1.5rem;
+  padding-block: 0;
 }
 
 /* Header layout */
@@ -42,7 +45,8 @@
   gap: 1.5rem;
 }
 
-/* Responsive */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
   .header-grid {
     grid-template-columns: 1fr;
@@ -52,12 +56,12 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 3rem 1.25rem;
+    padding-inline: 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 2.5rem 1rem;
+    padding-inline: 1rem;
   }
 }

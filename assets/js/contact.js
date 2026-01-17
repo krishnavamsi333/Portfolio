@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const toast = document.getElementById("toast");
   const toastMessage = document.getElementById("toastMessage");
 
+  let toastTimer = null;
+
   // --------------------------------
   // Toast helper
   // --------------------------------
@@ -20,9 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(message);
       return;
     }
+
     toastMessage.textContent = message;
     toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 3000);
+
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove("show");
+      toastTimer = null;
+    }, 3000);
   }
 
   // --------------------------------
@@ -33,16 +41,26 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const btn = form.querySelector("button[type='submit']");
-      if (btn.disabled) return;
+      if (!btn || btn.disabled) return;
+
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const subject = form.subject.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !subject || !message) {
+        showToast("⚠️ Please fill in all fields");
+        return;
+      }
 
       btn.disabled = true;
       btn.textContent = "Sending...";
 
       const params = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        title: form.subject.value.trim(),
-        message: form.message.value.trim(),
+        name,
+        email,
+        subject,     // safer naming
+        message,
       };
 
       emailjs
@@ -70,13 +88,29 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       e.stopPropagation();
 
-      const email = btn.closest(".contact-card")?.dataset.copy;
+      const card = btn.closest(".contact-card");
+      const email = card?.dataset.copy;
       if (!email) return;
 
-      navigator.clipboard
-        .writeText(email)
-        .then(() => showToast("📋 Email copied"))
-        .catch(() => showToast("❌ Copy failed"));
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard
+          .writeText(email)
+          .then(() => showToast("📋 Email copied"))
+          .catch(() => showToast("❌ Copy failed"));
+      } else {
+        // Fallback
+        const temp = document.createElement("textarea");
+        temp.value = email;
+        document.body.appendChild(temp);
+        temp.select();
+        try {
+          document.execCommand("copy");
+          showToast("📋 Email copied");
+        } catch {
+          showToast("Copy failed");
+        }
+        document.body.removeChild(temp);
+      }
     });
   });
 

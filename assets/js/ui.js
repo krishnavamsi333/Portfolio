@@ -1,36 +1,37 @@
 // =========================================================
 // ui.js – Core UI interactions (FINAL)
-// Compatible with app.js + effects.js + footer.js
+// Depends on components loaded by app.js
 // =========================================================
 
 const UI_CONFIG = {
-  scrollThreshold: 300,
   navOffset: 80,
-  headerParallaxLimit: 500,
-  throttleDelay: 16
+  scrollSpyOffset: 150,
+  throttleDelay: 16,
+  backToTopThreshold: 300
 };
 
 // =========================================================
-// INIT
+// ENTRY
 // =========================================================
 function initUI() {
   try {
     initSmoothScroll();
     initNavbarScroll();
-    initActiveNavLinks();
+    initScrollSpy();
     initMobileMenu();
+    initBackToTop();
     initFormValidation();
     initTooltips();
     initModals();
 
-    console.log("✓ UI initialized");
+    console.info("✓ UI initialized");
   } catch (err) {
     console.error("UI init failed:", err);
   }
 }
 
 // =========================================================
-// SMOOTH SCROLL (NAV + FOOTER SAFE)
+// SMOOTH SCROLL (NAV + FOOTER)
 // =========================================================
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(link => {
@@ -47,10 +48,7 @@ function initSmoothScroll() {
 
       window.scrollTo({ top: y, behavior: "smooth" });
 
-      // Close mobile menu
-      document.querySelector(".nav-list")?.classList.remove("active");
-      document.querySelector(".mobile-toggle")?.classList.remove("active");
-      document.body.style.overflow = "";
+      closeMobileMenu();
     });
   });
 }
@@ -69,10 +67,8 @@ function initNavbarScroll() {
     throttle(() => {
       const current = window.pageYOffset;
 
-      // Shadow
       nav.classList.toggle("scrolled", current > 50);
 
-      // Hide / Show
       if (current > 200) {
         current > lastScroll
           ? nav.classList.add("hidden")
@@ -88,9 +84,9 @@ function initNavbarScroll() {
 }
 
 // =========================================================
-// ACTIVE NAV LINK HIGHLIGHT
+// ACTIVE NAV LINK (SCROLL SPY)
 // =========================================================
-function initActiveNavLinks() {
+function initScrollSpy() {
   const sections = document.querySelectorAll("section[id]");
   const links = document.querySelectorAll(".nav-link");
 
@@ -100,14 +96,14 @@ function initActiveNavLinks() {
     "scroll",
     throttle(() => {
       let current = "";
-      const scrollY = window.pageYOffset + 150;
+      const scrollY = window.pageYOffset + UI_CONFIG.scrollSpyOffset;
 
-      sections.forEach(sec => {
+      sections.forEach(section => {
         if (
-          scrollY >= sec.offsetTop &&
-          scrollY < sec.offsetTop + sec.offsetHeight
+          scrollY >= section.offsetTop &&
+          scrollY < section.offsetTop + section.offsetHeight
         ) {
-          current = sec.id;
+          current = section.id;
         }
       });
 
@@ -135,6 +131,36 @@ function initMobileMenu() {
     const open = menu.classList.toggle("active");
     toggle.classList.toggle("active");
     document.body.style.overflow = open ? "hidden" : "";
+    toggle.setAttribute("aria-expanded", open);
+  });
+}
+
+function closeMobileMenu() {
+  document.querySelector(".nav-list")?.classList.remove("active");
+  document.querySelector(".mobile-toggle")?.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+// =========================================================
+// BACK TO TOP BUTTON
+// =========================================================
+function initBackToTop() {
+  const btn = document.querySelector(".back-to-top");
+  if (!btn) return;
+
+  window.addEventListener(
+    "scroll",
+    throttle(() => {
+      btn.classList.toggle(
+        "visible",
+        window.pageYOffset > UI_CONFIG.backToTopThreshold
+      );
+    }),
+    { passive: true }
+  );
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
@@ -148,8 +174,8 @@ function initFormValidation() {
 
       form.querySelectorAll("[required]").forEach(input => {
         if (!input.value.trim()) {
-          valid = false;
           input.classList.add("error");
+          valid = false;
         } else {
           input.classList.remove("error");
         }
@@ -161,7 +187,7 @@ function initFormValidation() {
 }
 
 // =========================================================
-// TOOLTIPS (NATIVE FALLBACK)
+// TOOLTIPS
 // =========================================================
 function initTooltips() {
   document.querySelectorAll("[data-tooltip]").forEach(el => {
@@ -175,8 +201,9 @@ function initTooltips() {
 function initModals() {
   document.querySelectorAll("[data-modal]").forEach(btn => {
     btn.addEventListener("click", () => {
-      const modal = document.getElementById(btn.dataset.modal);
-      modal?.classList.add("active");
+      document
+        .getElementById(btn.dataset.modal)
+        ?.classList.add("active");
     });
   });
 

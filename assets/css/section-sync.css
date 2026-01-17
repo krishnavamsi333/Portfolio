@@ -1,203 +1,41 @@
-/* ===============================================
-   SECTION SYNCHRONIZATION FIX
-   Add this to a new file: section-sync.css
-   Include it AFTER layout.css in index.html
-   =============================================== */
+/* =================================================
+   section-sync.css (FIXED & MINIMAL)
+   Purpose: ONLY scroll alignment + spacing harmony
+   ================================================= */
 
-/* ===== CONSISTENT SECTION SPACING ===== */
-
-/* All main sections should have uniform padding */
-.section,
+/* ---------- Scroll offset for fixed navbar ---------- */
 section[id] {
-  padding: 5rem 0;
-  scroll-margin-top: 80px; /* Account for fixed nav */
+  scroll-margin-top: 80px;
 }
 
-/* Header needs extra top padding for visual hierarchy */
-.header {
-  padding: 6rem 0 5rem;
-  scroll-margin-top: 0; /* Header is at top, no need for scroll margin */
+/* Mobile nav height */
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 76px;
+  }
 }
 
-/* ===== UNIFIED SECTION HEADER STYLES ===== */
-
-/* Override duplicate .section-header definitions */
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem; /* Consistent spacing */
-  padding: 0; /* Remove inconsistent padding */
-}
-
-.section-title {
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
-  margin: 0 0 1rem 0;
-  color: var(--color-text-main, #e4e6eb);
-}
-
-.title-accent {
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-divider {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, #60a5fa, transparent);
-  margin: 0 auto 1.5rem;
-  border-radius: 2px;
-}
-
-.section-subtitle {
-  font-size: 1.05rem;
-  color: var(--color-text-muted, #9ca3af);
+/* ---------- Unified section spacing (ONE SOURCE) ---------- */
+/* Do NOT override individual section CSS */
+.section {
   margin: 0;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
-/* ===== CONTAINER CONSISTENCY ===== */
-
-/* Main content container */
-main.container {
-  padding: 0; /* Remove container padding, let sections handle it */
+/* ---------- Section headers consistency ---------- */
+.section-header {
+  margin-bottom: 2.5rem; /* Reduced from 4rem */
+  padding: 0;
+  text-align: center;
 }
 
-/* Individual section containers */
-.section > div,
-section[id] > div {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+/* ---------- Prevent spacing bleed ---------- */
+section[id] + section[id] {
+  margin-top: 0;
 }
 
-/* ===== ALTERNATING SECTION BACKGROUNDS ===== */
-
-/* Optional: Add subtle background variation */
-.section:nth-child(even),
-section[id]:nth-child(even) {
-  background: rgba(255, 255, 255, 0.01);
-}
-
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
-
-@media (max-width: 1024px) {
-  .section,
-  section[id] {
-    padding: 4rem 0;
-  }
-
-  .header {
-    padding: 5rem 0 4rem;
-  }
-
-  .section-header {
-    margin-bottom: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .section,
-  section[id] {
-    padding: 3rem 0;
-    scroll-margin-top: 76px; /* Adjusted for mobile nav height */
-  }
-
-  .header {
-    padding: 4rem 0 3rem;
-  }
-
-  .section-header {
-    margin-bottom: 2.5rem;
-  }
-
-  .section > div,
-  section[id] > div {
-    padding: 0 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .section,
-  section[id] {
-    padding: 2.5rem 0;
-  }
-
-  .header {
-    padding: 3rem 0 2.5rem;
-  }
-
-  .section-header {
-    margin-bottom: 2rem;
-  }
-
-  .section > div,
-  section[id] > div {
-    padding: 0 1.25rem;
-  }
-}
-
-/* ===== SMOOTH SCROLL BEHAVIOR ===== */
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Offset for fixed nav */
-}
-
-@media (max-width: 768px) {
-  html {
-    scroll-padding-top: 76px;
-  }
-}
-
-/* ===== ACCESSIBILITY ===== */
-
+/* ---------- Accessibility ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-}
-
-/* ===============================================
-   QUICK FIX FOR EXISTING STYLES
-   These override conflicting rules
-   =============================================== */
-
-/* Remove inconsistent about-section padding */
-.about-section {
-  padding: 5rem 0 !important;
-}
-
-/* Remove inconsistent skills-section padding */
-.skills-section {
-  padding: 5rem 0 !important;
-  background: transparent !important; /* Let alternating bg handle this */
-}
-
-/* Fix about grid padding conflict */
-.about-grid {
-  padding: 0 !important; /* Parent section handles padding */
-}
-
-/* Fix skills grid padding conflict */
-.skills-grid {
-  padding: 0 !important; /* Parent section handles padding */
-}
-
-/* ===============================================
-   NAVIGATION SCROLL FIX
-   Ensures nav links scroll to correct position
-   =============================================== */
-
-/* This is already in nav.css, but ensuring it's set */
-.nav {
-  height: 80px; /* Fixed height */
-}
-
-@media (max-width: 768px) {
-  .nav {
-    height: 76px;
   }
 }
