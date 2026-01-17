@@ -4,9 +4,9 @@
 .header {
   padding: 6rem 0 4rem;         /* CHANGE: Section padding (top bottom) */
   background: linear-gradient(135deg, 
-    rgba(10, 14, 23, 1) 0%, 
-    rgba(26, 31, 46, 1) 100%);  /* CHANGE: Background gradient */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    rgb(255, 255, 255) 0%, 
+    rgb(255, 255, 255) 100%);  /* CHANGE: Background gradient */
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
   position: relative;
   overflow: hidden;
 }
@@ -19,7 +19,7 @@
   right: -10%;
   width: 600px;                 /* CHANGE: Glow size */
   height: 600px;
-  background: radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, transparent 70%);
   border-radius: 50%;
   animation: float 8s ease-in-out infinite;
   pointer-events: none;
@@ -97,7 +97,7 @@
   font-size: clamp(2.5rem, 5vw, 3.5rem);  /* CHANGE: Title size (responsive) */
   font-weight: 800;
   line-height: 1.15;
-  background: linear-gradient(135deg, #e4e6eb, #60a5fa);  /* CHANGE: Title gradient */
+  background: linear-gradient(135deg, #542a00, #03ff18);  /* CHANGE: Title gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -217,14 +217,14 @@
 
 /* Primary Button */
 .btn-primary {
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);  /* CHANGE: Primary button gradient */
+  background: linear-gradient(135deg, #542a00, #03ff18);  /* CHANGE: Primary button gradient */
   color: white;
   box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);  /* CHANGE: Button hover lift */
-  box-shadow: 0 6px 20px rgba(96, 165, 250, 0.4);
+  box-shadow: 0 6px 20px rgba(96, 250, 101, 0.4);
 }
 
 .btn-primary:hover svg {

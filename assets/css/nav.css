@@ -5,15 +5,15 @@
 
 /* ===== CSS VARIABLES FOR EASY CUSTOMIZATION ===== */
 :root {
-  --nav-bg: rgba(10, 14, 23, 0.95);
-  --nav-bg-scrolled: rgba(10, 14, 23, 0.98);
-  --primary-gradient: linear-gradient(135deg, #60a5fa, #3b82f6, #2563eb);
-  --primary-glow: rgba(96, 165, 250, 0.4);
-  --text-main: #e4e6eb;
-  --text-muted: #9ca3af;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --hover-bg: rgba(96, 165, 250, 0.1);
-  --nav-height: 80px;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.98);
+  --primary-gradient: linear-gradient(135deg, #542a00, #00900c);
+  --primary-glow: rgb(251, 253, 255);
+  --text-main: linear-gradient(135deg, #542a00, #00740a);
+  --text-muted: linear-gradient(135deg, #542a00, #03ff18);
+  --border-color: rgb(255, 255, 255);
+  --hover-bg: rgba(96, 250, 147, 0.1);
+  --nav-height: 2.125rem;
 }
 
 /* ===== NAVIGATION CONTAINER ===== */
