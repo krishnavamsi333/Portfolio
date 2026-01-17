@@ -2,290 +2,279 @@
 
 /* ===== SECTION CONTAINER ===== */
 .experience-section {
-  padding: 5rem 0;              /* CHANGE: Section vertical padding */
+  padding: 5rem 0;
   background: rgba(255, 255, 255, 0.01);
 }
 
 /* ===== SECTION HEADER ===== */
 .section-header {
   text-align: center;
-  margin-bottom: 3.5rem;        /* CHANGE: Space below header */
+  margin-bottom: 3.5rem;
   padding: 2rem;
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 2.75rem);  /* CHANGE: Title size (responsive) */
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
   margin: 0 0 1rem 0;
   color: var(--color-text-main, #e4e6eb);
 }
 
 .title-accent {
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);  /* CHANGE: Gradient colors */
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .section-divider {
-  width: 80px;                  /* CHANGE: Divider width */
-  height: 4px;                  /* CHANGE: Divider thickness */
+  width: 80px;
+  height: 4px;
   background: linear-gradient(90deg, transparent, #60a5fa, transparent);
   margin: 0 auto 1.5rem;
   border-radius: 2px;
 }
 
 .section-subtitle {
-  font-size: 1.05rem;           /* CHANGE: Subtitle text size */
+  font-size: 1.05rem;
   color: var(--color-text-muted, #9ca3af);
   margin: 0;
   max-width: 700px;
   margin: 0 auto;
 }
 
-/* ===== TIMELINE CONTAINER ===== */
-.timeline-container {
-  position: relative;
-  max-width: 900px;             /* CHANGE: Maximum width of timeline */
+/* ===== TIMELINE LIST ===== */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
 }
 
-/* Vertical line connecting timeline items */
-.timeline-container::before {
-  content: '';
-  position: absolute;
-  left: 40px;                   /* CHANGE: Position of vertical line */
-  top: 0;
-  bottom: 0;
-  width: 2px;                   /* CHANGE: Line thickness */
-  background: linear-gradient(180deg, 
-    transparent,
-    rgba(96, 165, 250, 0.3) 10%,
-    rgba(96, 165, 250, 0.3) 90%,
-    transparent
-  );
-}
-
-/* ===== TIMELINE BLOCK (EACH ITEM) ===== */
-.timeline-block {
-  position: relative;
+/* ===== TIMELINE ITEM (CARD) ===== */
+.timeline-item {
   display: grid;
-  grid-template-columns: 80px 1fr;  /* CHANGE: Dot area width (80px) and content area */
-  gap: 2rem;                    /* CHANGE: Space between dot and content */
-  margin-bottom: 3rem;          /* CHANGE: Space between timeline items */
-  padding-left: 0;
-}
-
-.timeline-block:last-child {
-  margin-bottom: 0;
-}
-
-/* ===== TIMELINE DOT WRAPPER ===== */
-.timeline-dot-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 0.5rem;
-  position: relative;
-  z-index: 2;
-}
-
-/* ===== TIMELINE DOT (ICON) ===== */
-.timeline-dot {
-  width: 48px;                  /* CHANGE: Dot size */
-  height: 48px;
-  border-radius: 50%;           /* CHANGE: Shape (50% = circle, lower % = rounded square) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Outer ring animation on hover */
-.timeline-dot::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border-radius: 50%;
-  border: 2px solid currentColor;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.timeline-block:hover .timeline-dot::before {
-  opacity: 0.3;
-  animation: ripple 1.5s ease-out infinite;
-}
-
-@keyframes ripple {
-  0% { transform: scale(1); opacity: 0.3; }
-  100% { transform: scale(1.3); opacity: 0; }
-}
-
-/* DOT COLORS FOR DIFFERENT TYPES */
-
-/* Work Experience - Blue */
-.work-node {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);  /* CHANGE: Work dot gradient */
-  color: white;
-}
-
-.timeline-block[data-type="work"]:hover .work-node {
-  transform: scale(1.1) rotate(5deg);  /* CHANGE: Hover animation */
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-}
-
-/* Education - Purple */
-.edu-node {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);  /* CHANGE: Education dot gradient */
-  color: white;
-}
-
-.timeline-block[data-type="education"]:hover .edu-node {
-  transform: scale(1.1) rotate(-5deg);
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
-}
-
-/* Learning - Green with pulse animation */
-.learn-node {
-  background: linear-gradient(135deg, #10b981, #059669);  /* CHANGE: Learning dot gradient */
-  color: white;
-}
-
-.timeline-block[data-type="learning"]:hover .learn-node {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-}
-
-/* Pulse animation for ongoing learning */
-.pulse {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
-                0 0 0 0 rgba(16, 185, 129, 0.7);
-  }
-  50% {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
-                0 0 0 10px rgba(16, 185, 129, 0);
-  }
-}
-
-/* ===== TIMELINE CONTENT ===== */
-.timeline-content {
-  background: rgba(255, 255, 255, 0.02);     /* CHANGE: Card background color */
-  border: 1px solid rgba(255, 255, 255, 0.05);  /* CHANGE: Card border */
-  border-radius: 1rem;          /* CHANGE: Card corner roundness */
-  padding: 2rem;                /* CHANGE: Card internal padding */
+  grid-template-columns: 140px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  min-height: 280px;
+  
+  /* CARD BACKGROUND COLOR */
+  background: rgba(240, 249, 255, 0.5);
+  
+  /* CARD BORDER (OUTLINE) COLOR */
+  border: 1px solid rgb(0, 255, 213);
+  
+  border-radius: 1rem;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
 
-/* Left border accent that appears on hover */
-.timeline-content::before {
+/* Top accent line that appears on hover */
+.timeline-item::before {
   content: '';
   position: absolute;
-  left: 0;
   top: 0;
-  bottom: 0;
-  width: 4px;                   /* CHANGE: Accent border thickness */
-  background: currentColor;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--timeline-accent, #60a5fa), transparent);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
-/* HOVER EFFECTS FOR DIFFERENT TYPES */
-
-/* Work type hover */
-.timeline-block[data-type="work"]:hover .timeline-content {
-  border-color: rgba(59, 130, 246, 0.3);     /* CHANGE: Work hover border */
-  background: rgba(59, 130, 246, 0.03);
-  transform: translateX(8px);                 /* CHANGE: Slide effect */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+/* CARD HOVER STATE */
+.timeline-item:hover {
+  border-color: rgba(96, 165, 250, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
-.timeline-block[data-type="work"]:hover .timeline-content::before {
+.timeline-item:hover::before {
   opacity: 1;
-  color: #3b82f6;               /* CHANGE: Work accent color */
 }
 
-/* Education type hover */
-.timeline-block[data-type="education"]:hover .timeline-content {
-  border-color: rgba(139, 92, 246, 0.3);
-  background: rgba(139, 92, 246, 0.03);
-  transform: translateX(8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.timeline-block[data-type="education"]:hover .timeline-content::before {
-  opacity: 1;
-  color: #8b5cf6;               /* CHANGE: Education accent color */
-}
-
-/* Learning type hover */
-.timeline-block[data-type="learning"]:hover .timeline-content {
-  border-color: rgba(16, 185, 129, 0.3);
-  background: rgba(16, 185, 129, 0.03);
-  transform: translateX(8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.timeline-block[data-type="learning"]:hover .timeline-content::before {
-  opacity: 1;
-  color: #10b981;               /* CHANGE: Learning accent color */
-}
-
-/* ===== TIMELINE HEADER ===== */
-.timeline-header {
+/* ===== TIMELINE THUMBNAIL ===== */
+.timeline-thumbnail {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
-  margin-bottom: 1rem;          /* CHANGE: Space below header */
-  flex-wrap: wrap;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  transition: transform 0.4s ease;
+}
+
+.timeline-item:hover .timeline-thumbnail {
+  transform: scale(1.05);
+}
+
+/* GRADIENT BACKGROUNDS FOR THUMBNAILS */
+
+/* Work Experience - Blue gradient */
+.timeline-thumbnail[data-gradient="blue"] {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(96, 165, 250, 0.05));
+  --timeline-accent: #3b82f6;
+}
+
+/* Education - Purple gradient */
+.timeline-thumbnail[data-gradient="purple"] {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(196, 181, 253, 0.05));
+  --timeline-accent: #a855f7;
+}
+
+/* Learning - Green gradient */
+.timeline-thumbnail[data-gradient="green"] {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(52, 211, 153, 0.05));
+  --timeline-accent: #10b981;
+}
+
+.timeline-index {
+  font-size: 2rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1;
+}
+
+.timeline-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-icon {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.timeline-icon svg {
+  opacity: 0.8;
+}
+
+/* ===== TIMELINE CONTENT ===== */
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ===== TIMELINE STATUS BADGE ===== */
+.timeline-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 2rem;
+  position: relative;
+}
+
+/* Pulsing dot before status text */
+.timeline-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* STATUS BADGE COLORS - Matching project status styles */
+
+/* Ongoing status - Green */
+.timeline-status[data-status="ongoing"] {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.timeline-status[data-status="ongoing"]::before {
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+}
+
+/* Research/Completed status - Blue */
+.timeline-status[data-status="research"] {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.timeline-status[data-status="research"]::before {
+  background: #3b82f6;
+  box-shadow: 0 0 10px #3b82f6;
+}
+
+/* Simulation/Learning status - Purple */
+.timeline-status[data-status="simulation"] {
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.timeline-status[data-status="simulation"]::before {
+  background: #a855f7;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
 }
 
 /* ===== TIMELINE TITLE ===== */
 .timeline-title {
-  font-size: 1.4rem;            /* CHANGE: Title size */
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
   color: var(--color-text-main, #e4e6eb);
   line-height: 1.3;
+  transition: color 0.3s ease;
 }
 
 .timeline-company {
-  color: var(--color-accent-soft, #60a5fa);  /* CHANGE: Company name color */
+  color: var(--color-accent-soft, #60a5fa);
   font-weight: 600;
+}
+
+.timeline-item:hover .timeline-title {
+  color: var(--color-accent-soft, #60a5fa);
 }
 
 /* ===== TIMELINE DURATION ===== */
 .timeline-duration {
-  font-size: 0.9rem;            /* CHANGE: Duration text size */
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.9rem;
   font-weight: 600;
-  padding: 0.4rem 1rem;         /* CHANGE: Duration badge padding */
-  background: rgba(96, 165, 250, 0.1);       /* CHANGE: Duration badge background */
-  color: var(--color-accent-soft, #60a5fa);  /* CHANGE: Duration text color */
-  border-radius: 2rem;          /* CHANGE: Duration badge roundness */
-  white-space: nowrap;
+  padding: 0.4rem 1rem;
+  background: rgba(96, 165, 250, 0.1);
+  color: var(--color-accent-soft, #60a5fa);
+  border-radius: 2rem;
   border: 1px solid rgba(96, 165, 250, 0.2);
 }
 
 /* ===== TIMELINE DESCRIPTION ===== */
 .timeline-description {
-  font-size: 1rem;              /* CHANGE: Description text size */
-  line-height: 1.7;             /* CHANGE: Line height for readability */
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--color-text-muted, #9ca3af);
-  margin: 0 0 1rem 0;           /* CHANGE: Space below description */
+  margin: 0;
 }
 
 .timeline-description strong {
@@ -297,87 +286,58 @@
 .timeline-highlights {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem 0;         /* CHANGE: Space below highlights */
+  margin: 0.5rem 0 0 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;                 /* CHANGE: Space between bullet points */
+  gap: 0.75rem;
 }
 
 .timeline-highlights li {
   position: relative;
-  padding-left: 1.5rem;         /* CHANGE: Space for bullet icon */
-  font-size: 0.95rem;           /* CHANGE: Bullet text size */
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--color-text-muted, #9ca3af);
 }
 
 /* Custom bullet icon */
 .timeline-highlights li::before {
-  content: '▹';                 /* CHANGE: Bullet character (try '•', '→', '▸') */
+  content: '▹';
   position: absolute;
   left: 0;
-  color: var(--color-accent-soft, #60a5fa);  /* CHANGE: Bullet color */
-  font-size: 1.2rem;            /* CHANGE: Bullet size */
+  color: var(--color-accent-soft, #60a5fa);
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
-/* ===== TAG CLOUD ===== */
-.tag-cloud {
+/* ===== TECH TAGS ===== */
+.tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;                  /* CHANGE: Space between tags */
-  margin-top: 1rem;             /* CHANGE: Space above tags */
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
 }
 
-/* ===== PILL TAGS ===== */
-.pill-tag {
-  display: inline-block;
-  padding: 0.4rem 1rem;         /* CHANGE: Tag padding */
-  font-size: 0.85rem;           /* CHANGE: Tag text size */
+.tech-tag {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  border-radius: 2rem;          /* CHANGE: Tag roundness (2rem = pill shape) */
+  
+  /* TAG COLORS - Matching project tag styles */
+  background: #dcfce7;
+  color: #3E2723;
+  border-radius: 6px;
+  border: 1px solid #bbf7d0;
+  
   transition: all 0.3s ease;
-  cursor: default;
 }
 
-/* TAG COLORS BY THEME */
-
-/* Work theme - Blue tags */
-.tag-cloud[data-theme="work"] .pill-tag {
-  background: rgba(59, 130, 246, 0.1);       /* CHANGE: Work tag background */
-  color: #60a5fa;                            /* CHANGE: Work tag text */
-  border: 1px solid rgba(59, 130, 246, 0.2); /* CHANGE: Work tag border */
-}
-
-.tag-cloud[data-theme="work"] .pill-tag:hover {
-  background: rgba(59, 130, 246, 0.2);
-  border-color: rgba(59, 130, 246, 0.4);
-  transform: translateY(-2px);              /* CHANGE: Hover lift effect */
-}
-
-/* Education theme - Purple tags */
-.tag-cloud[data-theme="education"] .pill-tag {
-  background: rgba(139, 92, 246, 0.1);
-  color: #a78bfa;
-  border: 1px solid rgba(139, 92, 246, 0.2);
-}
-
-.tag-cloud[data-theme="education"] .pill-tag:hover {
-  background: rgba(139, 92, 246, 0.2);
-  border-color: rgba(139, 92, 246, 0.4);
-  transform: translateY(-2px);
-}
-
-/* Learning theme - Green tags */
-.tag-cloud[data-theme="learning"] .pill-tag {
-  background: rgba(16, 185, 129, 0.1);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.2);
-}
-
-.tag-cloud[data-theme="learning"] .pill-tag:hover {
-  background: rgba(16, 185, 129, 0.2);
-  border-color: rgba(16, 185, 129, 0.4);
+.tech-tag:hover {
+  background: #dcfce7;
+  color: #000000;
+  border: 1px solid #bbf7d0;
   transform: translateY(-2px);
 }
 
@@ -387,138 +347,118 @@
     padding: 3rem 0;
   }
 
-  .timeline-container {
+  .timeline-list {
+    padding: 0 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    min-height: auto;
+  }
+
+  .timeline-thumbnail {
+    aspect-ratio: auto;
     padding: 1rem;
+    max-width: 120px;
+    margin: 0 auto;
   }
 
-  /* Center the vertical line on mobile */
-  .timeline-container::before {
-    left: 24px;                 /* CHANGE: Mobile line position */
+  .timeline-index {
+    font-size: 1.5rem;
   }
 
-  .timeline-block {
-    grid-template-columns: 48px 1fr;  /* CHANGE: Smaller dot area on mobile */
-    gap: 1rem;                  /* CHANGE: Less space on mobile */
-    margin-bottom: 2.5rem;
-  }
-
-  .timeline-dot {
-    width: 40px;                /* CHANGE: Smaller dot on mobile */
+  .timeline-icon {
+    width: 40px;
     height: 40px;
   }
 
-  .timeline-dot svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .timeline-content {
-    padding: 1.5rem;            /* CHANGE: Less padding on mobile */
-  }
-
-  .timeline-header {
-    flex-direction: column;
-    gap: 0.5rem;
+  .timeline-icon svg {
+    width: 30px;
+    height: 30px;
   }
 
   .timeline-title {
-    font-size: 1.2rem;          /* CHANGE: Smaller title on mobile */
-  }
-
-  .timeline-duration {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.8rem;
+    font-size: 1.3rem;
   }
 
   .timeline-description {
-    font-size: 0.95rem;         /* CHANGE: Smaller text on mobile */
+    font-size: 0.95rem;
   }
 
   .timeline-highlights li {
     font-size: 0.9rem;
   }
 
-  .pill-tag {
-    font-size: 0.8rem;          /* CHANGE: Smaller tags on mobile */
-    padding: 0.35rem 0.85rem;
+  .tech-tag {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.75rem;
   }
 }
 
 @media (max-width: 480px) {
-  .timeline-container::before {
-    left: 20px;
+  .section-header {
+    padding: 1.5rem;
   }
 
-  .timeline-block {
-    grid-template-columns: 40px 1fr;
-  }
-
-  .timeline-dot {
-    width: 36px;
-    height: 36px;
-  }
-
-  .timeline-content {
+  .timeline-item {
     padding: 1.25rem;
+  }
+
+  .tech-tags {
+    gap: 0.4rem;
   }
 }
 
 /* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
-  .timeline-dot,
-  .timeline-content,
-  .pill-tag,
-  .pulse {
+  .timeline-item,
+  .timeline-thumbnail,
+  .timeline-icon,
+  .tech-tag {
     animation: none;
     transition: none;
   }
   
-  .timeline-dot::before {
+  .timeline-status::before {
     animation: none;
   }
 }
 
 /* Focus visible for keyboard navigation */
-.timeline-block:focus-within .timeline-content {
-  outline: 2px solid var(--color-accent-soft, #60a5fa);
-  outline-offset: 3px;
+.timeline-item:focus-within {
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
 }
 
 /* ================= CUSTOMIZATION QUICK REFERENCE ================= */
 /*
 
-TIMELINE DIMENSIONS:
-- .timeline-container { max-width } - Timeline width (900px)
-- .timeline-block { margin-bottom } - Space between items (3rem)
-- .timeline-block { gap } - Space between dot and content (2rem)
-- .timeline-content { padding } - Card internal spacing (2rem)
-
-TIMELINE LINE:
-- .timeline-container::before { width } - Line thickness (2px)
-- .timeline-container::before { left } - Line position (40px)
-- .timeline-container::before { background } - Line color/gradient
-
-DOT COLORS:
-- .work-node - Blue work experience (#3b82f6)
-- .edu-node - Purple education (#8b5cf6)
-- .learn-node - Green continuous learning (#10b981)
+CARD DIMENSIONS:
+- .timeline-item { min-height } - Card height (280px)
+- .timeline-item { padding } - Internal spacing (2rem)
+- .timeline-list { gap } - Space between cards (2rem)
+- .timeline-list { max-width } - Maximum card width (1600px)
 
 CARD COLORS:
-- .timeline-content { background } - Card fill (rgba(255, 255, 255, 0.02))
-- .timeline-content { border } - Card border
-- [data-type="work"]:hover - Work hover colors (blue)
-- [data-type="education"]:hover - Education hover colors (purple)
-- [data-type="learning"]:hover - Learning hover colors (green)
+- .timeline-item { background } - Card fill (rgba(240, 249, 255, 0.5))
+- .timeline-item { border } - Card outline (rgb(0, 255, 213))
+- .timeline-item:hover { border-color } - Hover border (rgba(96, 165, 250, 0.3))
+- .timeline-item:hover { background } - Hover fill (rgba(255, 255, 255, 0.8))
+
+THUMBNAIL GRADIENTS:
+- .timeline-thumbnail[data-gradient="blue"] - Blue work experience
+- .timeline-thumbnail[data-gradient="purple"] - Purple education
+- .timeline-thumbnail[data-gradient="green"] - Green learning
+
+STATUS BADGES:
+- .timeline-status[data-status="ongoing"] - Green badge (Current/Ongoing)
+- .timeline-status[data-status="research"] - Blue badge (Completed/Research)
+- .timeline-status[data-status="simulation"] - Purple badge (Learning/Simulation)
 
 TAG COLORS:
-- [data-theme="work"] - Blue tags
-- [data-theme="education"] - Purple tags
-- [data-theme="learning"] - Green tags
-
-ANIMATIONS:
-- Ripple effect on dot hover
-- Pulse animation on learning dot
-- Slide-in effect on card hover
-- Left accent border appears on hover
+- .tech-tag - Soft mint background (#dcfce7) with espresso text (#3E2723)
 
 */
