@@ -1,507 +1,59 @@
-/* ================= ENHANCED NAVIGATION STYLES ================= */
-
-/* Import premium font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-/* ===== CSS VARIABLES FOR EASY CUSTOMIZATION ===== */
-:root {
-  --nav-bg: rgba(255, 255, 255, 0.95);
-  --nav-bg-scrolled: rgba(255, 255, 255, 0.98);
-  --primary-gradient: linear-gradient(135deg, #542a00, #00900c);
-  --primary-glow: rgb(251, 253, 255);
-  --text-main: linear-gradient(135deg, #542a00, #00740a);
-  --text-muted: linear-gradient(135deg, #542a00, #03ff18);
-  --border-color: rgb(255, 255, 255);
-  --hover-bg: rgba(96, 250, 147, 0.1);
-  --nav-height: 2.125rem;
-}
-
-/* ===== NAVIGATION CONTAINER ===== */
 .nav {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   z-index: 1000;
-  background: var(--nav-bg);
-  backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid var(--border-color);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  padding: 20px 0;
+  transition: all 0.4s var(--transition-main);
+  border-bottom: 1px solid transparent;
 }
 
-/* Scrolled state with enhanced shadow */
 .nav.scrolled {
-  background: var(--nav-bg-scrolled);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
-              0 0 80px rgba(96, 165, 250, 0.1);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #111;
+  padding: 15px 0;
 }
 
 .nav-container {
-  max-width: 1400px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 1.25rem 2.5rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  align-items: center;
+  padding: 0 40px;
 }
 
-/* ===== BRAND LOGO WITH ENHANCED EFFECTS ===== */
-.nav-brand {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
+.nav-logo {
+  font-family: 'JetBrains Mono', monospace;
   font-weight: 800;
-  color: var(--text-main);
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  letter-spacing: -0.02em;
+  font-size: 1.2rem;
+  letter-spacing: -1px;
 }
 
-.brand-text {
-  background: var(--primary-gradient);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 8s ease infinite;
-  filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.3));
-}
-
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-.nav-brand:hover {
-  transform: scale(1.05) translateY(-2px);
-}
-
-.nav-brand::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: var(--primary-gradient);
-  background-size: 200% 200%;
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 2px;
-  box-shadow: 0 0 12px var(--primary-glow);
-  animation: gradientShift 3s ease infinite;
-}
-
-.nav-brand:hover::after {
-  width: 100%;
-}
-
-/* ===== NAVIGATION LIST ===== */
-.nav-list {
+.nav-links {
   display: flex;
+  gap: 40px;
   align-items: center;
-  gap: 0.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
-/* ===== ENHANCED NAVIGATION LINKS ===== */
 .nav-link {
-  display: block;
-  padding: 0.875rem 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  text-decoration: none;
-  border-radius: 0.75rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  letter-spacing: 0.01em;
-  overflow: hidden;
-}
-
-/* Magnetic hover effect background */
-.nav-link::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--hover-bg), transparent);
-  transform: translate(-50%, -50%);
-  transition: width 0.5s ease, height 0.5s ease;
-  z-index: -1;
-}
-
-.nav-link:hover::before {
-  width: 200%;
-  height: 200%;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--text-main);
-  transform: translateY(-2px);
-  text-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
+  color: #fff;
 }
 
-.nav-link:focus-visible {
-  outline: 2px solid #60a5fa;
-  outline-offset: 4px;
+.btn-nav {
+  background: #fff;
+  color: #000;
+  padding: 8px 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 0;
 }
-
-/* Active link with glow effect */
-.nav-link.active {
-  color: #60a5fa;
-  background: var(--hover-bg);
-  box-shadow: 0 0 20px rgba(96, 165, 250, 0.2),
-              inset 0 0 20px rgba(96, 165, 250, 0.1);
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 8px;
-  left: 1.5rem;
-  right: 1.5rem;
-  height: 2px;
-  background: var(--primary-gradient);
-  background-size: 200% 200%;
-  border-radius: 2px;
-  box-shadow: 0 0 8px var(--primary-glow);
-  animation: gradientShift 3s ease infinite;
-}
-
-/* ===== NAVIGATION ACTIONS ===== */
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* ===== ENHANCED RESUME CTA BUTTON ===== */
-.nav-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: white;
-  background: var(--primary-gradient);
-  background-size: 200% 200%;
-  border: none;
-  border-radius: 0.75rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px var(--primary-glow),
-              0 0 0 0 rgba(96, 165, 250, 0.4);
-  position: relative;
-  overflow: hidden;
-  letter-spacing: 0.02em;
-  animation: gradientShift 8s ease infinite, float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-3px); }
-}
-
-/* Shimmer effect on hover */
-.nav-cta::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.3), 
-    transparent
-  );
-  transition: left 0.5s ease;
-}
-
-.nav-cta:hover::before {
-  left: 100%;
-}
-
-.nav-cta:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px var(--primary-glow),
-              0 0 0 8px rgba(96, 165, 250, 0.1);
-  animation: gradientShift 3s ease infinite;
-}
-
-.nav-cta:active {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--primary-glow);
-}
-
-.nav-cta svg {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-cta:hover svg {
-  transform: translateY(2px) scale(1.1);
-  animation: bounce 0.5s ease;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(4px) scale(1.1); }
-}
-
-/* ===== MOBILE MENU TOGGLE ===== */
-.mobile-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color);
-  border-radius: 0.75rem;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  gap: 5px;
-}
-
-.mobile-toggle:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(96, 165, 250, 0.5);
-  box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
-  transform: scale(1.05);
-}
-
-.hamburger-line {
-  width: 22px;
-  height: 2.5px;
-  background: var(--text-main);
-  border-radius: 2px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 8px rgba(96, 165, 250, 0.3);
-}
-
-/* Animated hamburger to X */
-.mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
-  transform: translateY(7.5px) rotate(45deg);
-}
-
-.mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
-  transform: translateY(-7.5px) rotate(-45deg);
-}
-
-/* ===== RESPONSIVE BREAKPOINTS ===== */
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .nav-container {
-    padding: 1rem 2rem;
-  }
-
-  .nav-list {
-    gap: 0.25rem;
-  }
-
-  .nav-link {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .nav-container {
-    padding: 1rem 1.5rem;
-  }
-
-  .mobile-toggle {
-    display: flex;
-  }
-
-  .nav-cta {
-    display: none;
-  }
-
-  /* Enhanced mobile menu */
-  .nav-list {
-    position: fixed;
-    top: 76px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 0;
-    background: var(--nav-bg-scrolled);
-    backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid var(--border-color);
-    padding: 1.5rem 0;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4),
-                0 0 60px rgba(96, 165, 250, 0.1);
-  }
-
-  .nav-list.active {
-    max-height: 500px;
-    opacity: 1;
-  }
-
-  /* Staggered animation for menu items */
-  .nav-list.active li {
-    animation: slideInFromLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    opacity: 0;
-  }
-
-  .nav-list.active li:nth-child(1) { animation-delay: 0.1s; }
-  .nav-list.active li:nth-child(2) { animation-delay: 0.15s; }
-  .nav-list.active li:nth-child(3) { animation-delay: 0.2s; }
-  .nav-list.active li:nth-child(4) { animation-delay: 0.25s; }
-  .nav-list.active li:nth-child(5) { animation-delay: 0.3s; }
-  .nav-list.active li:nth-child(6) { animation-delay: 0.35s; }
-
-  @keyframes slideInFromLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .nav-list li {
-    width: 100%;
-  }
-
-  .nav-link {
-    width: 100%;
-    padding: 1.25rem 1.5rem;
-    border-radius: 0;
-    border-left: 3px solid transparent;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .nav-link:hover {
-    border-left-color: #60a5fa;
-    padding-left: 2rem;
-    background: rgba(96, 165, 250, 0.05);
-  }
-
-  .nav-link.active {
-    border-left-color: #60a5fa;
-    background: rgba(96, 165, 250, 0.1);
-  }
-
-  .nav-link.active::after {
-    display: none;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .nav-brand {
-    font-size: 1.35rem;
-  }
-
-  .nav-container {
-    padding: 1rem 1.25rem;
-  }
-}
-
-/* ===== ACCESSIBILITY ===== */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-*:focus-visible {
-  outline: 2px solid #60a5fa;
-  outline-offset: 4px;
-  border-radius: 0.25rem;
-}
-
-/* ===== SMOOTH SCROLL BEHAVIOR ===== */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
-/* ===== SCROLL PROGRESS INDICATOR ===== */
-.nav::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--primary-gradient);
-  background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
-  box-shadow: 0 0 12px var(--primary-glow);
-  transition: width 0.1s linear;
-  z-index: 1001;
-}
-
-/* Add this via JavaScript: document.querySelector('.nav').style.setProperty('--scroll-width', scrollPercentage + '%'); */
-
-/* ================= FEATURES SUMMARY ================= */
-/*
-
-✨ NEW ENHANCEMENTS:
-
-TYPOGRAPHY:
-- Inter font family for premium look
-- Better letter-spacing
-- Improved font weights
-
-ANIMATIONS:
-- Gradient shift animation on logo and CTA
-- Floating animation on CTA button
-- Magnetic hover effect on links
-- Staggered slide-in for mobile menu
-- Shimmer effect on CTA hover
-- Bounce animation on icon
-
-COLORS & EFFECTS:
-- Enhanced glassmorphism with better blur
-- Gradient backgrounds that animate
-- Glow effects on active states
-- Better shadow depth
-- Radial gradient hover backgrounds
-
-MICRO-INTERACTIONS:
-- Smooth cubic-bezier easing
-- Icon scale and movement
-- Button lift effect
-- Border slide animations
-- Progressive menu item reveals
-
-ACCESSIBILITY:
-- Respects prefers-reduced-motion
-- Better focus indicators
-- Improved keyboard navigation
-
-*/

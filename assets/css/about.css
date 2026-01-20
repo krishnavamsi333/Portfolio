@@ -1,533 +1,64 @@
-/* ================= ABOUT SECTION STYLES ================= */
-
-/* ===== SECTION CONTAINER ===== */
-.about-section {
-  padding: 5rem 0;              /* CHANGE: Section vertical padding */
-}
-
-/* ===== SECTION HEADER ===== */
-.section-header {
-  text-align: center;
-  margin-bottom: 5rem;          /* CHANGE: Space below header */
-  padding: 2rem;
-}
-
-
-.section-title {
-  font-size: clamp(2rem, 4vw, 2.75rem);  /* CHANGE: Title size (responsive) */
-  font-weight: 700;
-  margin: 0 0 1rem 0;
-  color: var(--color-text-main, #000000);
-}
-
-.title-accent {
-  background: linear-gradient(135deg, #60a5fa, #032761);  /* CHANGE: Gradient colors */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-divider {
-  width: 80px;                  /* CHANGE: Divider width */
-  height: 4px;                  /* CHANGE: Divider thickness */
-  background: linear-gradient(90deg, transparent, #b3d2f8, transparent);
-  margin: 0 auto;
-  border-radius: 10px;
-}
-
-/* ===== ABOUT GRID ===== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 300px 1fr;  /* CHANGE: Image width (300px) and content area */
-  gap: 3rem;                    /* CHANGE: Space between image and content */
-  align-items: start;
-  max-width: 1200px;            /* CHANGE: Maximum width of grid */
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* ===== PROFILE IMAGE ===== */
-.profile-image-wrapper {
+/* Updated Visual Block (Replaces Image) */
+.about-visual-terminal {
+  flex: 1;
+  background: #050505;
+  border: 1px solid #1a1a1a;
+  padding: 40px;
   position: relative;
-  margin: 0;
-  width: 280px;                 /* CHANGE: Image container width */
-  height: 280px;                /* CHANGE: Image container height */
-  justify-self: center;
-}
-
-.profile-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 1.5rem;        /* CHANGE: Image corner roundness */
-  object-fit: cover;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.profile-image:hover {
-  transform: scale(1.05) translateY(-5px);  /* CHANGE: Hover zoom and lift effect */
-  box-shadow: 0 20px 60px rgba(158, 250, 96, 0.699);
-}
-
-.profile-image-border {
-  position: absolute;
-  top: -10px;                   /* CHANGE: Border offset from image */
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border: 2px solid rgba(96, 165, 250, 0.3);  /* CHANGE: Border color and thickness */
-  border-radius: 1.5rem;
-  z-index: 1;
-  animation: borderPulse 3s ease-in-out infinite;
-}
-
-@keyframes borderPulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1.02);
-    opacity: 1;
-  }
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-/* ===== ABOUT CONTENT ===== */
-.about-content {
+  min-height: 300px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;                    /* CHANGE: Space between content sections */
+  justify-content: center;
 }
 
-.about-text-wrapper {
+.terminal-header {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.terminal-header .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #333;
+}
+
+.terminal-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #444;
+  margin-left: 10px;
+}
+
+.code-decoration {
+  margin-top: 30px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--color-accent);
+  opacity: 0.6;
+  line-height: 2;
+}
+
+.experience-badge-industrial {
   display: flex;
   flex-direction: column;
-  gap: 1rem;                    /* CHANGE: Space between paragraphs */
 }
 
-.about-text {
-  font-size: 1.05rem;           /* CHANGE: Paragraph text size */
-  line-height: 1.8;             /* CHANGE: Line height for readability */
-  color: var(--color-text-muted, #9ca3af);
-  margin: 0;
-}
-
-.about-text-highlight {
-  font-size: 1.05rem;           /* CHANGE: Paragraph text size */
-  line-height: 1.8;             /* CHANGE: Line height for readability */
-  color: var(--color-text-muted, #000000);
-  margin: 0;
-  font-weight: 500;
-}
-
-.about-text strong {
-  color: var(--color-accent-soft, #60a5fa);  /* CHANGE: Bold text color */
-  font-weight: 750;
-}
-
-/* ===== EXPERTISE SECTION ===== */
-.expertise-section {
-  padding: 1.5rem;              /* CHANGE: Section padding */
-  background: rgba(255, 255, 255, 0.02);  /* CHANGE: Section background */
-  border-radius: 0.75rem;       /* CHANGE: Section corner roundness */
-  border-left: 4px solid #60a5fa;  /* CHANGE: Left accent border */
-}
-
-.expertise-title {
-  font-size: 2.25rem;           /* CHANGE: Section title size */
-  font-weight: 800;
-  margin: 0 0 1.25rem 0;        /* CHANGE: Space below title */
-  color: #581200; 
-}
-
-/* ===== TAGS ===== */
-.tags-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;                 /* CHANGE: Space between tags */
-}
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.6rem 1rem;         /* CHANGE: Tag padding */
-  border-radius: 0.5rem;        /* CHANGE: Tag corner roundness */
-  font-size: 0.9rem;            /* CHANGE: Tag text size */
-  font-weight: 500;
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-.tag:hover {
-  transform: translateY(-2px);  /* CHANGE: Hover lift effect */
-  box-shadow: 0 4px 12px #48aa219a;
-}
-
-/* TAG COLORS BY CATEGORY */
-.tag[data-category="algorithm"] { 
-  background: rgba(234, 178, 8, 0.411);       /* CHANGE: Algorithm tag background */
-  border: 1px solid #634700; ;
-  color: #634700;                           /* CHANGE: Algorithm tag text */
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.tag[data-category="algorithm"]:hover { 
-  background: rgba(234, 179, 8, 0.15);
-  border-color: rgba(234, 179, 8, 0.5);
-  color: #634700;
-}
-
-.tag[data-category="hardware"] { 
-  background: rgba(138, 92, 246, 0.384);
-  border: 1px solid #2f005a;
-  color: #2f005a;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.tag[data-category="hardware"]:hover { 
-  background: rgba(139, 92, 246, 0.15);
-  border-color: rgba(139, 92, 246, 0.5);
-  color: #2f005a;
-}
-
-.tag[data-category="robotics"] { 
-  background: rgba(59, 131, 246, 0.322);
-  border: 1px solid #002d75;
-  color: #002d75;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.tag[data-category="robotics"]:hover { 
-  background: rgba(59, 130, 246, 0.15);
-  border-color: rgba(59, 130, 246, 0.5);
-  color: #002d75;
-}
-
-.tag[data-category="ai"] { 
-  background: rgba(236, 72, 153, 0.1);
-  border: 1px solid #460023;
-  color: #460023;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.tag[data-category="ai"]:hover { 
-  background: rgba(236, 72, 153, 0.15);
-  border-color: rgba(236, 72, 153, 0.5);
-  color: #460023;
-}
-
-.tag[data-category="software"] { 
-  background: rgba(34, 197, 94, 0.404);
-  border: 1px solid #00551f;
-  color: #00551f;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.tag[data-category="software"]:hover { 
-  background: rgba(34, 197, 94, 0.15);
-  border-color: rgba(34, 197, 94, 0.5);
-  color: #00551f;
-}
-
-.tag[data-category="energy"] { 
-  background: rgba(16, 185, 129, 0.363);
-  border: 1px solid #00462e;
-  color: #00462e;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.tag[data-category="energy"]:hover { 
-  background: rgba(16, 185, 129, 0.15);
-  border-color: rgba(16, 185, 129, 0.5);
-  color: #00462e;
-}
-
-/* ===== BUTTON GROUP ===== */
-.button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;                    /* CHANGE: Space between buttons */
-  margin-top: 1rem;             /* CHANGE: Space above button group */
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.5rem;     /* CHANGE: Button padding */
-  border-radius: 0.5rem;        /* CHANGE: Button corner roundness */
-  font-weight: 600;
-  font-size: 0.95rem;           /* CHANGE: Button text size */
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-.btn-icon {
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-}
-
-.btn:hover .btn-icon {
-  transform: translateY(-5px);  /* CHANGE: Icon lift on hover */
-}
-
-/* PRIMARY BUTTON */
-.btn-primary {
-  background: rgba(255, 255, 255, 0.05); 
-  color: white;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);  /* CHANGE: Button lift on hover */
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-}
-
-/* SECONDARY BUTTON */
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.05);  /* CHANGE: Secondary button background */
-  color: var(--color-text-main, #e4e6eb);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-/* OUTLINE BUTTON */
-.btn-outline {
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.2);  /* CHANGE: Outline button border */
-  color: var(--color-text-main, #e4e6eb);
-}
-
-.btn-outline:hover {
-  background: rgba(96, 165, 250, 0.1);
-  border-color: #60a5fa;
-  color: #60a5fa;
-  transform: translateY(-2px);
-}
-.linkedin-img {
-  width: 30px;               /* Adjust size as needed */
-  height: 30px;
-  border-radius: 4px;        /* Optional: rounds the corners slightly */
-  transition: opacity 0.3s;
-  vertical-align: middle;    /* Aligns it nicely with text */
-}
-
-.linkedin-img:hover {
-  opacity: 0.8;              /* Dims slightly when you hover over it */
-  transform: translateY(-3px);
-}
-/* ===== STATS ===== */
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* CHANGE: Number of stat columns */
-  gap: 1.5rem;                  /* CHANGE: Space between stats */
-  padding: 2rem;                /* CHANGE: Stats container padding */
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 1rem;          /* CHANGE: Stats container roundness */
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Top gradient accent line */
-.about-stats::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;                  /* CHANGE: Accent line thickness */
-  background: linear-gradient(90deg, #60a5fa, #8b5cf6, #ec4899);  /* CHANGE: Gradient colors */
-}
-
-.stat-item {
-  text-align: center;
-  margin: 0;
-  transition: transform 0.3s ease;
-}
-
-.stat-item:hover {
-  transform: translateY(-5px);  /* CHANGE: Stat hover lift effect */
-}
-
-.stat-value {
-  font-size: 2.5rem;            /* CHANGE: Stat number size */
-  font-weight: 700;
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);  /* CHANGE: Stat number gradient */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: block;
-  margin-bottom: 0.5rem;        /* CHANGE: Space below number */
+.badge-num {
+  font-size: 5rem;
+  font-weight: 900;
   line-height: 1;
+  color: #fff;
 }
 
-.stat-label {
-  font-size: 0.9rem;            /* CHANGE: Stat label text size */
-  color: var(--color-text-muted, #9ca3af);
+.badge-txt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 500;
+  margin-top: 10px;
 }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;  /* Single column on tablet */
-    gap: 2.5rem;
-  }
-
-  .profile-image-wrapper {
-    justify-self: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-section {
-    padding: 3rem 0;
-  }
-
-  .about-grid {
-    padding: 0 1.25rem;
-  }
-
-  .section-header {
-    padding: 1.5rem;
-  }
-
-  .profile-image-wrapper {
-    width: 240px;               /* CHANGE: Mobile image size */
-    height: 240px;
-  }
-
-  .about-text {
-    font-size: 1rem;
-  }
-
-  .about-text-highlight {
-    font-size: 1.05rem;
-  }
-
-  .tags-container {
-    gap: 0.5rem;
-  }
-
-  .tag {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.85rem;
-  }
-
-  .button-group {
-    flex-direction: column;     /* Stack buttons on mobile */
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .about-stats {
-    grid-template-columns: 1fr;  /* Single column stats on mobile */
-    gap: 1.25rem;
-    padding: 1.5rem;
-  }
-
-  .stat-value {
-    font-size: 2rem;
-  }
-}
-
-/* ===== ANIMATIONS ===== */
-@media (prefers-reduced-motion: reduce) {
-  .profile-image,
-  .tag,
-  .btn,
-  .stat-item,
-  .profile-image-border {
-    animation: none;
-    transition: none;
-  }
-}
-
-/* ===== COUNTER ANIMATION ===== */
-@keyframes countUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.stat-value {
-  animation: countUp 0.6s ease-out;
-}
-
-/* ================= CUSTOMIZATION QUICK REFERENCE ================= */
-/*
-
-GRID LAYOUT:
-- .about-grid { grid-template-columns } - Image and content columns (300px 1fr)
-- .about-grid { gap } - Space between image and content (3rem)
-- .about-grid { max-width } - Maximum width (1200px)
-
-PROFILE IMAGE:
-- .profile-image-wrapper { width/height } - Image size (280px)
-- .profile-image { border-radius } - Corner roundness (1.5rem)
-- .profile-image:hover { transform } - Hover zoom and lift effect
-- .profile-image-border - Animated pulsing border
-
-TEXT CONTENT:
-- .about-text { font-size } - Paragraph size (1.05rem)
-- .about-text-highlight { font-size } - Highlighted paragraph (1.15rem)
-- .about-text strong { color } - Bold text color (#60a5fa)
-
-TAGS:
-- .tag { padding } - Tag size (0.6rem 1rem)
-- Tag colors by category (algorithm, hardware, robotics, ai, software, energy)
-- Each category has custom background and text colors
-
-BUTTONS:
-- .btn { padding } - Button size (0.875rem 1.5rem)
-- .btn-primary - Gradient blue button
-- .btn-secondary - Subtle background button
-- .btn-outline - Transparent with border
-
-STATS:
-- .about-stats { grid-template-columns } - Number of columns (3)
-- .stat-value { font-size } - Number size (2.5rem)
-- Stats have gradient text and hover lift effect
-
-*/

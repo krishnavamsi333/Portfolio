@@ -1,117 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>K. Krishna Vamsi | Research Portfolio</title>
-
-  <!-- =====================
-       CORE CSS
-  ====================== -->
-  <link rel="stylesheet" href="assets/css/base.css" />
+  <title>K. Krishna Vamsi | Research Engineer</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of K. Krishna Vamsi - Research Engineer specializing in Robotics, AI, and Power Electronics. Explore projects, publications, and expertise.">
+  <meta name="keywords" content="Krishna Vamsi, Research Engineer, Robotics, AI, Power Electronics, Portfolio">
+  <meta name="author" content="K. Krishna Vamsi">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="K. Krishna Vamsi | Research Engineer Portfolio">
+  <meta property="og:description" content="Research Engineer specializing in Robotics, AI, and Power Electronics">
+  <meta property="og:image" content="assets/images/profile-600.png">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="K. Krishna Vamsi | Research Engineer">
+  <meta name="twitter:description" content="Research Engineer specializing in Robotics, AI, and Power Electronics">
+  <meta name="twitter:image" content="assets/images/profile-600.png">
+  
+  <!-- Favicon (add your favicon files) -->
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png"> -->
+  <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png"> -->
+  
+  <!-- Preconnect to External Domains -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  <!-- Critical CSS - Theme and Base should load first -->
   <link rel="stylesheet" href="assets/css/theme.css" />
-  <link rel="stylesheet" href="assets/css/layout.css" />
-  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/animations.css" />
-
-  <!-- =====================
-       SECTION CSS
-  ====================== -->
+  
+  <!-- Component-specific CSS -->
   <link rel="stylesheet" href="assets/css/header.css" />
   <link rel="stylesheet" href="assets/css/nav.css" />
-  <link rel="stylesheet" href="assets/css/section-sync.css" />
   <link rel="stylesheet" href="assets/css/about.css" />
-  <link rel="stylesheet" href="assets/css/skills.css" />
-  <link rel="stylesheet" href="assets/css/research.css" />
-  <link rel="stylesheet" href="assets/css/publications.css" />
   <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/skills.css" />
   <link rel="stylesheet" href="assets/css/experience.css" />
-  <link rel="stylesheet" href="assets/css/learning.css" />
-  <!-- <link rel="stylesheet" href="assets/css/contact.css" /> -->
+  <link rel="stylesheet" href="assets/css/publications.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/achievements.css" />
 
-  <!-- =====================
-       EMAILJS (LIB ONLY)
-  ====================== -->
+  <!-- External Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
-
+  
+  <!-- Modernizr for feature detection (optional but recommended) -->
+  <script>
+    // Replace no-js class with js for progressive enhancement
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+  </script>
 </head>
-<body>
+<body class="industrial-theme">
 
-  <!-- =====================
-       PAGE LOADER
-  ====================== -->
-  <div class="page-loader active">
-    <span>Loading Intelligence…</span>
+  <!-- Page Loader -->
+  <div class="page-loader active" id="loader" role="status" aria-live="polite">
+    <div class="loader-matrix">
+      <span class="matrix-text" aria-label="Loading">SYSTEM_INITIALIZING...</span>
+      <div class="matrix-bar"></div>
+    </div>
   </div>
 
-  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor" aria-hidden="true"></div>
 
-  <div class="floating-particles" id="particles"></div>
+  <!-- Skip to main content (Accessibility) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- =====================
-       COMPONENT CONTAINERS
-  ====================== -->
-  <div id="header-container"></div>
-  <div id="nav-container"></div>
+  <!-- Navigation -->
+  <nav id="nav-container" role="navigation" aria-label="Main navigation"></nav>
 
-  <main class="container" id="main">
+  <!-- Main Content -->
+  <main id="main-scroll-container">
+    
+    <!-- Header/Hero Section -->
+    <header id="header-container" role="banner"></header>
 
-    <section class="section" id="about">
+    <!-- About Section -->
+    <section class="reveal-container" id="about" aria-labelledby="about-heading">
       <div id="about-container"></div>
     </section>
 
-    <section class="section" id="skills">
-      <div id="skills-container"></div>
-    </section>
-
-    <section class="section" id="research">
-      <div id="research-container"></div>
-    </section>
-
-    <section class="section" id="publications">
-      <div id="publications-container"></div>
-    </section>
-
-    <section class="section" id="projects">
+    <!-- Projects Section -->
+    <section class="reveal-container" id="projects" aria-labelledby="projects-heading">
       <div id="projects-container"></div>
     </section>
 
-    <section class="section" id="experience">
+    <!-- Skills Section -->
+    <section class="reveal-container" id="skills" aria-labelledby="skills-heading">
+      <div id="skills-container"></div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="reveal-container" id="experience" aria-labelledby="experience-heading">
       <div id="experience-container"></div>
     </section>
 
-    <section class="section" id="learning">
-      <div id="learning-container"></div>
+    <!-- Publications Section -->
+    <section class="reveal-container" id="publications" aria-labelledby="publications-heading">
+      <div id="publications-container"></div>
     </section>
 
-    <section class="section" id="contact">
+    <!-- Achievements Section (if you have achievements.css/html) -->
+    <section class="reveal-container" id="achievements" aria-labelledby="achievements-heading">
+      <div id="achievements-container"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="reveal-container" id="contact" aria-labelledby="contact-heading">
       <div id="contact-container"></div>
     </section>
 
   </main>
 
-  <div id="footer-container"></div>
+  <!-- Footer -->
+  <footer id="footer-container" role="contentinfo"></footer>
 
-  <!-- =====================
-       BACK TO TOP
-  ====================== -->
-  <a class="back-to-top" aria-label="Back to top">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-      <path fill-rule="evenodd"
-        d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
-    </svg>
-  </a>
-
-  <!-- =====================
-       JS (ORDER MATTERS)
-  ====================== -->
+  <!-- JavaScript - All deferred for better performance -->
   <script src="assets/js/app.js" defer></script>
-  <script src="assets/js/ui.js" defer></script>
   <script src="assets/js/effects.js" defer></script>
-  <script src="assets/js/contact.js" defer></script>
-  <script src="assets/js/footer.js" defer></script>
+  <script src="assets/js/ui.js" defer></script>
+
+  <!-- Schema.org structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "K. Krishna Vamsi",
+    "jobTitle": "Research Engineer",
+    "description": "Research Engineer specializing in Robotics, AI, and Power Electronics",
+    "image": "assets/images/profile-600.png",
+    "url": "https://yourwebsite.com",
+    "sameAs": [
+      "https://linkedin.com/in/yourprofile",
+      "https://github.com/yourprofile"
+    ]
+  }
+  </script>
 
 </body>
 </html>

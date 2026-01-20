@@ -1,422 +1,54 @@
-/* ================= HEADER SECTION STYLES ================= */
-
-/* ===== HEADER CONTAINER ===== */
 .header {
-  padding: 6rem 0 4rem;         /* CHANGE: Section padding (top bottom) */
-  background: linear-gradient(135deg, 
-    rgb(255, 255, 255) 0%, 
-    rgb(255, 255, 255) 100%);  /* CHANGE: Background gradient */
-  border-bottom: 1px solid rgba(255, 255, 255, 0);
-  position: relative;
+  height: var(--header-height);
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-}
-
-/* Animated background effect */
-.header::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 600px;                 /* CHANGE: Glow size */
-  height: 600px;
-  background: radial-gradient(circle, rgb(255, 255, 255) 0%, transparent 70%);
-  border-radius: 50%;
-  animation: float 8s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-20px) scale(1.05); }
-}
-
-.header-container {
-  max-width: 1400px;            /* CHANGE: Maximum content width */
-  margin: 0 auto;
-  padding: 0 2rem;              /* CHANGE: Horizontal padding */
-  position: relative;
-  z-index: 1;
 }
 
 .header-grid {
   display: grid;
-  grid-template-columns: 1fr auto;  /* CHANGE: Content and actions layout */
-  gap: 3rem;                    /* CHANGE: Space between columns */
-  align-items: center;
+  grid-template-columns: 1fr; /* Single column for high impact */
+  max-width: var(--container-width);
 }
 
-/* ===== HEADER CONTENT ===== */
-.header-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;                  /* CHANGE: Space between content elements */
-}
-
-/* ===== AVAILABILITY BADGE ===== */
-.badge-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.header-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;                 /* CHANGE: Space between pulse and text */
-  padding: 0.625rem 1.25rem;   /* CHANGE: Badge padding */
-  background: rgba(16, 185, 129, 0.1);  /* CHANGE: Badge background */
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  border-radius: 2rem;          /* CHANGE: Badge roundness (pill shape) */
-  font-size: 0.875rem;          /* CHANGE: Badge text size */
-  font-weight: 600;
-  color: #10b981;               /* CHANGE: Badge text color */
-  animation: badge-pulse 2s ease-in-out infinite;
-}
-
-.badge-pulse {
-  width: 8px;                   /* CHANGE: Pulse dot size */
-  height: 8px;
-  background: #10b981;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #10b981;
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-
-@keyframes badge-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-/* ===== HEADER TITLE ===== */
+/* BIG TYPOGRAPHY - This is the "Hook" */
 .header-title {
+  font-size: clamp(3rem, 10vw, 8.5rem); /* Giant text */
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
   margin: 0;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);  /* CHANGE: Title size (responsive) */
-  font-weight: 800;
-  line-height: 1.15;
-  background: linear-gradient(135deg, #542a00, #03ff18);  /* CHANGE: Title gradient */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.02em;
 }
 
-/* ===== HEADER SUBTITLE ===== */
 .header-subtitle {
-  max-width: 650px;             /* CHANGE: Maximum width of subtitle */
-  font-size: 1.125rem;          /* CHANGE: Subtitle text size */
-  line-height: 1.7;
-  color: var(--color-text-muted, #9ca3af);
-  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin-top: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
 }
 
-.header-subtitle .highlight {
-  color: #60a5fa;               /* CHANGE: Highlight color */
-  font-weight: 600;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.header-subtitle .highlight:hover {
-  color: #3b82f6;               /* CHANGE: Highlight hover color */
-}
-
-/* ===== HEADER META (CONTACT INFO) ===== */
-.header-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;                  /* CHANGE: Space between meta items */
-  font-style: normal;
-  margin-top: 0.5rem;
-}
-
-.header-meta-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;                  /* CHANGE: Space between icon and text */
-  font-size: 0.95rem;           /* CHANGE: Meta item text size */
-  color: var(--color-text-main, #e4e6eb);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-}
-
-.header-meta-item:hover {
-  color: #60a5fa;
-  background: rgba(96, 165, 250, 0.1);
-}
-
-.header-meta-item svg {
-  flex-shrink: 0;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.header-meta-item:hover svg {
-  opacity: 1;
-}
-
-/* ===== SOCIAL LINKS ===== */
-.header-social {
-  display: flex;
-  gap: 1rem;                    /* CHANGE: Space between social icons */
-  margin-top: 0.5rem;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;                  /* CHANGE: Social icon size */
-  height: 40px;
-  border-radius: 0.5rem;        /* CHANGE: Icon corner roundness */
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--color-text-muted, #9ca3af);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.social-link:hover {
-  background: rgba(96, 165, 250, 0.15);
-  color: #60a5fa;
-  transform: translateY(-2px);  /* CHANGE: Hover lift effect */
-}
-
-/* ===== HEADER ACTIONS (BUTTONS) ===== */
-.header-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;                    /* CHANGE: Space between buttons */
-  align-items: flex-end;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.625rem;                /* CHANGE: Space between icon and text */
-  padding: 0.875rem 1.75rem;   /* CHANGE: Button padding */
-  font-size: 0.95rem;           /* CHANGE: Button text size */
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 0.5rem;        /* CHANGE: Button corner roundness */
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  border: 2px solid transparent;
-  cursor: pointer;
-}
-
-.btn svg {
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-/* Primary Button */
+/* THE BUTTON - Ultra Minimalist Outline */
 .btn-primary {
-  background: linear-gradient(135deg, #542a00, #03ff18);  /* CHANGE: Primary button gradient */
-  color: white;
-  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+  margin-top: 60px;
+  padding: 20px 50px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  transition: all 0.5s var(--transition-main);
+  cursor: pointer;
+  width: fit-content;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);  /* CHANGE: Button hover lift */
-  box-shadow: 0 6px 20px rgba(96, 250, 101, 0.4);
+  background: #fff;
+  color: #000;
+  transform: translateY(-5px);
 }
-
-.btn-primary:hover svg {
-  transform: translateY(2px);   /* CHANGE: Icon animation on hover */
-}
-
-/* Secondary Button */
-.btn-secondary {
-  background: transparent;
-  color: var(--color-text-main, #e4e6eb);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.btn-secondary:hover {
-  border-color: #60a5fa;
-  background: rgba(96, 165, 250, 0.1);
-  transform: translateY(-2px);
-}
-
-.btn-secondary:hover svg {
-  transform: scale(1.1);
-}
-
-/* ===== RESPONSIVE BREAKPOINTS ===== */
-
-/* Large Tablet */
-@media (max-width: 1024px) {
-  .header {
-    padding: 5rem 0 3rem;
-  }
-
-  .header-title {
-    font-size: clamp(2.25rem, 5vw, 3rem);
-  }
-
-  .header-subtitle {
-    font-size: 1.05rem;
-  }
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-  .header-grid {
-    grid-template-columns: 1fr;  /* Single column on tablet */
-    gap: 2.5rem;
-  }
-
-  .header-actions {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  .btn {
-    flex: 1;
-    min-width: 180px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .header {
-    padding: 4rem 0 3rem;
-  }
-
-  .header-container {
-    padding: 0 1.5rem;
-  }
-
-  .header-content {
-    gap: 1.25rem;
-  }
-
-  .header-title {
-    font-size: clamp(2rem, 6vw, 2.5rem);
-  }
-
-  .header-subtitle {
-    font-size: 1rem;
-  }
-
-  .header-meta {
-    gap: 1rem;
-  }
-
-  .header-meta-item {
-    font-size: 0.9rem;
-  }
-
-  .header-social {
-    gap: 0.75rem;
-  }
-
-  .social-link {
-    width: 36px;
-    height: 36px;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .header {
-    padding: 3rem 0 2rem;
-  }
-
-  .header-container {
-    padding: 0 1.25rem;
-  }
-
-  .header-badge {
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .badge-pulse {
-    width: 6px;
-    height: 6px;
-  }
-
-  .header-actions {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .header-meta {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-}
-
-/* ===== ACCESSIBILITY ===== */
-@media (prefers-reduced-motion: reduce) {
-  .header::before,
-  .header-badge,
-  .badge-pulse,
-  .btn,
-  .social-link {
-    animation: none;
-    transition: none;
-  }
-}
-
-/* Focus visible for keyboard navigation */
-.btn:focus-visible,
-.header-meta-item:focus-visible,
-.social-link:focus-visible {
-  outline: 2px solid #60a5fa;
-  outline-offset: 3px;
-}
-
-/* ================= CUSTOMIZATION QUICK REFERENCE ================= */
-/*
-
-LAYOUT:
-- .header { padding } - Section vertical padding (6rem 0 4rem)
-- .header-grid { grid-template-columns } - Layout columns (1fr auto)
-- .header-grid { gap } - Space between columns (3rem)
-
-COLORS:
-- .header { background } - Background gradient
-- .header-badge { background } - Badge background (green)
-- .header-title { background } - Title gradient
-- .highlight { color } - Highlight text color (#60a5fa)
-
-TYPOGRAPHY:
-- .header-title { font-size } - Title size (clamp 2.5rem-3.5rem)
-- .header-subtitle { font-size } - Subtitle size (1.125rem)
-- .header-meta-item { font-size } - Meta text size (0.95rem)
-
-BADGE:
-- .header-badge { padding } - Badge size
-- .badge-pulse { width/height } - Pulse dot size (8px)
-- Animated pulse effect can be disabled
-
-BUTTONS:
-- .btn { padding } - Button size (0.875rem 1.75rem)
-- .btn-primary { background } - Primary button gradient
-- .btn-secondary { border } - Secondary button style
-- Icons included with animations
-
-SOCIAL LINKS:
-- .social-link { width/height } - Icon size (40px)
-- Hover effects (lift + color change)
-- GitHub and LinkedIn included
-
-RESPONSIVE:
-- 1024px - Large tablet adjustments
-- 900px - Single column layout
-- 768px - Mobile optimizations
-- 480px - Small mobile (stacked buttons)
-
-*/
