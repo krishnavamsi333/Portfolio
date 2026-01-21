@@ -1,40 +1,88 @@
+/* ============================================
+   EXPERIENCE / ROADMAP SECTION
+   ============================================ */
+
+.experience-section {
+  padding: var(--space-3xl) 0;
+  background: var(--color-bg);
+}
+
+.experience-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
 .roadmap-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2px; /* Precision Lines */
-  background: #111;
-  border: 1px solid #111;
+  gap: 2px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
 }
 
 .roadmap-card {
   background: var(--color-bg);
-  padding: 60px;
+  padding: var(--space-3xl);
   position: relative;
-  transition: background 0.4s var(--transition-main);
+  transition: background 0.4s var(--ease-apple);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .roadmap-card:hover {
-  background: var(--color-bg-alt);
+  background: var(--color-bg-elevated);
 }
 
 .roadmap-date {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
   color: var(--color-accent);
-  font-size: 0.85rem;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-lg);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 .roadmap-title {
-  font-size: 2.5rem;
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-md);
+}
+
+.roadmap-company {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.roadmap-description {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
 }
 
 .roadmap-number {
   position: absolute;
-  bottom: 20px;
-  right: 40px;
-  font-size: 5rem;
-  font-weight: 900;
-  color: rgba(255,255,255,0.03);
+  bottom: var(--space-lg);
+  right: var(--space-xl);
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: var(--font-weight-bold);
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 1;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .roadmap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap-card {
+    padding: var(--space-2xl);
+  }
 }

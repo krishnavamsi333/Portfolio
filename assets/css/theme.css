@@ -40,7 +40,7 @@
   /* Font Families */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  --font-display: 'Inter', sans-serif; /* For large headings */
+  --font-display: 'Inter', sans-serif;
   
   /* Font Sizes - Fluid Typography */
   --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -87,7 +87,7 @@
   
   --container-width: 1440px;
   --container-padding: clamp(1.5rem, 5vw, 3rem);
-  --content-width: 800px; /* For readable text content */
+  --content-width: 800px;
   
   --header-height: 100vh;
   --nav-height: 80px;
@@ -129,7 +129,7 @@
   --duration-slow: 400ms;
   --duration-slower: 600ms;
   
-  /* Combined Transitions (for convenience) */
+  /* Combined Transitions */
   --transition-main: var(--duration-base) var(--ease-apple);
   --transition-smooth: var(--duration-base) var(--ease-smooth);
   --transition-slow: var(--duration-slow) var(--ease-apple);
@@ -147,21 +147,7 @@
   --z-tooltip: 600;
   --z-cursor: 9999;
   --z-loader: 10000;
-  
-  /* ============================================
-     BREAKPOINTS (for reference in JS)
-     ============================================ */
-  
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
 }
-
-/* ============================================
-   BASE BODY STYLES
-   ============================================ */
 
 body {
   font-family: var(--font-primary);
@@ -172,33 +158,12 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   
-  /* Text Rendering Optimization */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   
-  /* Prevent horizontal scroll */
   overflow-x: hidden;
 }
-
-/* ============================================
-   DARK MODE SUPPORT (if needed later)
-   ============================================ */
-
-@media (prefers-color-scheme: light) {
-  /* If you want to support light mode in future */
-  /* Uncomment and adjust colors */
-  /*
-  :root {
-    --color-bg: #FFFFFF;
-    --color-text: #000000;
-  }
-  */
-}
-
-/* ============================================
-   REDUCED MOTION SUPPORT
-   ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
   :root {

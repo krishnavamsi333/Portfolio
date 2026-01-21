@@ -1,50 +1,143 @@
-<section id="contact" class="contact-section">
-  <div class="container">
+<!-- ============================================
+     CONTACT SECTION
+     ============================================ -->
+<section id="contact" class="contact-section" aria-labelledby="contact-heading">
+  <div class="contact-container">
+    <!-- Section Header -->
     <div class="section-header">
-      <div class="reveal-container">
-        <h2 class="section-title reveal-inner">05 / <span class="text-glow">Collaboration</span></h2>
-      </div>
-      <p class="section-subtitle">Open for research inquiries and technical discussions.</p>
+      <h2 id="contact-heading" class="section-title">
+        07 / <span class="text-glow">Collaboration</span>
+      </h2>
+      <p class="section-subtitle">
+        Open for research inquiries and technical discussions.
+      </p>
     </div>
 
+    <!-- Availability Status -->
     <div class="availability-status magnetic-target">
       <div class="status-pulse"></div>
       <span class="status-msg">SYSTEM_STATUS: AVAILABLE_FOR_COLLAB</span>
     </div>
 
+    <!-- Contact Matrix -->
     <div class="contact-matrix">
-      <div class="contact-access">
-        <div class="access-row magnetic-target" data-copy="kasimallakrishnavamsi333@gmail.com">
+      
+      <!-- Contact Information -->
+      <div class="access-info">
+        <!-- Email -->
+        <div class="access-row magnetic-target">
           <span class="access-label">EMAIL_LINK</span>
-          <span class="access-value">kasimallakrishnavamsi333@gmail.com</span>
-          <button class="copy-trigger">COPY_ID</button>
+          <a 
+            href="mailto:kasimallakrishnavamsi333@gmail.com" 
+            class="access-value"
+          >
+            kasimallakrishnavamsi333@gmail.com
+          </a>
+          <button 
+            class="copy-trigger" 
+            data-copy="kasimallakrishnavamsi333@gmail.com"
+            aria-label="Copy email address"
+          >
+            COPY_ID
+          </button>
         </div>
         
+        <!-- LinkedIn -->
         <div class="access-row magnetic-target">
           <span class="access-label">LINKEDIN_ID</span>
-          <a href="https://www.linkedin.com/in/krishnavamsikasimalla/" target="_blank" class="access-value">K. Krishna Vamsi</a>
+          <a 
+            href="https://www.linkedin.com/in/krishnavamsikasimalla/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="access-value"
+          >
+            K. Krishna Vamsi
+          </a>
         </div>
 
+        <!-- GitHub -->
+        <div class="access-row magnetic-target">
+          <span class="access-label">GITHUB_REPO</span>
+          <a 
+            href="https://github.com/krishnavamsi333" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="access-value"
+          >
+            @krishnavamsi333
+          </a>
+        </div>
+
+        <!-- Location -->
         <div class="access-row magnetic-target">
           <span class="access-label">GEO_LOCATION</span>
-          <span class="access-value">Vijayawada, India [16.5062° N, 80.6480° E]</span>
+          <span class="access-value">
+            Vijayawada, India [16.5062° N, 80.6480° E]
+          </span>
         </div>
       </div>
 
+      <!-- Contact Form -->
       <div class="contact-form-wrapper">
         <form id="contactForm" class="industrial-form">
+          <!-- Name and Email Row -->
           <div class="form-row">
-            <input type="text" name="name" placeholder="IDENT_NAME" required>
-            <input type="email" name="email" placeholder="ACCESS_EMAIL" required>
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Name</label>
+              <input 
+                type="text" 
+                id="contact-name"
+                name="name" 
+                placeholder="IDENT_NAME" 
+                required
+                aria-required="true"
+              >
+            </div>
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email</label>
+              <input 
+                type="email" 
+                id="contact-email"
+                name="email" 
+                placeholder="ACCESS_EMAIL" 
+                required
+                aria-required="true"
+              >
+            </div>
           </div>
-          <input type="text" name="subject" placeholder="SUBJECT_LINE" required>
-          <textarea name="message" placeholder="MESSAGE_DATA_INPUT" required></textarea>
+
+          <!-- Subject -->
+          <div class="form-group">
+            <label for="contact-subject" class="form-label">Subject</label>
+            <input 
+              type="text" 
+              id="contact-subject"
+              name="subject" 
+              placeholder="SUBJECT_LINE" 
+              required
+              aria-required="true"
+            >
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="contact-message" class="form-label">Message</label>
+            <textarea 
+              id="contact-message"
+              name="message" 
+              placeholder="MESSAGE_DATA_INPUT" 
+              required
+              aria-required="true"
+            ></textarea>
+          </div>
           
-          <button type="submit" class="btn-primary magnetic-target">
-            EXECUTE_SEND <span class="arrow">→</span>
+          <!-- Submit Button -->
+          <button type="submit" class="btn-submit magnetic-target">
+            EXECUTE_SEND →
           </button>
         </form>
       </div>
+
     </div>
   </div>
 </section>

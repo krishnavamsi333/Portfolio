@@ -1,80 +1,141 @@
-<section id="skills" class="skills-section">
-  <div class="container">
+<!-- ============================================
+     SKILLS SECTION
+     ============================================ -->
+<section id="skills" class="skills-section" aria-labelledby="skills-heading">
+  <div class="skills-container">
+    <!-- Section Header -->
     <div class="section-header">
-      <div class="reveal-container">
-        <h2 class="section-title reveal-inner">Technical <span class="text-glow">Stack</span></h2>
-      </div>
-      <p class="section-subtitle reveal-inner" style="animation-delay: 0.2s;">
+      <h2 id="skills-heading" class="section-title">
+        03 / Technical <span class="text-glow">Stack</span>
+      </h2>
+      <p class="section-subtitle">
         Multidisciplinary toolkit for advanced engineering research and deployment.
       </p>
     </div>
 
+    <!-- Skills Matrix -->
     <div class="skills-matrix">
       
-      <div class="skill-module" data-accent="robotics">
-        <div class="module-header">
-          <span class="module-number">01</span>
-          <h3 class="module-title">Robotics & Software</h3>
+      <!-- Robotics Module -->
+      <div class="skill-module scroll-reveal" data-accent="robotics">
+        <span class="module-number">01</span>
+        <h3 class="module-title">Robotics & Software</h3>
+        
+        <div class="skill-group">
+          <span class="skill-main">ROS 2 & Gazebo</span>
+          <div class="skill-tags">
+            <span class="tag">Nav2</span>
+            <span class="tag">URDF</span>
+            <span class="tag">SLAM</span>
+            <span class="tag">TF2</span>
+          </div>
         </div>
 
-      <!-- <div class="skill-module" data-accent="robotics">
-        <div class="module-header reveal-inner"> <span class="module-number">01</span>
-          <h3 class="module-title">Robotics & Software</h3>
-        </div> -->
-        <div class="module-content">
-          <div class="skill-group">
-            <span class="skill-main">ROS 2 & Gazebo</span>
-            <div class="skill-tags">
-              <span class="tag">Nav2</span><span class="tag">URDF</span><span class="tag">SLAM</span>
-            </div>
+        <div class="skill-group">
+          <span class="skill-main">Computer Vision</span>
+          <div class="skill-tags">
+            <span class="tag">OpenCV</span>
+            <span class="tag">YOLO</span>
+            <span class="tag">MediaPipe</span>
           </div>
-          <div class="skill-group">
-            <span class="skill-main">Computer Vision</span>
-            <div class="skill-tags">
-              <span class="tag">OpenCV</span><span class="tag">YOLO</span><span class="tag">MediaPipe</span>
-            </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-main">Programming</span>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">JavaScript</span>
           </div>
         </div>
       </div>
 
-      <div class="skill-module" data-accent="ai">
-        <div class="module-header">
-          <span class="module-number">02</span>
-          <h3 class="module-title">AI & Machine Learning</h3>
-        </div>
-        <div class="module-content">
-          <div class="skill-group">
-            <span class="skill-main">Reinforcement Learning</span>
-            <div class="skill-tags">
-              <span class="tag">DQN</span><span class="tag">Policy Gradient</span><span class="tag">Q-Learning</span>
-            </div>
+      <!-- AI Module -->
+      <div class="skill-module scroll-reveal" data-accent="ai">
+        <span class="module-number">02</span>
+        <h3 class="module-title">AI & Machine Learning</h3>
+        
+        <div class="skill-group">
+          <span class="skill-main">Reinforcement Learning</span>
+          <div class="skill-tags">
+            <span class="tag">DQN</span>
+            <span class="tag">Policy Gradient</span>
+            <span class="tag">Q-Learning</span>
           </div>
-          <div class="skill-group">
-            <span class="skill-main">Deep Learning</span>
-            <div class="skill-tags">
-              <span class="tag">PyTorch</span><span class="tag">TensorFlow</span>
-            </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-main">Deep Learning</span>
+          <div class="skill-tags">
+            <span class="tag">PyTorch</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Keras</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-main">Frameworks</span>
+          <div class="skill-tags">
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Gym</span>
           </div>
         </div>
       </div>
 
-      <div class="skill-module" data-accent="modeling">
-        <div class="module-header">
-          <span class="module-number">03</span>
-          <h3 class="module-title">Simulation & Modeling</h3>
-        </div>
-        <div class="module-content">
-          <div class="skill-group">
-            <span class="skill-main">MATLAB / Simulink</span>
-            <div class="skill-tags">
-              <span class="tag">Control Systems</span><span class="tag">MPPT</span><span class="tag">HIL</span>
-            </div>
+      <!-- Simulation Module -->
+      <div class="skill-module scroll-reveal" data-accent="modeling">
+        <span class="module-number">03</span>
+        <h3 class="module-title">Simulation & Modeling</h3>
+        
+        <div class="skill-group">
+          <span class="skill-main">MATLAB / Simulink</span>
+          <div class="skill-tags">
+            <span class="tag">Control Systems</span>
+            <span class="tag">MPPT</span>
+            <span class="tag">HIL</span>
           </div>
-          <div class="skill-group">
-            <span class="skill-main">Python (Scientific)</span>
-            <div class="skill-tags">
-              <span class="tag">NumPy</span><span class="tag">SciPy</span><span class="tag">Pandas</span>
-            </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-main">Scientific Python</span>
+          <div class="skill-tags">
+            <span class="tag">NumPy</span>
+            <span class="tag">SciPy</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Matplotlib</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Power Electronics Module -->
+      <div class="skill-module scroll-reveal" data-accent="power">
+        <span class="module-number">04</span>
+        <h3 class="module-title">Power & Embedded</h3>
+        
+        <div class="skill-group">
+          <span class="skill-main">Power Electronics</span>
+          <div class="skill-tags">
+            <span class="tag">MPPT</span>
+            <span class="tag">DC-DC Converters</span>
+            <span class="tag">Solar PV</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-main">Embedded Systems</span>
+          <div class="skill-tags">
+            <span class="tag">ESP32</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">MQTT</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-main">Cloud & IoT</span>
+          <div class="skill-tags">
+            <span class="tag">AWS IoT</span>
+            <span class="tag">Lambda</span>
+            <span class="tag">DynamoDB</span>
           </div>
         </div>
       </div>
@@ -82,3 +143,4 @@
     </div>
   </div>
 </section>
+

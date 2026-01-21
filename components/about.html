@@ -1,47 +1,90 @@
-<section id="about" class="about-section">
+<section id="about" class="about-section" aria-labelledby="about-heading">
   <div class="about-container">
-    <div class="about-wrapper">
-      
-      <div class="about-visual-terminal reveal-container">
-        <div class="terminal-header">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <span class="terminal-title">SYSTEM_CORE_INFO</span>
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 id="about-heading" class="section-title">
+        01 / <span class="text-glow">Intelligence</span>
+      </h2>
+      <p class="section-subtitle">
+        Engineer. Researcher. Architect of Autonomous Systems.
+      </p>
+    </div>
+
+    <!-- About Grid -->
+    <div class="about-grid scroll-reveal">
+      <!-- Content Side -->
+      <div class="about-content">
+        <p class="about-text">
+          Specializing in the <strong>fusion of Power Electronics and Robotics</strong>, 
+          I design and deploy intelligent systems that bridge the gap between 
+          energy optimization and autonomous decision-making.
+        </p>
+
+        <p class="about-text">
+          My research focuses on <strong>ROS-based navigation systems</strong>, 
+          <strong>reinforcement learning for agricultural robotics</strong>, and 
+          <strong>MPPT algorithms for renewable energy</strong>. I believe in 
+          building technology that's not just smart, but sustainable.
+        </p>
+
+        <!-- Highlight Box -->
+        <div class="about-highlight">
+          <p class="about-text">
+            <strong>Current Focus:</strong> Developing autonomous navigation 
+            solutions for precision agriculture using ROS2 and Gazebo simulation.
+          </p>
         </div>
-        <div class="terminal-body reveal-inner">
-          <div class="experience-badge-industrial">
-            <span class="badge-num">04+</span>
-            <span class="badge-txt">Years of Research</span>
+
+        <!-- Stats -->
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-counter="4">0</span>
+            <span class="stat-label">Years Research</span>
           </div>
-          <div class="code-decoration">
-            <code>> INITIALIZING_RESEARCH_ENGINEER...</code><br>
-            <code>> STATUS: AVAILABLE_FOR_COLLAB</code><br>
-            <code>> LOC: VIJAYAWADA_IN_16.50N_80.64E</code>
+          <div class="stat-item">
+            <span class="stat-number" data-counter="3">0</span>
+            <span class="stat-label">IEEE Papers</span>
           </div>
+          <div class="stat-item">
+            <span class="stat-number" data-counter="8">0</span>
+            <span class="stat-label">Projects</span>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="about-cta">
+          <a href="assets/docs/CV_KV.pdf" class="btn-primary magnetic-target" download>
+            Download CV →
+          </a>
         </div>
       </div>
 
-      <div class="about-info">
-        <h2 class="glitch-title" data-text="INTELLIGENCE">INTELLIGENCE</h2>
-        <p class="about-description">
-          Engineer. Researcher. Architect of <span class="highlight">Autonomous Systems</span>. 
-          Specializing in the fusion of Power Electronics and Robotics.
-        </p>
-        
-        <div class="about-metrics">
-          <div class="metric-box magnetic-target">
-            <span class="m-val">03</span>
-            <span class="m-lab">IEEE Papers</span>
-          </div>
-          <div class="metric-box magnetic-target">
-            <span class="m-val">05</span>
-            <span class="m-lab">AI Projects</span>
-          </div>
+      <!-- Visual Terminal Side -->
+      <div class="about-visual-terminal scroll-reveal">
+        <!-- Terminal Header -->
+        <div class="terminal-header">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="terminal-title">SYSTEM_CORE_INFO.sh</span>
         </div>
 
-        <div class="about-cta">
-          <a href="assets/docs/CV_KV.pdf" class="btn-primary magnetic-target">
-            GET FULL CV <span class="arrow">→</span>
-          </a>
+        <!-- Terminal Body -->
+        <div class="terminal-body">
+          <!-- Experience Badge -->
+          <div class="experience-badge-industrial">
+            <span class="badge-num" data-counter="4">0</span>
+            <span class="badge-txt">Years of Research</span>
+          </div>
+
+          <!-- Code Decoration -->
+          <div class="code-decoration">
+            <code><span class="comment">// System Status</span></code><br>
+            <code><span class="keyword">const</span> status = <span class="string">'AVAILABLE_FOR_COLLAB'</span>;</code><br>
+            <code><span class="keyword">const</span> location = <span class="string">'VIJAYAWADA_IN'</span>;</code><br>
+            <code><span class="keyword">const</span> coords = [<span class="string">16.50°N</span>, <span class="string">80.64°E</span>];</code><br>
+            <code><span class="comment">// Specialization: Robotics + AI + Power</span></code>
+          </div>
         </div>
       </div>
     </div>

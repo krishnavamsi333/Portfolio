@@ -1,10 +1,41 @@
-<nav class="nav">
+<nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
-    <a href="#" class="nav-logo">K.VAMSI</a>
+    <!-- Logo -->
+    <a href="#home" class="nav-logo" aria-label="K. Krishna Vamsi - Home">
+      K.VAMSI
+    </a>
+
+    <!-- Desktop Navigation -->
     <div class="nav-links">
       <a href="#about" class="nav-link">/ABOUT</a>
       <a href="#projects" class="nav-link">/RESEARCH</a>
+      <a href="#skills" class="nav-link">/STACK</a>
       <a href="#experience" class="nav-link">/ROADMAP</a>
+      <a href="#contact" class="btn-nav">HIRE_ME</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button 
+      class="menu-toggle" 
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="nav-links">
+      <a href="#about" class="nav-link">/ABOUT</a>
+      <a href="#projects" class="nav-link">/RESEARCH</a>
+      <a href="#skills" class="nav-link">/STACK</a>
+      <a href="#experience" class="nav-link">/ROADMAP</a>
+      <a href="#publications" class="nav-link">/PAPERS</a>
+      <a href="#achievements" class="nav-link">/AWARDS</a>
       <a href="#contact" class="btn-nav">HIRE_ME</a>
     </div>
   </div>

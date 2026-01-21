@@ -1,52 +1,169 @@
-<section id="projects" class="projects-section" aria-labelledby="projects-title">
-  <div class="container">
+<section id="projects" class="projects-section" aria-labelledby="projects-heading">
+  <div class="projects-container">
+    <!-- Section Header -->
     <div class="section-header">
-      <div class="reveal-container">
-        <h2 id="projects-title" class="section-title reveal-inner">
-          Selected <span class="text-glow">Research</span>
-        </h2>
-      </div>
-      <p class="section-subtitle reveal-inner" style="animation-delay: 0.2s;">
+      <h2 id="projects-heading" class="section-title">
+        02 / Selected <span class="text-glow">Research</span>
+      </h2>
+      <p class="section-subtitle">
         Engineering high-frequency systems and autonomous robotics.
       </p>
     </div>
 
+    <!-- Bento Grid -->
     <div class="bento-grid">
       
-      <article class="bento-item featured magnetic-target" style="--accent: #3b82f6;">
+      <!-- Featured Project #1 -->
+      <article class="bento-item featured magnetic-target scroll-reveal">
+        <span class="project-index">01</span>
+        <span class="project-status">Ongoing</span>
+        
         <div class="bento-content">
-          <div class="bento-meta">
-            <span class="project-index">01</span>
-            <span class="project-status" data-status="ongoing">Ongoing</span>
-          </div>
+          <span class="project-category">Autonomous Robotics</span>
           <h3 class="project-title">UCHCHAIHSHRAVA</h3>
-          <p class="project-description">ROS Agropilot: Autonomous navigation for precision agriculture field robots.</p>
+          <p class="project-description">
+            ROS2-based autonomous navigation system for precision agriculture. 
+            Implementing SLAM, path planning, and obstacle avoidance for 
+            field robots using Gazebo simulation.
+          </p>
+          
           <div class="tech-tags">
-            <span class="tech-tag">ROS2</span><span class="tech-tag">Gazebo</span><span class="tech-tag">Python</span>
+            <span class="tech-tag">ROS2</span>
+            <span class="tech-tag">Gazebo</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Nav2</span>
+            <span class="tech-tag">SLAM</span>
           </div>
-          <a href="https://github.com/..." class="bento-link">Source <svg>...</svg></a>
+
+          <div class="project-links">
+            <a href="https://github.com/krishnavamsi333" target="_blank" class="project-link">
+              View Source →
+            </a>
+          </div>
         </div>
       </article>
 
-      <article class="bento-item tall" style="--accent: #eab308;">
+      <!-- Tall Project #2 -->
+      <article class="bento-item tall magnetic-target scroll-reveal">
+        <span class="project-index">02</span>
+        <span class="project-status completed">Published</span>
+        
         <div class="bento-content">
-          <div class="bento-meta">
-            <span class="project-index">02</span>
-            <span class="project-status" data-status="research">Research</span>
+          <span class="project-category">Power Electronics</span>
+          <h3 class="project-title">MPPT Solar System</h3>
+          <p class="project-description">
+            Novel Maximum Power Point Tracking algorithm for portable 
+            solar charging systems targeting e-bike batteries.
+          </p>
+          
+          <div class="tech-tags">
+            <span class="tech-tag">MATLAB</span>
+            <span class="tech-tag">Simulink</span>
+            <span class="tech-tag">Power Electronics</span>
           </div>
-          <h3 class="project-title">MPPT Solar</h3>
-          <p class="project-description">High-efficiency portable solar charging for e-bike batteries via MATLAB/Simulink.</p>
+
+          <div class="project-links">
+            <a href="#publications" class="project-link">
+              Read Paper →
+            </a>
+          </div>
         </div>
       </article>
 
-      <article class="bento-item wide" style="--accent: #10b981;">
+      <!-- Medium Project #3 -->
+      <article class="bento-item medium magnetic-target scroll-reveal">
+        <span class="project-index">03</span>
+        <span class="project-status in-progress">Simulation</span>
+        
         <div class="bento-content">
-          <div class="bento-meta">
-            <span class="project-index">03</span>
-            <span class="project-status" data-status="simulation">Simulation</span>
-          </div>
+          <span class="project-category">Reinforcement Learning</span>
           <h3 class="project-title">Chili Harvester</h3>
-          <p class="project-description">Reinforcement learning and CV for selective harvesting robotics.</p>
+          
+          <div class="tech-tags">
+            <span class="tech-tag">RL</span>
+            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">OpenCV</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Medium Project #4 -->
+      <article class="bento-item medium magnetic-target scroll-reveal">
+        <span class="project-index">04</span>
+        
+        <div class="bento-content">
+          <span class="project-category">Computer Vision</span>
+          <h3 class="project-title">Object Detection</h3>
+          
+          <div class="tech-tags">
+            <span class="tech-tag">YOLO</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">MediaPipe</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Wide Project #5 -->
+      <article class="bento-item wide magnetic-target scroll-reveal">
+        <span class="project-index">05</span>
+        
+        <div class="bento-content">
+          <span class="project-category">IoT Systems</span>
+          <h3 class="project-title">AWS IoT Integration</h3>
+          <p class="project-description">
+            Cloud-based monitoring and control systems for distributed 
+            hardware deployments using AWS IoT Core and Lambda functions.
+          </p>
+          
+          <div class="tech-tags">
+            <span class="tech-tag">AWS IoT</span>
+            <span class="tech-tag">Lambda</span>
+            <span class="tech-tag">MQTT</span>
+            <span class="tech-tag">DynamoDB</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Small Projects -->
+      <article class="bento-item small magnetic-target scroll-reveal">
+        <span class="project-index">06</span>
+        
+        <div class="bento-content">
+          <span class="project-category">Machine Learning</span>
+          <h3 class="project-title">DQN Training</h3>
+          
+          <div class="tech-tags">
+            <span class="tech-tag">DQN</span>
+            <span class="tech-tag">Gym</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="bento-item small magnetic-target scroll-reveal">
+        <span class="project-index">07</span>
+        
+        <div class="bento-content">
+          <span class="project-category">Embedded</span>
+          <h3 class="project-title">ESP32 Firmware</h3>
+          
+          <div class="tech-tags">
+            <span class="tech-tag">C++</span>
+            <span class="tech-tag">ESP32</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="bento-item small magnetic-target scroll-reveal">
+        <span class="project-index">08</span>
+        
+        <div class="bento-content">
+          <span class="project-category">Simulation</span>
+          <h3 class="project-title">Control Systems</h3>
+          
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">SciPy</span>
+          </div>
         </div>
       </article>
 
