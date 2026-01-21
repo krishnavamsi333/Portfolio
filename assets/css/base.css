@@ -195,7 +195,7 @@ button:focus-visible {
    PAGE LOADER
    ============================================ */
 
-.page-loader {
+/* .page-loader {
   position: fixed;
   inset: 0;
   background: var(--color-bg);
@@ -266,7 +266,7 @@ button:focus-visible {
   100% {
     left: 100%;
   }
-}
+} */
 
 /* ============================================
    UTILITY CLASSES
